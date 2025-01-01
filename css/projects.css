@@ -64,9 +64,7 @@
 
 .project-content {
     padding: 2rem;
-    display: grid;
-    grid-template-columns: 3fr 2fr;
-    gap: 2rem;
+    display: block;
 }
 
 .tech-stack {
@@ -83,10 +81,8 @@
     font-size: 0.9rem;
 }
 
-.project-media img {
-    width: 100%;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+.project-media {
+    display: none;
 }
 
 @media (max-width: 768px) {

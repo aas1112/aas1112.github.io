@@ -57,24 +57,32 @@ document.addEventListener('DOMContentLoaded', () => {
     const menuToggle = document.querySelector('.menu-toggle');
     const navLinks = document.querySelector('.nav-links');
 
-    menuToggle.addEventListener('click', () => {
+    menuToggle.addEventListener('click', function() {
         navLinks.classList.toggle('active');
+        // Menü açıkken sayfayı kaydırmayı engelle
+        document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
     });
 
-    // Menü linkine tıklandığında menüyü kapat
+    // Menü linklerine tıklandığında menüyü kapat
     document.querySelectorAll('.nav-links a').forEach(link => {
         link.addEventListener('click', () => {
-            if (window.innerWidth <= 768) {
-                navLinks.classList.remove('active');
-            }
+            navLinks.classList.remove('active');
+            document.body.style.overflow = '';
         });
     });
 
     // Sayfa scroll olduğunda menüyü kapat
     window.addEventListener('scroll', () => {
-        if (window.innerWidth <= 768) {
+        if (navLinks.classList.contains('active')) {
             navLinks.classList.remove('active');
+            document.body.style.overflow = '';
         }
+    });
+
+    // Ekran döndürüldüğünde menüyü resetle
+    window.addEventListener('orientationchange', () => {
+        navLinks.classList.remove('active');
+        document.body.style.overflow = '';
     });
 });
 

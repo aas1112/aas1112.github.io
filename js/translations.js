@@ -58,7 +58,7 @@ const translations = {
         usedTech: "Used Technologies",
 
         // Footer
-        copyright: "© 2024 Ahmet Arda Sezgin. All rights reserved.",
+        copyright: "© 2025 Ahmet Arda Sezgin. All rights reserved.",
 
         // İngilizce çeviriler içine eklenecek
         rosProjectTitle: "Service Robot Design and Control with Robot Operating System (ROS)",
@@ -73,6 +73,13 @@ const translations = {
         // YOLO Projesi
         yoloProjectTitle: "Strawberry Detection Algorithm with YOLOv5 and LabelImg",
         yoloProjectDesc: "Developed an AI algorithm using YOLOv5 and LabelImg for accurate and efficient detection of strawberries.",
+
+        contactMe: "Get in Touch",
+        contactText: "Feel free to contact me for detailed information about projects or potential collaborations.",
+        sendEmail: "Send Email",
+
+        quickLinks: "Quick Links",
+        connect: "Connect"
     },
     tr: {
         // Navigasyon
@@ -133,7 +140,7 @@ const translations = {
         usedTech: "Kullanılan Teknolojiler",
 
         // Footer
-        copyright: "© 2024 Ahmet Arda Sezgin. Tüm hakları saklıdır.",
+        copyright: "© 2025 Ahmet Arda Sezgin. Tüm hakları saklıdır.",
 
         // Türkçe çeviriler içine eklenecek
         rosProjectTitle: "Robot İşletim Sistemi (ROS) ile Servis Robot Tasarımı ve Kontrolü",
@@ -148,5 +155,12 @@ const translations = {
         // YOLO Projesi
         yoloProjectTitle: "YOLOv5 ve LabelImg ile Çilek Tespit Algoritması",
         yoloProjectDesc: "YOLOv5 ve LabelImg kullanarak çileklerin doğru ve verimli bir şekilde tespit edilmesini sağlayan bir AI algoritması geliştirildi.",
+
+        contactMe: "İletişime Geçin",
+        contactText: "Projeler hakkında detaylı bilgi almak veya iş birliği yapmak için benimle iletişime geçebilirsiniz.",
+        sendEmail: "E-posta Gönder",
+
+        quickLinks: "Hızlı Bağlantılar",
+        connect: "Bağlantılar"
     }
 }; 

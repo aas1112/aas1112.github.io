@@ -52,6 +52,30 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // Mobil menü toggle
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    menuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+    });
+
+    // Menü linkine tıklandığında menüyü kapat
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            if (window.innerWidth <= 768) {
+                navLinks.classList.remove('active');
+            }
+        });
+    });
+
+    // Sayfa scroll olduğunda menüyü kapat
+    window.addEventListener('scroll', () => {
+        if (window.innerWidth <= 768) {
+            navLinks.classList.remove('active');
+        }
+    });
 });
 
 // Sertifika görüntüleme fonksiyonu

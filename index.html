@@ -6,7 +6,6 @@
     <title>Ahmet Arda Sezgin - Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
-    <script src="js/translations.js"></script>
     <script src="js/main.js"></script>
 </head>
 <body>
@@ -14,23 +13,26 @@
     <header class="header">
         <nav class="navbar">
             <div class="logo">
-                <a href="index.html">AAS</a>
+                <a href="index.html">
+                    <img src="images/logo.png" alt="AAS Logo" class="logo-img">
+                </a>
             </div>
             <div class="menu-toggle">
                 <i class="fas fa-bars"></i>
             </div>
             <ul class="nav-links">
-                <li><a href="#about" data-translate="about">Hakkımda</a></li>
-                <li><a href="#education" data-translate="education">Eğitim</a></li>
-                <li><a href="#experience" data-translate="experience">Deneyim</a></li>
-                <li><a href="#skills" data-translate="skills">Beceriler</a></li>
-                <li><a href="projects.html" data-translate="projects">Projeler</a></li>
-                <li><a href="certificates.html" data-translate="certificates">Sertifikalar</a></li>
+                <li class="dropdown">
+                    <a href="index.html" class="dropdown-toggle">Ana Sayfa <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#about" data-section="about">Hakkımda</a></li>
+                        <li><a href="#education" data-section="education">Eğitim</a></li>
+                        <li><a href="#experience" data-section="experience">Deneyim</a></li>
+                        <li><a href="#skills" data-section="skills">Beceriler</a></li>
+                    </ul>
+                </li>
+                <li><a href="projects.html">Projeler</a></li>
+                <li><a href="certificates.html">Sertifikalar</a></li>
             </ul>
-            <div class="language-selector">
-                <button class="lang-btn" data-lang="tr">TR</button>
-                <button class="lang-btn" data-lang="en">EN</button>
-            </div>
         </nav>
     </header>
 
@@ -38,11 +40,10 @@
     <section class="hero">
         <div class="hero-content">
             <h1>Ahmet Arda Sezgin</h1>
-            <h2 data-translate="role">Elektrik ve Elektronik Mühendisi</h2>
+            <h2>Elektrik ve Elektronik Mühendisi</h2>
             <div class="contact-info">
-                <p><i class="fas fa-map-marker-alt"></i> İzmir, Turkey</p>
-                <p><i class="fas fa-envelope"></i> ahmetardaszgnas@gmail.com</p>
-                <p><i class="fas fa-phone"></i> 0533 034 47 10</p>
+                <p><i class="fas fa-map-marker-alt"></i> İzmir, Türkiye</p>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:ahmetardaszgnas@gmail.com">ahmetardaszgnas@gmail.com</a></p>
             </div>
             <div class="social-links">
                 <a href="https://github.com/businessaas" target="_blank"><i class="fab fa-github"></i></a>
@@ -52,33 +53,35 @@
     </section>
 
     <!-- Hakkımda Bölümü -->
-    <section class="about-section" id="about">
+    <section class="content-section about-section" id="about">
         <div class="container">
-            <h2 data-translate="aboutMe">Hakkımda</h2>
+            <h2>Hakkımda</h2>
             <div class="about-content">
                 <div class="about-text">
-                    <p data-translate="aboutText">Güçlü bir akademik geçmişe sahip, hırslı ve detay odaklı bir Elektrik ve Elektronik Mühendisi olarak, mükemmel iletişim becerileri ve takım odaklı bir yaklaşımla işbirlikçi ortamlarda başarılıyım. Ar-Ge'de uygulamalı deneyim ve mühendislik prensiplerinde sağlam bir temele sahip olarak, yazılım geliştirme, elektronik devre tasarımı ve yenilenebilir enerji sistemleri konusunda tutkuluyum. Şu anda yüksek lisans derecesi alıyorum, robotik ve otomasyondaki bilgi ve becerilerimi genişletmeye ve yenilikçi projelere katkıda bulunmaya kararlıyım.</p>
+                    <p>Güçlü bir akademik geçmişe sahip, hırslı ve detay odaklı bir Elektrik ve Elektronik Mühendisi olarak, mükemmel iletişim becerileri ve takım odaklı bir yaklaşımla işbirlikçi ortamlarda başarılıyım. Ar-Ge'de uygulamalı deneyim ve mühendislik prensiplerinde sağlam bir temele sahibim. Yazılım geliştirme, elektronik devre tasarımı ve yenilenebilir enerji sistemleri konusunda tutkuluyum. Şu anda yüksek lisans yapmaktayım, robotik ve otomasyondaki bilgi ve becerilerimi genişletmeye ve yenilikçi projelere katkıda bulunmaya kararlıyım.</p>
                 </div>
                 <div class="profile-image">
-                    <img src="images/onepiece.png" alt="Profil Fotoğrafı">
+                    <a href="certificates/CV_AhmetArdaSezgin.pdf" target="_blank">
+                        <img src="images/logo.png" alt="AAS Logo" class="logo-img">
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Eğitim Bölümü -->
-    <section class="education-section" id="education">
+    <section class="content-section education-section" id="education">
         <div class="container">
-            <h2 data-translate="educationTitle">Eğitim</h2>
+            <h2>Eğitim</h2>
             <div class="education-item">
                 <h3>İzmir Ekonomi Üniversitesi</h3>
-                <p data-translate="masters">Yüksek Lisans - Elektrik ve Elektronik Mühendisliği</p>
+                <p>Yüksek Lisans - Elektrik ve Elektronik Mühendisliği</p>
                 <p>GPA: /4.0</p>
-                <span class="date">Eylül 2024 - <span data-translate="ongoing">Devam Ediyor</span></span>
+                <span class="date">Eylül 2024 - Devam Ediyor</span>
             </div>
             <div class="education-item">
                 <h3>İzmir Ekonomi Üniversitesi</h3>
-                <p data-translate="bachelors">Lisans - Elektrik ve Elektronik Mühendisliği</p>
+                <p>Lisans - Elektrik ve Elektronik Mühendisliği</p>
                 <p>GPA: 2.45/4.0</p>
                 <span class="date">Eylül 2019 - Şubat 2024</span>
             </div>
@@ -91,53 +94,53 @@
     </section>
 
     <!-- Deneyim Bölümü -->
-    <section class="experience-section" id="experience">
+    <section class="content-section experience-section" id="experience">
         <div class="container">
-            <h2 data-translate="experienceTitle">Deneyim</h2>
+            <h2>Deneyim</h2>
             <div class="experience-item">
-                <h3 data-translate="internTitle">Ar-Ge Stajyeri</h3>
-                <p>Gdz Electric</p>
-                <p data-translate="internLocation">İzmir, Türkiye</p>
-                <span class="date" data-translate="internDate">Temmuz 2023 - Eylül 2023</span>
+                <h3>Ar-Ge Stajyeri</h3>
+                <p>Gdz Electrik</p>
+                <p>İzmir, Türkiye</p>
+                <span class="date">Temmuz 2023 - Eylül 2023</span>
                 <ul>
-                    <li data-translate="internDesc1">Ar-Ge çalışmalarını inceleyip değerlendirerek kapsamlı bir rapor hazırladım.</li>
-                    <li data-translate="internDesc2">Devam eden projeleri araştırıp ileriye dönük çözümler önerdim.</li>
+                    <li>Ar-Ge çalışmalarını inceleyip değerlendirerek kapsamlı bir rapor hazırladım.</li>
+                    <li>Devam eden projeleri araştırıp ileriye dönük çözümler önerdim.</li>
                 </ul>
             </div>
         </div>
     </section>
 
     <!-- Beceriler Bölümü -->
-    <section class="skills-section" id="skills">
+    <section class="content-section skills-section" id="skills">
         <div class="container">
-            <h2 data-translate="skillsTitle">Beceriler</h2>
+            <h2>Beceriler</h2>
             <div class="skills-container">
                 <!-- Dil Becerileri -->
                 <div class="skill-category">
-                    <h3 data-translate="languageSkills">Dil Becerileri</h3>
+                    <h3>Dil Becerileri</h3>
                     <div class="skill-items">
                         <div class="skill-item">
-                            <span class="skill-name" data-translate="turkish">Türkçe</span>
-                            <span class="skill-level" data-translate="native">Anadil</span>
+                            <span class="skill-name">Türkçe</span>
+                            <span class="skill-level">Anadil</span>
                         </div>
                         <div class="skill-item">
-                            <span class="skill-name" data-translate="english">İngilizce</span>
-                            <span class="skill-level" data-translate="advanced">İleri Seviye</span>
+                            <span class="skill-name">İngilizce</span>
+                            <span class="skill-level">İleri Seviye</span>
                         </div>
                         <div class="skill-item">
-                            <span class="skill-name" data-translate="french">Fransızca</span>
-                            <span class="skill-level" data-translate="intermediate">Orta Seviye</span>
+                            <span class="skill-name">Fransızca</span>
+                            <span class="skill-level">Orta Seviye</span>
                         </div>
                         <div class="skill-item">
-                            <span class="skill-name" data-translate="italian">İtalyanca</span>
-                            <span class="skill-level" data-translate="elementary">Başlangıç</span>
+                            <span class="skill-name">İtalyanca</span>
+                            <span class="skill-level">Başlangıç</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Teknik Beceriler -->
                 <div class="skill-category">
-                    <h3 data-translate="technicalSkills">Teknik Beceriler</h3>
+                    <h3>Teknik Beceriler</h3>
                     <div class="skill-items">
                         <div class="skill-item">ROS</div>
                         <div class="skill-item">LabVIEW</div>
@@ -153,11 +156,11 @@
 
                 <!-- Kişisel Beceriler -->
                 <div class="skill-category">
-                    <h3 data-translate="personalSkills">Kişisel Beceriler</h3>
+                    <h3>Kişisel Beceriler</h3>
                     <div class="skill-items">
-                        <div class="skill-item" data-translate="teamwork">Takım Çalışması</div>
-                        <div class="skill-item" data-translate="timeManagement">Zaman Yönetimi</div>
-                        <div class="skill-item" data-translate="problemSolving">Problem Çözme</div>
+                        <div class="skill-item">Takım Çalışması</div>
+                        <div class="skill-item">Zaman Yönetimi</div>
+                        <div class="skill-item">Problem Çözme</div>
                     </div>
                 </div>
             </div>
@@ -169,28 +172,24 @@
         <div class="footer-content">
             <div class="footer-section">
                 <h3>Ahmet Arda Sezgin</h3>
-                <p data-translate="role">Elektrik ve Elektronik Mühendisi</p>
+                <p>Elektrik ve Elektronik Mühendisi</p>
                 <div class="footer-contact">
                     <p><i class="fas fa-map-marker-alt"></i> İzmir, Turkey</p>
-                    <p><i class="fas fa-envelope"></i> ahmetardaszgnas@gmail.com</p>
-                    <p><i class="fas fa-phone"></i> 0533 034 47 10</p>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:ahmetardaszgnas@gmail.com">ahmetardaszgnas@gmail.com</a></p>
                 </div>
             </div>
 
             <div class="footer-section">
-                <h3 data-translate="quickLinks">Hızlı Bağlantılar</h3>
+                <h3>Hızlı Bağlantılar</h3>
                 <ul class="footer-links">
-                    <li><a href="#about" data-translate="about">Hakkımda</a></li>
-                    <li><a href="#education" data-translate="education">Eğitim</a></li>
-                    <li><a href="#experience" data-translate="experience">Deneyim</a></li>
-                    <li><a href="#skills" data-translate="skills">Beceriler</a></li>
-                    <li><a href="projects.html" data-translate="projects">Projeler</a></li>
-                    <li><a href="certificates.html" data-translate="certificates">Sertifikalar</a></li>
+                    <li><a href="index.html">Ana Sayfa</a></li>
+                    <li><a href="projects.html">Projeler</a></li>
+                    <li><a href="certificates.html">Sertifikalar</a></li>
                 </ul>
             </div>
 
             <div class="footer-section">
-                <h3 data-translate="connect">Bağlantılar</h3>
+                <h3>Bağlantılar</h3>
                 <div class="social-links-footer">
                     <a href="https://github.com/aas1112" target="_blank" title="GitHub">
                         <i class="fab fa-github"></i>
@@ -203,7 +202,7 @@
         </div>
 
         <div class="footer-bottom">
-            <p data-translate="copyright">&copy; 2025 Ahmet Arda Sezgin. Tüm hakları saklıdır.</p>
+            <p>&copy; 2025 Ahmet Arda Sezgin. Tüm hakları saklıdır.</p>
         </div>
     </footer>
 

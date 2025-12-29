@@ -7,411 +7,172 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/certificates.css">
-    <script src="js/main.js"></script>
 </head>
 <body>
     <!-- Header Bölümü -->
     <header class="header">
         <nav class="navbar">
             <div class="logo">
-                <a href="index.html">AAS</a>
+                <a href="index.html">
+                    <img src="images/logo.png" alt="AAS Logo" class="logo-img">
+                </a>
             </div>
             <div class="menu-toggle">
                 <i class="fas fa-bars"></i>
             </div>
             <ul class="nav-links">
-                <li><a href="index.html#about">Hakkımda</a></li>
-                <li><a href="index.html#education">Eğitim</a></li>
-                <li><a href="index.html#experience">Deneyim</a></li>
+                <li class="dropdown">
+                    <a href="index.html" class="dropdown-toggle">Ana Sayfa <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="index.html#about">Hakkımda</a></li>
+                        <li><a href="index.html#education">Eğitim</a></li>
+                        <li><a href="index.html#experience">Deneyim</a></li>
+                        <li><a href="index.html#skills">Beceriler</a></li>
+                    </ul>
+                </li>
                 <li><a href="projects.html">Projeler</a></li>
-                <li><a href="certificates.html">Sertifikalar</a></li>
+                <li><a href="certificates.html" class="active">Sertifikalar</a></li>
             </ul>
-            <div class="language-selector">
-                <button class="lang-btn" data-lang="tr">TR</button>
-                <button class="lang-btn" data-lang="en">EN</button>
-            </div>
         </nav>
     </header>
 
-    <section class="certificates-section">
-        <div class="container">
-            <h1 data-translate="certificates">Sertifikalar</h1>
-            
-            <div class="certificates-grid">
-                <!-- Solar Energy Sertifikası -->
-                <div class="certificate-card">
-                    <div class="certificate-header">
-                        <h2>Solar Energy Systems for Engineers by University at Buffalo</h2>
-                        <div class="meta-info">
-                            <span class="issuer">University at Buffalo</span>
-                            <span class="date">October 2024</span>
-                        </div>
+    <main class="certificates-page">
+        <!-- Hero Section -->
+        <section class="certificates-hero">
+            <div class="container">
+                <div class="hero-title-container">
+                    <h1 class="hero-title">
+                        Doğrulanmış Beceriler ve
+                    </h1>
+                    <h2 class="hero-title hero-title-second">
+                        Başarılar
+                    </h2>
+                </div>
+                <p class="hero-description">
+                    Geliştirme, Tasarım, Bulut Bilişim ve Yönetim alanlarında 10'dan fazla sertifikayı kapsayan özenle seçilmiş bir koleksiyon. 
+                    Her zaman öğreniyor, her zaman gelişiyorum.
+                </p>
+
+                <!-- Statistics -->
+                <div class="stats-container">
+                    <div class="stat-item">
+                        <div class="stat-number" id="totalCertificates">0</div>
+                        <div class="stat-label">TOPLAM SERTİFİKA</div>
                     </div>
-                    <div class="certificate-content">
-                        <ul>
-                            <li>Solar Energy Systems Overview</li>
-                            <li>Solar Energy and Electrical System Design</li>
-                            <li>Solar Energy Codes, Permitting and Zoning</li>
-                        </ul>
-                        <button onclick="viewCertificate('certificates/buffalo_solar.pdf')" class="view-certificate">
-                            Sertifikayı Görüntüle
-                        </button>
+                    <div class="stat-item">
+                        <div class="stat-number" id="totalIssuers">0</div>
+                        <div class="stat-label">VEREN KURUM</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" id="totalCategories">0</div>
+                        <div class="stat-label">KATEGORİ</div>
                     </div>
                 </div>
 
-                <!-- Computer Vision Sertifikası -->
-                <div class="certificate-card">
-                    <div class="certificate-header">
-                        <h2>Computer Vision and Machine Learning by MathWorks</h2>
-                        <div class="meta-info">
-                            <span class="issuer">MathWorks</span>
-                            <span class="date">October 2024</span>
-                        </div>
+                <!-- Filters and Search -->
+                <div class="filters-section">
+                    <div class="filter-buttons">
+                        <button class="filter-btn active" data-category="all">Tümü</button>
+                        <button class="filter-btn" data-category="software">Yazılım</button>
+                        <button class="filter-btn" data-category="electrical-electronics">Elektrik-Elektronik</button>
+                        <button class="filter-btn" data-category="management">Yönetim</button>
+                        <button class="filter-btn" data-category="language">Yabancı Dil</button>
+                        <button class="filter-btn" data-category="education">Eğitim</button>
+                        <button class="filter-btn" data-category="image-processing">Görüntü İşleme</button>
                     </div>
-                    <div class="certificate-content">
-                        <ul>
-                            <li>Introduction to Computer Vision</li>
-                            <li>Machine Learning for Computer Vision</li>
-                            <li>Object Tracking and Motion Detection</li>
-                        </ul>
-                        <button onclick="viewCertificate('certificates/mathworks_vision.pdf')" class="view-certificate">
-                            Sertifikayı Görüntüle
-                        </button>
+                    <div class="search-container">
+                        <i class="fas fa-search search-icon"></i>
+                        <input type="text" id="searchInput" class="search-input" placeholder="Sertifikaları ara...">
                     </div>
                 </div>
+            </div>
+        </section>
 
-                <!-- IBM AI Engineering Sertifikası -->
-                <div class="certificate-card">
-                    <div class="certificate-header">
-                        <h2>Advanced AI Engineering and Deep Learning by IBM</h2>
-                        <div class="meta-info">
-                            <span class="issuer">IBM</span>
-                            <span class="date">October 2024</span>
-                        </div>
-                    </div>
-                    <div class="certificate-content">
-                        <ul>
-                            <li>Machine Learning with Python</li>
-                            <li>Introduction to Deep Learning & Neural Networks with Keras</li>
-                            <li>Deep Learning with Keras and Tensorflow</li>
-                            <li>Introduction to Neural Networks and PyTorch</li>
-                            <li>Deep Learning with PyTorch</li>
-                            <li>AI Capstone Project with Deep Learning</li>
-                            <li>Generative AI and LLMs: Architecture and Data Preparation</li>
-                            <li>Gen AI Foundational Models for NLP & Language Understanding</li>
-                            <li>Generative AI Language Modeling with Transformers</li>
-                            <li>Generative AI Engineering and Fine-Tuning Transformers</li>
-                            <li>Generative AI Advance Fine-Tuning for LLMs</li>
-                            <li>Fundamentals of AI Agents Using RAG and LangChain</li>
-                            <li>Project: Generative AI Applications with RAG and LangChain</li>
-                        </ul>
-                        <button onclick="viewCertificate('certificates/ibm_ai.pdf')" class="view-certificate">
-                            Sertifikayı Görüntüle
-                        </button>
-                    </div>
+        <!-- Category Sections -->
+        <section class="category-sections">
+            <div class="container">
+                <div id="categorySections">
+                    <!-- Category sections will be dynamically inserted here -->
                 </div>
+            </div>
+        </section>
+    </main>
 
-                <!-- Coderspace Sertifikası -->
-                <div class="certificate-card">
-                    <div class="certificate-header">
-                        <h2>Software and Technology School</h2>
-                        <div class="meta-info">
-                            <span class="issuer">Coderspace</span>
-                            <span class="date">June 2024</span>
-                        </div>
-                    </div>
-                    <div class="certificate-content">
-                        <ul>
-                            <li>Software Development Fundamentals</li>
-                            <li>Technology and Innovation</li>
-                        </ul>
-                        <button onclick="viewCertificate('certificates/coderspace_tech.pdf')" class="view-certificate">
-                            Sertifikayı Görüntüle
-                        </button>
-                    </div>
+    <!-- Modal -->
+    <div id="certificateModal" class="modal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <button class="modal-close" id="closeModal">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="modal-body">
+                <div class="modal-image">
+                    <img id="modalImage" src="" alt="Certificate">
                 </div>
-
-                <!-- Google Project Management Sertifikası -->
-                <div class="certificate-card">
-                    <div class="certificate-header">
-                        <h2>Google Project Management</h2>
-                        <div class="meta-info">
-                            <span class="issuer">Google</span>
-                            <span class="date">June 2024</span>
+                <div class="modal-info">
+                    <span class="modal-category" id="modalCategory"></span>
+                    <h2 class="modal-title" id="modalTitle"></h2>
+                    <div class="modal-meta">
+                        <div class="modal-meta-item">
+                            <i class="fas fa-user"></i>
+                            <span id="modalIssuer"></span>
+                        </div>
+                        <div class="modal-meta-item">
+                            <i class="fas fa-calendar"></i>
+                            <span id="modalDate"></span>
                         </div>
                     </div>
-                    <div class="certificate-content">
-                        <ul>
-                            <li>Foundations of Project Management</li>
-                            <li>Project Initiation: Starting a Successful Project</li>
-                            <li>Project Planning: Putting It All Together</li>
-                            <li>Project Execution: Running the Project</li>
-                            <li>Agile Project Management</li>
-                            <li>Capstone: Applying Project Management in the Real World</li>
-                        </ul>
-                        <button onclick="viewCertificate('certificates/google_pm.pdf')" class="view-certificate">
-                            Sertifikayı Görüntüle
-                        </button>
-                    </div>
+                    <p class="modal-description" id="modalDescription"></p>
+                    <div class="modal-courses" id="modalCourses"></div>
+                    <button class="verify-btn" id="verifyBtn">
+                        Sertifikayı Doğrula
+                        <i class="fas fa-external-link-alt"></i>
+                    </button>
                 </div>
-
-                <!-- L&T EduTech Power Distribution Sertifikası -->
-                <div class="certificate-card">
-                    <div class="certificate-header">
-                        <h2>A Practitioner's Approach to Power Distribution & Automation</h2>
-                        <div class="meta-info">
-                            <span class="issuer">L&T EduTech</span>
-                            <span class="date">June 2024</span>
-                        </div>
-                    </div>
-                    <div class="certificate-content">
-                        <ul>
-                            <li>Electrical Power Distribution</li>
-                            <li>MV Substation - An industrial approach (PART-A)</li>
-                            <li>MV Substation - An industrial approach (PART-B)</li>
-                        </ul>
-                        <button onclick="viewCertificate('certificates/lt_power_dist.pdf')" class="view-certificate">
-                            Sertifikayı Görüntüle
-                        </button>
-                    </div>
-                </div>
-
-                <!-- L&T EduTech Power System Sertifikası -->
-                <div class="certificate-card">
-                    <div class="certificate-header">
-                        <h2>Power Systems and Protection Engineering by L&T EduTech</h2>
-                        <div class="meta-info">
-                            <span class="issuer">L&T EduTech</span>
-                            <span class="date">June 2024</span>
-                        </div>
-                    </div>
-                    <div class="certificate-content">
-                        <ul>
-                            <li>Electrical Power Generation - An Industrial Outlook</li>
-                            <li>Basics of Electrical Protection System</li>
-                            <li>Advanced Study of Protection Schemes and Switchgear</li>
-                            <li>Design of Transmission Line: Modelling and Performance</li>
-                        </ul>
-                        <button onclick="viewCertificate('certificates/lt_power_sys.pdf')" class="view-certificate">
-                            Sertifikayı Görüntüle
-                        </button>
-                    </div>
-                </div>
-
-                <!-- MathWorks Image Processing Sertifikası -->
-                <div class="certificate-card">
-                    <div class="certificate-header">
-                        <h2>Image Processing for Engineering and Science by MathWorks</h2>
-                        <div class="meta-info">
-                            <span class="issuer">MathWorks</span>
-                            <span class="date">May 2024</span>
-                        </div>
-                    </div>
-                    <div class="certificate-content">
-                        <ul>
-                            <li>Introduction to Image Processing</li>
-                            <li>Image Segmentation, Filtering, and Region Analysis</li>
-                            <li>Automating Image Processing</li>
-                        </ul>
-                        <button onclick="viewCertificate('certificates/mathworks_image.pdf')" class="view-certificate">
-                            Sertifikayı Görüntüle
-                        </button>
-                    </div>
-                </div>
-
-                <!-- NVIDIA AI Infrastructure Sertifikası -->
-                <div class="certificate-card">
-                    <div class="certificate-header">
-                        <h2>AI Infrastructure and Operations Fundamentals by NVIDIA</h2>
-                        <div class="meta-info">
-                            <span class="issuer">NVIDIA</span>
-                            <span class="date">May 2024</span>
-                        </div>
-                    </div>
-                    <div class="certificate-content">
-                        <button onclick="viewCertificate('certificates/nvidia_ai.pdf')" class="view-certificate">
-                            Sertifikayı Görüntüle
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Google Data Analytics Sertifikası -->
-                <div class="certificate-card">
-                    <div class="certificate-header">
-                        <h2>Professional Data Analytics by Google</h2>
-                        <div class="meta-info">
-                            <span class="issuer">Google</span>
-                            <span class="date">April 2024</span>
-                        </div>
-                    </div>
-                    <div class="certificate-content">
-                        <ul>
-                            <li>Foundations: Data, Data, Everywhere</li>
-                            <li>Ask Questions to Make Data-Driven Decisions</li>
-                            <li>Prepare Data for Exploration</li>
-                            <li>Process Data from Dirty to Clean</li>
-                            <li>Analyze Data to Answer Questions</li>
-                            <li>Share Data Through the Art of Visualization</li>
-                            <li>Data Analysis with R Programming</li>
-                            <li>Google Data Analytics Capstone: Complete a Case Study</li>
-                        </ul>
-                        <button onclick="viewCertificate('certificates/google_analytics.pdf')" class="view-certificate">
-                            Sertifikayı Görüntüle
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Edge Impulse Sertifikası -->
-                <div class="certificate-card">
-                    <div class="certificate-header">
-                        <h2>Edge Impulse Introduction to Embedded Machine Learning by Edge Impulse</h2>
-                        <div class="meta-info">
-                            <span class="issuer">Edge Impulse</span>
-                            <span class="date">March 2024</span>
-                        </div>
-                    </div>
-                    <div class="certificate-content">
-                        <button onclick="viewCertificate('certificates/edge_impulse.pdf')" class="view-certificate">
-                            Sertifikayı Görüntüle
-                        </button>
-                    </div>
-                </div>
-
-
-                
-                <!-- Dataquest Python Sertifikası -->
-                <div class="certificate-card">
-                    <div class="certificate-header">
-                        <h2>Introduction to Python Programming for Data Science</h2>
-                        <div class="meta-info">
-                            <span class="issuer">Dataquest</span>
-                            <span class="date">Şubat 2024</span>
-                        </div>
-                    </div>
-                    <div class="certificate-content">
-                        <ul>
-                            <li>Python Programming</li>
-                            <li>Programming Python Variables</li>
-                            <li>Python Data Types: Integers, Floats, Strings</li>
-                            <li>Python Lists</li>
-                        </ul>
-                        <button onclick="viewCertificate('certificates/dataquest_python.pdf')" class="view-certificate">
-                            Sertifikayı Görüntüle
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Dataquest AI Chatbots Sertifikası -->
-                <div class="certificate-card">
-                    <div class="certificate-header">
-                        <h2>AI Chatbots: Large Language Models with Chandra</h2>
-                        <div class="meta-info">
-                            <span class="issuer">Dataquest</span>
-                            <span class="date">Şubat 2024</span>
-                        </div>
-                    </div>
-                    <div class="certificate-content">
-                        <ul>
-                            <li>Introduction to AI Chatbots with Chandra</li>
-                            <li>Capabilities and Limitations of AI Chatbots</li>
-                            <li>Managing Effective Interactions with AI Chatbots</li>
-                        </ul>
-                        <button onclick="viewCertificate('certificates/dataquest_ai_chatbots.pdf')" class="view-certificate">
-                            Sertifikayı Görüntüle
-                        </button>
-                    </div>
-                </div>
-
-
-                <!-- Kangourou Sertifikası -->
-                <div class="certificate-card">
-                    <div class="certificate-header">
-                        <h2>Le plus grand concours scolaire du monde (Kangourou)</h2>
-                        <div class="meta-info">
-                            <span class="issuer">Kangourou</span>
-                            <span class="date">2018</span>
-                        </div>
-                    </div>
-                    <div class="certificate-content">
-                        <button onclick="viewCertificate('certificates/kangourou.pdf')" class="view-certificate">
-                            Sertifikayı Görüntüle
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Sabancı Üniversitesi 2018 -->
-                <div class="certificate-card">
-                    <div class="certificate-header">
-                        <h2>Summer School by Sabancı University</h2>
-                        <div class="meta-info">
-                            <span class="issuer">Sabancı University</span>
-                            <span class="date">2018</span>
-                        </div>
-                    </div>
-                    <div class="certificate-content">
-                        <ul>
-                            <li>Surgical Robots and Biomedical</li>
-                            <li>Introduction to Industrial Engineering</li>
-                        </ul>
-                        <button onclick="viewCertificate('certificates/sabanci_2018.pdf')" class="view-certificate">
-                            Sertifikayı Görüntüle
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Sabancı Üniversitesi 2017 -->
-                <div class="certificate-card">
-                    <div class="certificate-header">
-                        <h2>Summer School by Sabancı University</h2>
-                        <div class="meta-info">
-                            <span class="issuer">Sabancı University</span>
-                            <span class="date">2017</span>
-                        </div>
-                    </div>
-                    <div class="certificate-content">
-                        <ul>
-                            <li>Immune System and Cancer Drug Design</li>
-                            <li>Cosmology and the Universe</li>
-                            <li>Materials Science and Nano Engineering</li>
-                        </ul>
-                        <button onclick="viewCertificate('certificates/sabanci_2017.pdf')" class="view-certificate">
-                            Sertifikayı Görüntüle
-                        </button>
-                    </div>
-                </div>
-
-
-                <!-- DELF A2 Sertifikası -->
-                <div class="certificate-card">
-                    <div class="certificate-header">
-                        <h2>Diplome D'études en langue Française (A2)</h2>
-                        <div class="meta-info">
-                            <span class="issuer">DELF A2</span>
-                            <span class="date">2015</span>
-                        </div>
-                    </div>
-                    <div class="certificate-content">
-                        <div class="certificate-details">
-                            <!-- Boş alan için flex-grow kullanılacak -->
-                        </div>
-                        <button onclick="viewCertificate('certificates/delf_a2.pdf')" class="view-certificate">
-                            Sertifikayı Görüntüle
-                        </button>
-                    </div>
-                </div>
-
-
             </div>
         </div>
-    </section>
+    </div>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 Ahmet Arda Sezgin. Tüm hakları saklıdır.</p>
+    <!-- Footer bölümü -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Ahmet Arda Sezgin</h3>
+                <p>Elektrik ve Elektronik Mühendisi</p>
+                <div class="footer-contact">
+                    <p><i class="fas fa-map-marker-alt"></i> İzmir, Turkey</p>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:ahmetardaszgnas@gmail.com">ahmetardaszgnas@gmail.com</a></p>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h3>Hızlı Bağlantılar</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Ana Sayfa</a></li>
+                    <li><a href="projects.html">Projeler</a></li>
+                    <li><a href="certificates.html">Sertifikalar</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Bağlantılar</h3>
+                <div class="social-links-footer">
+                    <a href="https://github.com/aas1112" target="_blank" title="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/ahmet-arda-sezgin" target="_blank" title="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 Ahmet Arda Sezgin. Tüm hakları saklıdır.</p>
         </div>
     </footer>
 
-    <script src="js/translations.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/certificates.js"></script>
 </body>
-</html> 
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sertifikalar - Ahmet Arda Sezgin</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/certificates.css">
+</head>
+<body>
+    <!-- Header Bölümü -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/logo.png" alt="AAS Logo" class="logo-img">
+                </a>
+            </div>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-links">
+                <li class="dropdown">
+                    <a href="index.html" class="dropdown-toggle">Ana Sayfa <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="index.html#about">Hakkımda</a></li>
+                        <li><a href="index.html#education">Eğitim</a></li>
+                        <li><a href="index.html#experience">Deneyim</a></li>
+                        <li><a href="index.html#skills">Beceriler</a></li>
+                    </ul>
+                </li>
+                <li><a href="projects.html">Projeler</a></li>
+                <li><a href="certificates.html" class="active">Sertifikalar</a></li>
+
+            </ul>
+        </nav>
+    </header>
+
+    <main class="certificates-page">
+        <!-- Hero Section -->
+        <section class="certificates-hero">
+            <div class="container">
+                <div class="hero-title-container">
+                    <h1 class="hero-title">
+                        Doğrulanmış Beceriler ve
+                    </h1>
+                    <h2 class="hero-title hero-title-second">
+                        Başarılar
+                    </h2>
+                </div>
+                <p class="hero-description">
+                    Geliştirme, Tasarım, Bulut Bilişim ve Yönetim alanlarında 10'dan fazla sertifikayı kapsayan özenle seçilmiş bir koleksiyon. 
+                    Her zaman öğreniyor, her zaman gelişiyorum.
+                </p>
+
+                <!-- Statistics -->
+                <div class="stats-container">
+                    <div class="stat-item">
+                        <div class="stat-number" id="totalCertificates">0</div>
+                        <div class="stat-label">TOPLAM SERTİFİKA</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" id="totalIssuers">0</div>
+                        <div class="stat-label">VEREN KURUM</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" id="totalCategories">0</div>
+                        <div class="stat-label">KATEGORİ</div>
+                    </div>
+                </div>
+
+                <!-- Filters and Search -->
+                <div class="filters-section">
+                    <div class="filter-buttons">
+                        <button class="filter-btn active" data-category="all">Tümü</button>
+                        <button class="filter-btn" data-category="software">Yazılım</button>
+                        <button class="filter-btn" data-category="electrical-electronics">Elektrik-Elektronik</button>
+                        <button class="filter-btn" data-category="management">Yönetim</button>
+                        <button class="filter-btn" data-category="language">Yabancı Dil</button>
+                        <button class="filter-btn" data-category="education">Eğitim</button>
+                        <button class="filter-btn" data-category="image-processing">Görüntü İşleme</button>
+                    </div>
+                    <div class="search-container">
+                        <i class="fas fa-search search-icon"></i>
+                        <input type="text" id="searchInput" class="search-input" placeholder="Sertifikaları ara...">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Category Sections -->
+        <section class="category-sections">
+            <div class="container">
+                <div id="categorySections">
+                    <!-- Category sections will be dynamically inserted here -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal -->
+    <div id="certificateModal" class="modal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <button class="modal-close" id="closeModal">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="modal-body">
+                <div class="modal-image">
+                    <img id="modalImage" src="" alt="Certificate">
+                </div>
+                <div class="modal-info">
+                    <span class="modal-category" id="modalCategory"></span>
+                    <h2 class="modal-title" id="modalTitle"></h2>
+                    <div class="modal-meta">
+                        <div class="modal-meta-item">
+                            <i class="fas fa-user"></i>
+                            <span id="modalIssuer"></span>
+                        </div>
+                        <div class="modal-meta-item">
+                            <i class="fas fa-calendar"></i>
+                            <span id="modalDate"></span>
+                        </div>
+                    </div>
+                    <p class="modal-description" id="modalDescription"></p>
+                    <div class="modal-courses" id="modalCourses"></div>
+                    <button class="verify-btn" id="verifyBtn">
+                        Sertifikayı Doğrula
+                        <i class="fas fa-external-link-alt"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer bölümü -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Ahmet Arda Sezgin</h3>
+                <p>Elektrik ve Elektronik Mühendisi</p>
+                <div class="footer-contact">
+                    <p><i class="fas fa-map-marker-alt"></i> İzmir, Turkey</p>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:ahmetardaszgnas@gmail.com">ahmetardaszgnas@gmail.com</a></p>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h3>Hızlı Bağlantılar</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Ana Sayfa</a></li>
+                    <li><a href="projects.html">Projeler</a></li>
+                    <li><a href="certificates.html">Sertifikalar</a></li>
+
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Bağlantılar</h3>
+                <div class="social-links-footer">
+                    <a href="https://github.com/aas1112" target="_blank" title="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/ahmet-arda-sezgin" target="_blank" title="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 Ahmet Arda Sezgin. Tüm hakları saklıdır.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/certificates.js?v=2"></script>
+</body>
+</html>

@@ -1,6 +1,8 @@
 name: Notion Library Sync
 
 on:
+  push:
+    branches: [ "main" ]
   schedule:
     # Runs every day at midnight UTC
     - cron: '0 0 * * *'

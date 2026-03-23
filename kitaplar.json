@@ -1,0 +1,50 @@
+[
+  {
+    "title": "Mitolojinin Gücü",
+    "author": "Joseph Campbell, Bill Moyers",
+    "cover": "https://m.media-amazon.com/images/I/81T8N+cMkmL._AC_UF1000,1000_QL80_.jpg",
+    "status": "Okunuyor",
+    "category": "Genel Kitaplar",
+    "date": "04/02/2026"
+  },
+  {
+    "title": "Aklı Karışıklar İçin Kılavuz",
+    "author": "E.F. Schumacher",
+    "cover": "https://m.media-amazon.com/images/I/71I2h7x+eLL._AC_UF1000,1000_QL80_.jpg",
+    "status": "Okundu",
+    "category": "Genel Kitaplar",
+    "date": "29/01/2026"
+  },
+  {
+    "title": "Düşünce ve Tartışma Özgürlüğü Üzerine",
+    "author": "John Stuart Mill",
+    "cover": "https://m.media-amazon.com/images/I/81xU-JvQpwL._AC_UF1000,1000_QL80_.jpg",
+    "status": "Okundu",
+    "category": "Genel Kitaplar",
+    "date": "05/01/2026"
+  },
+  {
+    "title": "Mühendisleri İçin Optimizasyon",
+    "author": "Singiresu S. Rao",
+    "cover": "https://m.media-amazon.com/images/I/61k8QG7PXiL._AC_UF1000,1000_QL80_.jpg",
+    "status": "Okunuyor",
+    "category": "Akademik Kitaplar & Makaleler",
+    "date": "Sürekli"
+  },
+  {
+    "title": "Derin Öğrenme (Deep Learning)",
+    "author": "Ian Goodfellow",
+    "cover": "https://m.media-amazon.com/images/I/61qblA-vH+L._AC_UF1000,1000_QL80_.jpg",
+    "status": "Okunacak",
+    "category": "Akademik Kitaplar & Makaleler",
+    "date": "-"
+  },
+  {
+    "title": "Sapiens: Hayvanlardan Tanrılara İnsan Türünün Kısa Bir Tarihi",
+    "author": "Yuval Noah Harari",
+    "cover": "https://m.media-amazon.com/images/I/713jIoMO3UL._AC_UF1000,1000_QL80_.jpg",
+    "status": "Okunacak",
+    "category": "Genel Kitaplar",
+    "date": "-"
+  }
+]

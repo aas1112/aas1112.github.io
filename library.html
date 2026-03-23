@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kütüphane - Ahmet Arda Sezgin</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/library.css">
+</head>
+<body>
+    <!-- Header Bölümü -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/logo.png" alt="AAS Logo" class="logo-img">
+                </a>
+            </div>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-links">
+                <li class="dropdown">
+                    <a href="index.html" class="dropdown-toggle">Ana Sayfa <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="index.html#about">Hakkımda</a></li>
+                        <li><a href="index.html#education">Eğitim</a></li>
+                        <li><a href="index.html#experience">Deneyim</a></li>
+                        <li><a href="index.html#skills">Beceriler</a></li>
+                    </ul>
+                </li>
+                <li><a href="projects.html">Projeler</a></li>
+                <li><a href="certificates.html">Sertifikalar</a></li>
+                <li><a href="library.html" class="active">Kütüphane</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="library-section content-section">
+        <div class="container">
+            <h1 class="library-title">Kütüphane</h1>
+            <p class="library-intro">Düşüncelerimi besleyen, mesleki gelişimime yön veren yazılı kaynakları derlediğim alan.<br> Kitaplar, Notion tablomdan GitHub Actions sayesinde otomatik olarak anlık güncellenmektedir.</p>
+
+            <div class="library-filters">
+                <button class="filter-btn active" data-filter="all">Tümü</button>
+                <button class="filter-btn" data-filter="Okunuyor">Okunuyor</button>
+                <button class="filter-btn" data-filter="Okundu">Okundu</button>
+                <button class="filter-btn" data-filter="Okunacak">Okunacak</button>
+                <button class="filter-btn" data-filter="Akademik Kitaplar & Makaleler">Akademik/Makaleler</button>
+            </div>
+
+            <div class="books-grid" id="books-grid">
+                <!-- JS tarafından doldurulacak -->
+            </div>
+            
+            <div class="automation-info">
+                <h3><i class="fas fa-cogs"></i> Sistem Hakkında</h3>
+                <p>Kütüphane verileri doğrudan bir JSON dosyasından çekilmektedir. Bu dosya, bir <strong>GitHub Actions</strong> scripti ile Notion veritabanından veri alınarak günlük şekilde dinamik olarak güncellenir.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer bölümü -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Ahmet Arda Sezgin</h3>
+                <p>Elektrik ve Elektronik Mühendisi</p>
+                <div class="footer-contact">
+                    <p><i class="fas fa-map-marker-alt"></i> İzmir, Turkey</p>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:ahmetardaszgnas@gmail.com">ahmetardaszgnas@gmail.com</a></p>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h3>Hızlı Bağlantılar</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Ana Sayfa</a></li>
+                    <li><a href="projects.html">Projeler</a></li>
+                    <li><a href="certificates.html">Sertifikalar</a></li>
+                    <li><a href="library.html">Kütüphane</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Bağlantılar</h3>
+                <div class="social-links-footer">
+                    <a href="https://github.com/aas1112" target="_blank" title="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/ahmet-arda-sezgin" target="_blank" title="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 Ahmet Arda Sezgin. Tüm hakları saklıdır.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/library.js"></script>
+</body>
+</html>

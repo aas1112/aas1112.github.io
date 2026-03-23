@@ -2,9 +2,13 @@
 
 Bu depo, bir **Elektrik ve Elektronik Mühendisi** olan Ahmet Arda Sezgin'in akademik ve profesyonel yeteneklerini, deneyimlerini, güncel projelerini ve aldığı eğitimleri sergilemek amacıyla modern web teknolojileri (HTML5, CSS3, Vanilla JS) ile geliştirilmiş kişisel portfolyo web sitesini içerir.
 
-<div align="center">
-  <img src="images/logo.png" alt="AAS Logo" style="background-color: white; width: 200px; padding: 15px; border-radius: 12px; margin-bottom: 20px;">
-</div>
+<table align="center">
+  <tr>
+    <td bgcolor="white" align="center" style="padding: 15px; border-radius: 12px;">
+      <img src="images/logo.png" alt="AAS Logo" width="200" style="margin-bottom: 20px;">
+    </td>
+  </tr>
+</table>
 
 ## 📌 Proje Hakkında
 

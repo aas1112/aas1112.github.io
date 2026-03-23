@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/library.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js/dist/chart.umd.js"></script>
 </head>
 <body>
     <!-- Header Bölümü -->
@@ -40,8 +41,24 @@
     <section class="library-section content-section">
         <div class="container">
             <h1 class="library-title">Kütüphane</h1>
-            <p class="library-intro">Düşüncelerimi besleyen, mesleki gelişimime yön veren yazılı kaynakları derlediğim alan.<br> Kitaplar, Notion tablomdan GitHub Actions sayesinde otomatik olarak anlık güncellenmektedir.</p>
 
+            <!-- YENİ SIRA: 1. Bu Yıl Okuduklarım -->
+            <div class="showcase-shelf-container">
+                <h2 class="shelf-title"><i class="fas fa-book-open"></i> Bu Yıl Okuduklarım</h2>
+                <div class="wooden-shelf" id="yearly-shelf">
+                    <!-- JS tarafından kitaplar buraya eklenecek -->
+                </div>
+            </div>
+
+            <!-- YENİ SIRA: 2. Aylık Okuma İstatistikleri -->
+            <div class="stats-container">
+                <h2 class="stats-title"><i class="fas fa-chart-bar"></i> Aylık Okuma İstatistikleri</h2>
+                <div class="chart-wrapper">
+                    <canvas id="readingStatsChart"></canvas>
+                </div>
+            </div>
+
+            <!-- YENİ SIRA: 3. Kategori ve Durum Filtreleri -->
             <div class="library-filters">
                 <div class="filter-group">
                     <span class="filter-label"><i class="fas fa-book-reader"></i> Durum:</span>
@@ -56,6 +73,8 @@
                 </div>
             </div>
 
+            <!-- YENİ SIRA: 4. Kitap Listesi -->
+            <h2 class="grid-title"><i class="fas fa-layer-group"></i> Tüm Kütüphane</h2>
             <div class="books-grid" id="books-grid">
                 <!-- JS tarafından doldurulacak -->
             </div>

@@ -258,26 +258,26 @@ const certificatesData = [
     },
     {
         id: 15,
-        title: "Certificat de remerciement (participé de la francophonie)",
-        issuer: "Francophonie",
-        date: "2016",
-        year: "2016",
-        category: "language",
-        image: "images/sertifikalar/francophonie.jpg",
-        pdf: "certificates/francophonie.pdf",
-        description: "Frankofoni etkinliğine katılım sertifikası.",
+        title: "Concours Fermat",
+        issuer: "University of Waterloo (CEMC)",
+        date: "2018",
+        year: "2018",
+        category: "education",
+        image: "images/sertifikalar/concours_fermat.jpg",
+        pdf: "certificates/concours_fermat.pdf",
+        description: "University of Waterloo - CEMC tarafından düzenlenen Concours Fermat matematik yarışması katılım sertifikası.",
         courses: []
     },
     {
         id: 16,
-        title: "Le plus grand concours scolaire du monde (Kangourou)",
-        issuer: "Kangourou",
+        title: "Sabancı Üniversitesi Yaz Okulu - Cerrahi Robotlar ve Biyomedikal",
+        issuer: "Sabancı Üniversitesi",
         date: "2018",
         year: "2018",
-        category: "language",
-        image: "images/sertifikalar/kangourou.jpg",
-        pdf: "certificates/kangourou.pdf",
-        description: "Kangourou matematik yarışması katılım sertifikası.",
+        category: "education",
+        image: "images/sertifikalar/sabanci_2018_2.jpg",
+        pdf: "certificates/sabanci_2018_2.pdf",
+        description: "Sabancı Üniversitesi Yaz Okulu - Cerrahi Robotlar ve Biyomedikal sertifikası.",
         courses: []
     },
     // Sabancı Üniversitesi Yaz Okulu Sertifikaları - 2017
@@ -300,18 +300,15 @@ const certificatesData = [
     // Sabancı Üniversitesi Yaz Okulu Sertifikaları - 2018
     {
         id: 18,
-        title: "Sabancı Üniversitesi Yaz Okulu",
+        title: "Sabancı Üniversitesi Yaz Okulu - Endüstri Mühendisliğine Giriş",
         issuer: "Sabancı Üniversitesi",
         date: "2018",
         year: "2018",
         category: "education",
-        image: "images/sertifikalar/sabanci_2018.jpg",
-        pdf: "certificates/sabanci_2018.pdf",
-        description: "Sabancı Üniversitesi Yaz Okulu - 2018 yılında alınan dersler.",
-        courses: [
-            "Cerrahi Robotlar ve Biyomedikal",
-            "Endüstri Mühendisliğine Giriş"
-        ]
+        image: "images/sertifikalar/sabanci_2018_1.jpg",
+        pdf: "certificates/sabanci_2018_1.pdf",
+        description: "Sabancı Üniversitesi Yaz Okulu - Endüstri Mühendisliğine Giriş sertifikası.",
+        courses: []
     }
 ];
 
@@ -352,12 +349,12 @@ function parseDate(dateString) {
         'ocak': 1, 'şubat': 2, 'mart': 3, 'nisan': 4, 'mayıs': 5, 'haziran': 6,
         'temmuz': 7, 'ağustos': 8, 'eylül': 9, 'ekim': 10, 'kasım': 11, 'aralık': 12
     };
-    
+
     // Tarih string'ini parse et
     const parts = dateString.toLowerCase().trim().split(' ');
     let month = 1;
     let year = new Date().getFullYear();
-    
+
     // Ay ismini bul
     for (let i = 0; i < parts.length; i++) {
         if (months[parts[i]]) {
@@ -373,7 +370,7 @@ function parseDate(dateString) {
             year = parseInt(parts[i]);
         }
     }
-    
+
     return new Date(year, month - 1);
 }
 
@@ -381,53 +378,53 @@ function parseDate(dateString) {
 function initializeCertificates() {
     const categorySections = document.getElementById('categorySections');
     categorySections.innerHTML = '';
-    
+
     // Tüm sertifikaları zamana göre sırala
     const sortedAllCerts = sortByDate([...certificatesData]);
-    
+
     // "Tümü" için tek bir grid oluştur
     const allSection = document.createElement('div');
     allSection.className = 'category-section';
     allSection.id = 'category-all';
-    
+
     const allGrid = document.createElement('div');
     allGrid.className = 'certificates-grid';
     allGrid.id = 'allCertificatesGrid';
-    
+
     sortedAllCerts.forEach(cert => {
         const card = createCertificateCard(cert);
         allGrid.appendChild(card);
     });
-    
+
     allSection.appendChild(allGrid);
     categorySections.appendChild(allSection);
-    
+
     // Kategorilere göre grupla ve sırala
     const categories = ['software', 'electrical-electronics', 'management', 'language', 'education', 'image-processing'];
-    
+
     categories.forEach(category => {
         const categoryCerts = certificatesData.filter(c => c.category === category);
         if (categoryCerts.length > 0) {
             const sortedCategoryCerts = sortByDate([...categoryCerts]);
-            
+
             const section = document.createElement('div');
             section.className = 'category-section';
             section.id = `category-${category}`;
             section.style.display = 'none'; // Başlangıçta gizli
-            
+
             const heading = document.createElement('h2');
             heading.className = 'category-heading';
             heading.textContent = categoryNames[category];
             section.appendChild(heading);
-            
+
             const categoryGrid = document.createElement('div');
             categoryGrid.className = 'certificates-grid';
-            
+
             sortedCategoryCerts.forEach(cert => {
                 const card = createCertificateCard(cert);
                 categoryGrid.appendChild(card);
             });
-            
+
             section.appendChild(categoryGrid);
             categorySections.appendChild(section);
         }
@@ -441,7 +438,7 @@ function createCertificateCard(cert) {
     card.setAttribute('data-category', cert.category);
     card.setAttribute('data-title', cert.title.toLowerCase());
     card.setAttribute('data-issuer', cert.issuer.toLowerCase());
-    
+
     card.innerHTML = `
         <div class="cert-card-image">
             <img src="${cert.image}" alt="${cert.title}">
@@ -458,9 +455,9 @@ function createCertificateCard(cert) {
             </div>
         </div>
     `;
-    
+
     card.addEventListener('click', () => openModal(cert));
-    
+
     return card;
 }
 
@@ -475,7 +472,7 @@ function openModal(cert) {
     const modalDescription = document.getElementById('modalDescription');
     const modalCourses = document.getElementById('modalCourses');
     const verifyBtn = document.getElementById('verifyBtn');
-    
+
     modalImage.src = cert.image;
     modalImage.alt = cert.title;
     modalCategory.textContent = categoryNames[cert.category].toUpperCase();
@@ -484,7 +481,7 @@ function openModal(cert) {
     modalIssuer.textContent = cert.issuer;
     modalDate.textContent = cert.date;
     modalDescription.textContent = cert.description;
-    
+
     // Kursları göster
     if (cert.courses && cert.courses.length > 0) {
         modalCourses.innerHTML = '<h4>Kurs İçeriği:</h4><ul>';
@@ -495,12 +492,12 @@ function openModal(cert) {
     } else {
         modalCourses.innerHTML = '';
     }
-    
+
     // Doğrulama butonu
     verifyBtn.onclick = () => {
         window.open(cert.pdf, '_blank');
     };
-    
+
     modal.classList.add('active');
     document.body.style.overflow = 'hidden';
 }
@@ -515,21 +512,21 @@ function closeModal() {
 // Filtreleri ayarla
 function setupFilters() {
     const filterButtons = document.querySelectorAll('.filter-btn');
-    
+
     filterButtons.forEach(btn => {
         btn.addEventListener('click', () => {
             // Aktif butonu güncelle
             filterButtons.forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
-            
+
             const category = btn.getAttribute('data-category');
-            
+
             // Tüm kategori bölümlerini gizle
             const allSections = document.querySelectorAll('.category-section');
             allSections.forEach(section => {
                 section.style.display = 'none';
             });
-            
+
             // Seçili kategoriyi göster
             if (category === 'all') {
                 const allSection = document.getElementById('category-all');
@@ -550,7 +547,7 @@ function setupFilters() {
                         const headerOffset = 100;
                         const elementPosition = categorySection.getBoundingClientRect().top;
                         const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-                        
+
                         window.scrollTo({
                             top: offsetPosition,
                             behavior: 'smooth'
@@ -558,7 +555,7 @@ function setupFilters() {
                     }, 100);
                 }
             }
-            
+
             // Arama ile birlikte filtrele
             const searchTerm = document.getElementById('searchInput').value.toLowerCase();
             filterCertificates(category, searchTerm);
@@ -568,23 +565,23 @@ function setupFilters() {
 
 // Sertifikaları filtrele
 function filterCertificates(category, searchTerm = '') {
-    const activeSection = category === 'all' 
+    const activeSection = category === 'all'
         ? document.getElementById('category-all')
         : document.getElementById(`category-${category}`);
-    
+
     if (!activeSection) return;
-    
+
     const cards = activeSection.querySelectorAll('.certificate-card');
-    
+
     // Kartları filtrele
     cards.forEach(card => {
         const cardTitle = card.getAttribute('data-title');
         const cardIssuer = card.getAttribute('data-issuer');
-        
-        const matchesSearch = !searchTerm || 
-            cardTitle.includes(searchTerm) || 
+
+        const matchesSearch = !searchTerm ||
+            cardTitle.includes(searchTerm) ||
             cardIssuer.includes(searchTerm);
-        
+
         if (matchesSearch) {
             card.style.display = 'block';
             setTimeout(() => {
@@ -604,7 +601,7 @@ function filterCertificates(category, searchTerm = '') {
 // Arama ayarla
 function setupSearch() {
     const searchInput = document.getElementById('searchInput');
-    
+
     searchInput.addEventListener('input', (e) => {
         const activeFilter = document.querySelector('.filter-btn.active');
         const category = activeFilter ? activeFilter.getAttribute('data-category') : 'all';
@@ -618,7 +615,7 @@ function updateStatistics() {
     const totalCertificates = certificatesData.length;
     const issuers = [...new Set(certificatesData.map(c => c.issuer))];
     const categories = [...new Set(certificatesData.map(c => c.category))];
-    
+
     // Animasyonlu sayı gösterimi
     animateNumber('totalCertificates', totalCertificates);
     animateNumber('totalIssuers', issuers.length);
@@ -646,15 +643,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const modal = document.getElementById('certificateModal');
     const closeBtn = document.getElementById('closeModal');
     const overlay = document.querySelector('.modal-overlay');
-    
+
     if (closeBtn) {
         closeBtn.addEventListener('click', closeModal);
     }
-    
+
     if (overlay) {
         overlay.addEventListener('click', closeModal);
     }
-    
+
     // ESC tuşu ile kapat
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && modal.classList.contains('active')) {

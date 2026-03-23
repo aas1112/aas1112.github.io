@@ -26,64 +26,62 @@ def get_notion_data():
         title = "Bilinmeyen Başlık"
         author = "Bilinmeyen Yazar"
         status = "Okunacak"
-        category = "Genel Kitaplar"
+        category = "Okuma"
         date_val = "-"
         cover = "https://via.placeholder.com/300x450?text=Kapak+Yok"
 
-        # 1. Notion Sayfa Kapağına (Page Cover) bak:
+        # 1. Page Cover
         if item.get("cover"):
             if item["cover"].get("type") == "external":
                 cover = item["cover"]["external"]["url"]
             elif item["cover"].get("type") == "file":
                 cover = item["cover"]["file"]["url"]
 
-        # 2. Bütün özellikleri otomatik tara:
+        # 2. Extract properties
         rich_texts = []
         for prop_name, prop_data in props.items():
             prop_type = prop_data.get("type", "")
             lower_name = prop_name.lower()
 
-            # BAŞLIK
             if prop_type == "title":
-                try:
-                    title = prop_data["title"][0]["plain_text"]
+                try: title = prop_data["title"][0]["plain_text"]
                 except: pass
                 
-            # ZENGİN METİN (Yazar adayı)
             elif prop_type == "rich_text":
                 try:
                     val = prop_data["rich_text"][0]["plain_text"]
                     if val.strip():
                         rich_texts.append(val)
-                        if "yazar" in lower_name or "author" in lower_name:
+                        if "author" in lower_name or "yazar" in lower_name:
                             author = val
                 except: pass
                 
-            # DURUM - STATUS PROPERTY
             elif prop_type == "status":
                 try:
-                    status = prop_data["status"]["name"]
+                    val = prop_data["status"]["name"]
+                    if val == "Done" or val == "Okundu": status = "Okundu"
+                    elif val == "In Progress" or val == "Okunuyor": status = "Okunuyor"
+                    else: status = "Okunacak"
                 except: pass
                 
-            # SEÇENEKLER (Select) - Durum veya Kategori olabilir
             elif prop_type == "select":
                 try:
                     val = prop_data["select"]["name"]
-                    # Eğer kolon ismi durum ile ilgiliyse...
-                    if "durum" in lower_name or "okuma" in lower_name or "status" in lower_name or val.lower() in ["okundu", "okunuyor", "okunacak", "done", "reading", "to do"]:
-                        status = val
+                    if "tür" in lower_name or "category" in lower_name or "kategori" in lower_name:
+                        category = val
+                    elif "durum" in lower_name or "status" in lower_name:
+                        if val == "Done" or val == "Okundu": status = "Okundu"
+                        elif val == "In Progress" or val == "Okunuyor": status = "Okunuyor"
+                        else: status = "Okunacak"
                     else:
-                        # Durum değilse muhtemelen kategoridir
                         category = val
                 except: pass
 
-            # TARİH (Date)
             elif prop_type == "date":
                 try:
                     date_val = prop_data["date"]["start"]
                 except: pass
                 
-            # DOSYA VE MEDYA (Eğer kapak görseli property içindeyse)
             elif prop_type == "files":
                 try:
                     if len(prop_data["files"]) > 0:
@@ -94,7 +92,6 @@ def get_notion_data():
                             cover = file_info["file"]["url"]
                 except: pass
             
-            # URL (Eğer görsel linki url property olarak verilmişse)
             elif prop_type == "url":
                  try:
                      url_val = prop_data.get("url", "")
@@ -102,9 +99,7 @@ def get_notion_data():
                          cover = url_val
                  except: pass
 
-        # Eğer hala yazar bulunamadıysa ve elimizde başlık dışı zengin metin varsa, ilk metni yazar olarak ata (Basit bir fallback)
         if author == "Bilinmeyen Yazar" and len(rich_texts) > 0:
-            # Özet vs gibi çok uzun olmayan ilk text'i al
             for text in rich_texts:
                 if len(text) < 50:
                     author = text

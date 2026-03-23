@@ -43,11 +43,17 @@
             <p class="library-intro">Düşüncelerimi besleyen, mesleki gelişimime yön veren yazılı kaynakları derlediğim alan.<br> Kitaplar, Notion tablomdan GitHub Actions sayesinde otomatik olarak anlık güncellenmektedir.</p>
 
             <div class="library-filters">
-                <button class="filter-btn active" data-filter="all">Tümü</button>
-                <button class="filter-btn" data-filter="Okunuyor">Okunuyor</button>
-                <button class="filter-btn" data-filter="Okundu">Okundu</button>
-                <button class="filter-btn" data-filter="Okunacak">Okunacak</button>
-                <button class="filter-btn" data-filter="Akademik Kitaplar & Makaleler">Akademik/Makaleler</button>
+                <div class="filter-group">
+                    <span class="filter-label"><i class="fas fa-book-reader"></i> Durum:</span>
+                    <button class="filter-btn status-btn active" data-filter="all">Tümü</button>
+                    <button class="filter-btn status-btn" data-filter="Okunuyor">Okunuyor</button>
+                    <button class="filter-btn status-btn" data-filter="Okundu">Okundu</button>
+                    <button class="filter-btn status-btn" data-filter="Okunacak">Okunacak</button>
+                </div>
+                
+                <div class="filter-group" id="dynamic-filters">
+                    <!-- Dinamik Kategori Butonları Gelecek -->
+                </div>
             </div>
 
             <div class="books-grid" id="books-grid">

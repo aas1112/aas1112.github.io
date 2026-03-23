@@ -2,7 +2,7 @@
   {
     "title": "Programming Robots with ROS: A Practical Introduction to the Robot Operating System Ch4",
     "author": "William D. Smart",
-    "status": "In progress",
+    "status": "Okunacak",
     "category": "Ders",
     "date": "2024-09-02",
     "cover": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcT7oowDfN9Fn5EiaO0iG2LbCT8P3bRrEiKQ&s"
@@ -10,7 +10,7 @@
   {
     "title": "Bilinçaltının Gücü",
     "author": "Joseph Murphy",
-    "status": "Done",
+    "status": "Okundu",
     "category": "Okuma",
     "date": "-",
     "cover": "https://img.kitapyurdu.com/v1/getImage/fn:191539/wh:true/wi:800"
@@ -18,7 +18,7 @@
   {
     "title": "Electrical Engineering 101 Ch2",
     "author": "Darren Ashby",
-    "status": "In progress",
+    "status": "Okunacak",
     "category": "Ders",
     "date": "2024-09-12",
     "cover": "https://cdn.sparkfun.com/assets/parts/3/1/6/4/09458-03.jpg"
@@ -26,7 +26,7 @@
   {
     "title": "Statü Endişesi",
     "author": "Alain de Bottom",
-    "status": "Done",
+    "status": "Okundu",
     "category": "Okuma",
     "date": "2024-09-30",
     "cover": "https://static.nadirkitap.com/fotograf/1870611/30/Kitap_2023011913480318706115.jpg"
@@ -34,7 +34,7 @@
   {
     "title": "Geleceği Keşfedenler",
     "author": "Walter Isaacson",
-    "status": "Done",
+    "status": "Okundu",
     "category": "Okuma",
     "date": "2024-09-16",
     "cover": "https://tamadres.com/media/catalog/product/cache/aecd3b5a913cfd3fa68b2e6550e35f91/1/7/177240_9786054729852.jpg"
@@ -42,7 +42,7 @@
   {
     "title": "1Q84",
     "author": "Haruki Murakami",
-    "status": "Done",
+    "status": "Okundu",
     "category": "Okuma",
     "date": "2025-01-05",
     "cover": "https://m.media-amazon.com/images/I/914iJuDQXnL._AC_UF1000,1000_QL80_.jpg"
@@ -50,7 +50,7 @@
   {
     "title": "İyi Vatandaş İyi İnsan",
     "author": "Hasan Ali Yücel",
-    "status": "Done",
+    "status": "Okundu",
     "category": "Okuma",
     "date": "2024-09-20",
     "cover": "https://img.kitapyurdu.com/v1/getImage/fn:1007366/wh:true/miw:200/mih:200"
@@ -58,7 +58,7 @@
   {
     "title": "Sayısal görüntü işleme Ch2",
     "author": "Rafael Gonzalez",
-    "status": "In progress",
+    "status": "Okunacak",
     "category": "Ders",
     "date": "2024-09-09",
     "cover": "https://palmeyayinevi.com/content/images/thumbs/0001454_sayisal-goruntu-sleme_550.jpeg"
@@ -66,7 +66,7 @@
   {
     "title": "Insanin Esareti",
     "author": "W. Somerset Maugham",
-    "status": "Done",
+    "status": "Okundu",
     "category": "Okuma",
     "date": "-",
     "cover": "https://img.kitapyurdu.com/v1/getImage/fn:3683967/wh:true/wi:800"
@@ -74,7 +74,7 @@
   {
     "title": "Hızlı ve Yavaş Düşünme",
     "author": "Daniel Kahneman",
-    "status": "Done",
+    "status": "Okundu",
     "category": "Okuma",
     "date": "2025-02-10",
     "cover": "https://img.kitapyurdu.com/v1/getImage/fn:1106581/wh:true/wi:800"
@@ -82,7 +82,7 @@
   {
     "title": "Şu bizim kırılganlığımız",
     "author": "Eugenio Borgna",
-    "status": "Done",
+    "status": "Okundu",
     "category": "Okuma",
     "date": "-",
     "cover": "https://img.kitapyurdu.com/v1/getImage/fn:5569308/wh:true/wi:800"
@@ -90,7 +90,7 @@
   {
     "title": "Uygarlığın Ayak İzleri",
     "author": "Celil Sadık",
-    "status": "Done",
+    "status": "Okundu",
     "category": "Okuma",
     "date": "-",
     "cover": "https://img.kitapyurdu.com/v1/getImage/fn:10074823/wh:true/wi:220"
@@ -98,7 +98,7 @@
   {
     "title": "Dikkat Zengin Yapabilir",
     "author": "Cihat E. Çiçek",
-    "status": "Done",
+    "status": "Okundu",
     "category": "Okuma",
     "date": "-",
     "cover": "https://img.kitapyurdu.com/v1/getImage/fn:11960613/wh:true/wi:800"
@@ -106,15 +106,15 @@
   {
     "title": "Sparse Features for Multi-Exposure Fusion ",
     "author": " (Zeynep Övgü Yaycı, Mehmet Türkan) ",
-    "status": "Done",
+    "status": "Okundu",
     "category": "Ders",
     "date": "-",
-    "cover": "https://prod-files-secure.s3.us-west-2.amazonaws.com/55f0f05b-978f-4779-bf05-466228bdf559/b694daa7-1466-4d6a-bec7-192f8152ff77/a.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4663XKHHYHF%2F20260323%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260323T062712Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEK3%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQDkeJ2Sf%2FGd8ao89DJqIswo9I4rWWnD19hDIDVoKK5RmAIhAO20orij%2FNq4Ne9nQpcWc3X9aJxMptcR7z4ZB3JrXJ9SKv8DCHYQABoMNjM3NDIzMTgzODA1IgzzAHQ39NzOC6eij14q3AM3W5hZqhKfuzZoylKlIrsDrtGOZJW8Z1xbiQrA9FYRieKZYxz8luDUi9ibOMLWlf2nXcrDWEgErq%2Btagslf2nP%2Fmkl4KKCD%2F6k%2BZoq4lBFUSy2DFd40blSE65EAWlxTq5U3vxgbCHZMNZkTwPUbJ6QC0AHFL%2BRzMm7VV6CmFWyjGdgiu8ALP0YeqE1V%2Fn5fWZgU%2FBGeCZTaB1qsLlz%2FCliDW%2FyYEpspcToOKwGVgiweKEEkjFRwi5MIQhz8XMamiJBe31IfGIwtSvpgOR6vONZlk5ITDE45K%2BVIpT4WyCEOIR7D%2FF%2F4cDryvaxsWvXsBzDi2gIeUYvZVij2TOXl2u0tn3fMs0JmzoUL4LhstMafOyXZ0GHDQ4%2Bbq8xG1NhVWLMivqLgGPmZ73afXz70Qj7tlO4LSApO77g9YgxfMCR5Yf0p6RLG0BLr%2BcnVSs%2BUJ7rMSpK7Juk8im%2F6cuXTFeZbVRIm2pUGLnvLXM5nZJelW61jT3AEc%2Bd7YREa5c%2BP4mAdhWwQ%2BpGwYJkcBcvcxuWy7illuryZSFkLa2%2FgeP3yqIFRfaCwvpG0vKlYIGRU33FFAAm0Rzsm8sKS41YlRf%2FXcXq0TYctqJzeQlAorn2yoSBUsF%2Fy%2BfVzqWbGjCSkoPOBjqkAYqFMfPd6jI8SDrcpKfeJIdTQlFJr7a9Jd0lrsFIQWnoqdoGjHpJwexoshVFuxYxFPs4kwiTPNzb9m35msj5GfRaQTB7wOARyE9UbxEZ8oXiFr6B%2FymfJwTNiigySivjJ9CqyIJoX3I%2BzCOIHodtrZe80wVlai13EJZdYr79xXRDdAe%2F2pae9oYRFznA0ACX58QdvzJZOtDgb7fP2jhseEvVGYgz&X-Amz-Signature=df2d43ae3b32443fa6d154ab71ef51a106b02fd44fc75c372d680ccb0d07e543&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+    "cover": "https://prod-files-secure.s3.us-west-2.amazonaws.com/55f0f05b-978f-4779-bf05-466228bdf559/b694daa7-1466-4d6a-bec7-192f8152ff77/a.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4662DKP2O3Q%2F20260323%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260323T064044Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEK%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQCgwDkPrVBpen7mZsJ3wzwOjPD%2BP2YYEIFU%2BRRH6h4xRgIhAIKYs8ciGJynt8UyXxEdZPXRdZa%2BPwl%2BZH2GC4URMyO7Kv8DCHcQABoMNjM3NDIzMTgzODA1IgzER%2FlB4M%2BkmV7frjoq3AMwBkZSg0PtL6f9F7atKkbqoMwcDZ%2BMqS9ZSjUW11wwgZPc2matbC1q7hzsIrMBAuXZoT%2BQFRf8esd7pedeN%2FzfBf3F%2F5uRDHIMtc1VEM1qIdh8UfTMx8FIjnQ4d6VIHEpKvjGYqgqJ0hq9x8Yt8jJVbVpio0vhP7HCMykvDXXaI03BO6VggpGHX4WVrCa%2FZUS1MEfJu%2BW3TKUn9Yt%2BxIgCn2cpMEtTAgu9IaRHAd79kQgbHjbiWtjsL2gD%2F%2FhXn6faM1VhXeY9EuFXZHl%2BRuVHdX85VyF37NTdnXPqZ%2FVhvxyv%2FKAIfo17Gpsh5ER5saM8dX72b2wHFMLsWdQwBufX655qvzJJgnF3b%2By%2F8BmVpSMw01tbS%2BrSVnhipnX%2BbYZvTHHLX9tcWVH8ieopUAtxsN%2FA0jzMNpvhGzdl3gBWbS40wUJJ6TKHzlsZEs66hwsxq30xZW5kuQjTWvfaZP1Qfwq8f7TLX3onoNFhlY1rx9OBtK47GTyKvaI4tWrihYjn7mDz3k2eyWLjFLTTUjl%2Br%2FZE9R%2BXgSoUhy69CeJTAZgQKlvlRaZIMockRpB6O1AI3i3c1DP1anmdrmapcNnz3I7glbqp14bHwbDJ6GEcX%2FW21AKmzu15%2FLEzNDCYuYPOBjqkAT2kDH0F0VCfO9o14ZyJ8DlI2%2FP1wC5snwxvFiZx0Hqkzd%2FxjPH6G50OLb0wxYDWor2eU%2FZNpHTlFWqrPRX%2FceIrRPhsDg8f6hYBiBzTbaQ063qWvwPj1hb%2FraJ1MHEYs63KSuyL2klVBmd1ddzX5U5ypS6%2F6QdZlGcugI%2F3s4uTlWyg6620%2BVqbB2ZheAp%2FXBjGZwgtM1J2WBX%2BFdNk4%2BvRdZt8&X-Amz-Signature=70d4a39230dc39f0d787adb59b418e456e02cd6a6c5659a2aae5af23b4187a94&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
   },
   {
     "title": "Ego",
     "author": "Ayn Rand",
-    "status": "Done",
+    "status": "Okundu",
     "category": "Okuma",
     "date": "-",
     "cover": "https://img.kitapyurdu.com/v1/getImage/fn:11491033/wh:true/wi:220"
@@ -122,7 +122,7 @@
   {
     "title": "Eminim Şaka Yapıyorsunuz Bay Feynman",
     "author": "Richard P. Feynman",
-    "status": "Done",
+    "status": "Okundu",
     "category": "Okuma",
     "date": "-",
     "cover": "https://i.dr.com.tr/cache/500x400-0/originals/0000000427673-1.jpg"
@@ -130,7 +130,7 @@
   {
     "title": "İnsan Geleceğini Nasıl Kurar?",
     "author": "Prof. Dr. İlber Ortaylı",
-    "status": "Done",
+    "status": "Okundu",
     "category": "Okuma",
     "date": "2025-01-01",
     "cover": "https://img.kitapyurdu.com/v1/getImage/fn:11525210/wh:true/wi:220"
@@ -138,15 +138,15 @@
   {
     "title": "Leonardo’nun DefterleriBüyük Üstattan Uygulamalı Dersler",
     "author": "H. Anna Suh",
-    "status": "Done",
+    "status": "Okundu",
     "category": "Okuma",
     "date": "2025-01-08",
-    "cover": "https://via.placeholder.com/300x450?text=Kapak+Yok"
+    "cover": "https://productimages.hepsiburada.net/s/7/375-375/9084235481138.jpg"
   },
   {
     "title": "Resim Sanatının Tarihi",
     "author": "Ivana Smudja",
-    "status": "Done",
+    "status": "Okundu",
     "category": "Okuma",
     "date": "-",
     "cover": "https://img.kitapyurdu.com/v1/getImage/fn:11465411/wh:true/wi:800"
@@ -154,7 +154,7 @@
   {
     "title": "Meydan Okuyan Kadınlar",
     "author": "Penelope Bagieu",
-    "status": "Done",
+    "status": "Okundu",
     "category": "Okuma",
     "date": "-",
     "cover": "https://img.kitapyurdu.com/v1/getImage/fn:11465219/wh:true/wi:800"
@@ -162,15 +162,15 @@
   {
     "title": "Ütopik Sosyalizm Ve Bilimsel Sosyalizm",
     "author": "Friedrich Engels",
-    "status": "Done",
+    "status": "Okundu",
     "category": "Okuma",
     "date": "-",
-    "cover": "https://d35fbhjemrkr2a.cloudfront.net/Images/Shop/31/Product/8168/400/cfb574423d2643148480b94348434544.jpg"
+    "cover": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2KAY21A79HkxStc379ZPejZueeDpuRBbDz0XJSoJlda9cTcRtGSqTtGGOtHfu6DMHokJiuJ0ZniaVxCg4EWy2SxLGZoWJ-KElhLNlUmI&s=10"
   },
   {
     "title": "Altıncı Yok Oluş",
     "author": "Elizabeth Kolbert",
-    "status": "Done",
+    "status": "Okundu",
     "category": "Okuma",
     "date": "-",
     "cover": "https://img.kitapyurdu.com/v1/getImage/fn:9820153/wh:true/wi:800"
@@ -178,7 +178,7 @@
   {
     "title": "Nyarlathotep ",
     "author": "H.P. Lovecraft",
-    "status": "Done",
+    "status": "Okundu",
     "category": "Okuma",
     "date": "2025-02-12",
     "cover": "https://img.kitapyurdu.com/v1/getImage/fn:11433365/wh:true/wi:220"
@@ -186,7 +186,7 @@
   {
     "title": "Tez Nasıl Yazılır?",
     "author": "Umberto Eco",
-    "status": "Done",
+    "status": "Okundu",
     "category": "Okuma",
     "date": "2025-02-12",
     "cover": "https://img.kitapyurdu.com/v1/getImage/fn:11219641/wh:true/wi:220"
@@ -194,7 +194,7 @@
   {
     "title": "Geometri",
     "author": "Mustafa Kemal Atatürk",
-    "status": "Done",
+    "status": "Okundu",
     "category": "Okuma",
     "date": "2025-02-14",
     "cover": "https://img.kitapyurdu.com/v1/getImage/fn:11257847/wh:true/wi:220"
@@ -202,7 +202,7 @@
   {
     "title": "Aforizmalar",
     "author": "Bernard Shaw",
-    "status": "Done",
+    "status": "Okundu",
     "category": "Okuma",
     "date": "2025-02-14",
     "cover": "https://img.kitapyurdu.com/v1/getImage/fn:11829918/wh:true/wi:256"
@@ -210,7 +210,7 @@
   {
     "title": "Affairs - The School of Life",
     "author": "Bilinmeyen Yazar",
-    "status": "Done",
+    "status": "Okundu",
     "category": "Okuma",
     "date": "2025-02-15",
     "cover": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1561328751l/50934815.jpg"
@@ -218,7 +218,7 @@
   {
     "title": "Keyif Verici Maddelerin Tarihi",
     "author": "Wolfgang Schivelbusch",
-    "status": "Done",
+    "status": "Okundu",
     "category": "Okuma",
     "date": "2025-02-18",
     "cover": "https://img.kitapyurdu.com/v1/getImage/fn:11337823/wh:true/wi:220"
@@ -226,7 +226,7 @@
   {
     "title": "Neye İnanıyorum",
     "author": "Bertrand Russell",
-    "status": "Done",
+    "status": "Okundu",
     "category": "Okuma",
     "date": "2025-02-17",
     "cover": "https://img.kitapyurdu.com/v1/getImage/fn:1020626/wh:true/wi:220"
@@ -234,23 +234,15 @@
   {
     "title": "Robinson Crouse",
     "author": "Daniel Defoe",
-    "status": "Done",
+    "status": "Okundu",
     "category": "Okuma",
     "date": "2025-03-01",
     "cover": "https://productimages.hepsiburada.net/s/7/375-375/9125574377522.jpg"
   },
   {
-    "title": "Sorularla Masonluk ",
-    "author": "Mustafa Besimzade",
-    "status": "Done",
-    "category": "Okuma",
-    "date": "2025-02-28",
-    "cover": "https://img.kitapyurdu.com/v1/getImage/fn:118167/wh:true/wi:800"
-  },
-  {
     "title": "Nah Kalkınırız",
     "author": "Aziz Nesin",
-    "status": "Done",
+    "status": "Okundu",
     "category": "Okuma",
     "date": "2025-03-05",
     "cover": "https://img.kitapyurdu.com/v1/getImage/fn:98401/wh:true/wi:220"
@@ -258,7 +250,7 @@
   {
     "title": "Kızıl Kahkaha",
     "author": "Leonid Andreyev",
-    "status": "Done",
+    "status": "Okundu",
     "category": "Okuma",
     "date": "2025-03-07",
     "cover": "https://www.iskultur.com.tr/webp/2019/08/kizilkahkaha.jpg"
@@ -266,7 +258,7 @@
   {
     "title": "Propaganda",
     "author": "Edward Bernays",
-    "status": "Done",
+    "status": "Okundu",
     "category": "Okuma",
     "date": "2025-03-07",
     "cover": "https://img.kitapyurdu.com/v1/getImage/fn:11699086/wh:true/wi:220"
@@ -274,15 +266,15 @@
   {
     "title": "ICARUS OR THE FUTURE OF SCIENCE",
     "author": "BERTRAND RUSSELL",
-    "status": "Done",
+    "status": "Okundu",
     "category": "Okuma",
     "date": "2025-03-12",
-    "cover": "https://prod-files-secure.s3.us-west-2.amazonaws.com/55f0f05b-978f-4779-bf05-466228bdf559/d793e32d-60fa-41a3-b3c9-c152012c75d7/a.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4663XKHHYHF%2F20260323%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260323T062714Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEK3%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQDkeJ2Sf%2FGd8ao89DJqIswo9I4rWWnD19hDIDVoKK5RmAIhAO20orij%2FNq4Ne9nQpcWc3X9aJxMptcR7z4ZB3JrXJ9SKv8DCHYQABoMNjM3NDIzMTgzODA1IgzzAHQ39NzOC6eij14q3AM3W5hZqhKfuzZoylKlIrsDrtGOZJW8Z1xbiQrA9FYRieKZYxz8luDUi9ibOMLWlf2nXcrDWEgErq%2Btagslf2nP%2Fmkl4KKCD%2F6k%2BZoq4lBFUSy2DFd40blSE65EAWlxTq5U3vxgbCHZMNZkTwPUbJ6QC0AHFL%2BRzMm7VV6CmFWyjGdgiu8ALP0YeqE1V%2Fn5fWZgU%2FBGeCZTaB1qsLlz%2FCliDW%2FyYEpspcToOKwGVgiweKEEkjFRwi5MIQhz8XMamiJBe31IfGIwtSvpgOR6vONZlk5ITDE45K%2BVIpT4WyCEOIR7D%2FF%2F4cDryvaxsWvXsBzDi2gIeUYvZVij2TOXl2u0tn3fMs0JmzoUL4LhstMafOyXZ0GHDQ4%2Bbq8xG1NhVWLMivqLgGPmZ73afXz70Qj7tlO4LSApO77g9YgxfMCR5Yf0p6RLG0BLr%2BcnVSs%2BUJ7rMSpK7Juk8im%2F6cuXTFeZbVRIm2pUGLnvLXM5nZJelW61jT3AEc%2Bd7YREa5c%2BP4mAdhWwQ%2BpGwYJkcBcvcxuWy7illuryZSFkLa2%2FgeP3yqIFRfaCwvpG0vKlYIGRU33FFAAm0Rzsm8sKS41YlRf%2FXcXq0TYctqJzeQlAorn2yoSBUsF%2Fy%2BfVzqWbGjCSkoPOBjqkAYqFMfPd6jI8SDrcpKfeJIdTQlFJr7a9Jd0lrsFIQWnoqdoGjHpJwexoshVFuxYxFPs4kwiTPNzb9m35msj5GfRaQTB7wOARyE9UbxEZ8oXiFr6B%2FymfJwTNiigySivjJ9CqyIJoX3I%2BzCOIHodtrZe80wVlai13EJZdYr79xXRDdAe%2F2pae9oYRFznA0ACX58QdvzJZOtDgb7fP2jhseEvVGYgz&X-Amz-Signature=775df2cc16019938b2d4a2eefb45cffcfb33d7362bc2c78aeed44433f89a454e&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+    "cover": "https://prod-files-secure.s3.us-west-2.amazonaws.com/55f0f05b-978f-4779-bf05-466228bdf559/d793e32d-60fa-41a3-b3c9-c152012c75d7/a.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4662DKP2O3Q%2F20260323%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260323T064044Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEK%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQCgwDkPrVBpen7mZsJ3wzwOjPD%2BP2YYEIFU%2BRRH6h4xRgIhAIKYs8ciGJynt8UyXxEdZPXRdZa%2BPwl%2BZH2GC4URMyO7Kv8DCHcQABoMNjM3NDIzMTgzODA1IgzER%2FlB4M%2BkmV7frjoq3AMwBkZSg0PtL6f9F7atKkbqoMwcDZ%2BMqS9ZSjUW11wwgZPc2matbC1q7hzsIrMBAuXZoT%2BQFRf8esd7pedeN%2FzfBf3F%2F5uRDHIMtc1VEM1qIdh8UfTMx8FIjnQ4d6VIHEpKvjGYqgqJ0hq9x8Yt8jJVbVpio0vhP7HCMykvDXXaI03BO6VggpGHX4WVrCa%2FZUS1MEfJu%2BW3TKUn9Yt%2BxIgCn2cpMEtTAgu9IaRHAd79kQgbHjbiWtjsL2gD%2F%2FhXn6faM1VhXeY9EuFXZHl%2BRuVHdX85VyF37NTdnXPqZ%2FVhvxyv%2FKAIfo17Gpsh5ER5saM8dX72b2wHFMLsWdQwBufX655qvzJJgnF3b%2By%2F8BmVpSMw01tbS%2BrSVnhipnX%2BbYZvTHHLX9tcWVH8ieopUAtxsN%2FA0jzMNpvhGzdl3gBWbS40wUJJ6TKHzlsZEs66hwsxq30xZW5kuQjTWvfaZP1Qfwq8f7TLX3onoNFhlY1rx9OBtK47GTyKvaI4tWrihYjn7mDz3k2eyWLjFLTTUjl%2Br%2FZE9R%2BXgSoUhy69CeJTAZgQKlvlRaZIMockRpB6O1AI3i3c1DP1anmdrmapcNnz3I7glbqp14bHwbDJ6GEcX%2FW21AKmzu15%2FLEzNDCYuYPOBjqkAT2kDH0F0VCfO9o14ZyJ8DlI2%2FP1wC5snwxvFiZx0Hqkzd%2FxjPH6G50OLb0wxYDWor2eU%2FZNpHTlFWqrPRX%2FceIrRPhsDg8f6hYBiBzTbaQ063qWvwPj1hb%2FraJ1MHEYs63KSuyL2klVBmd1ddzX5U5ypS6%2F6QdZlGcugI%2F3s4uTlWyg6620%2BVqbB2ZheAp%2FXBjGZwgtM1J2WBX%2BFdNk4%2BvRdZt8&X-Amz-Signature=f2d9c58163150c3d5e36419f7b15540692ae4bbd2b460171cf208a3a6dfc2f00&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
   },
   {
     "title": "Makine Öğrenmesi",
     "author": "Hugh Howey",
-    "status": "Done",
+    "status": "Okundu",
     "category": "Okuma",
     "date": "2025-03-13",
     "cover": "https://img.kitapyurdu.com/v1/getImage/fn:11589201/wh:true/wi:220"
@@ -290,7 +282,7 @@
   {
     "title": "Dinozorlarla Karıncaların Öyküsü",
     "author": "Cixin Liu",
-    "status": "Done",
+    "status": "Okundu",
     "category": "Okuma",
     "date": "2025-03-15",
     "cover": "https://img.kitapyurdu.com/v1/getImage/fn:11663642/wh:true/wi:220"
@@ -298,7 +290,7 @@
   {
     "title": "Kitaplar ve Sigaralar",
     "author": "George Orwell",
-    "status": "Done",
+    "status": "Okundu",
     "category": "Okuma",
     "date": "2025-03-19",
     "cover": "https://img.kitapyurdu.com/v1/getImage/fn:11893747/wh:true/wi:220"
@@ -306,7 +298,7 @@
   {
     "title": "Mezbaha 5",
     "author": "Kurt Vonnegut",
-    "status": "Done",
+    "status": "Okundu",
     "category": "Okuma",
     "date": "2025-03-25",
     "cover": "https://img.kitapyurdu.com/v1/getImage/fn:11564821/wh:true/wi:220"
@@ -314,7 +306,7 @@
   {
     "title": "Erich Fromm’un Önemi",
     "author": "Rainer Funk",
-    "status": "Done",
+    "status": "Okundu",
     "category": "Okuma",
     "date": "2025-03-27",
     "cover": "https://img.kitapyurdu.com/v1/getImage/fn:11825669/wh:true/wi:800?_gl=1*107zqrk*_up*MQ..*_ga*MTIzOTQzODY5MC4xNzQzMDU1Njc5*_ga_2XQNT66RG4*MTc0MzA1NTY3OC4xLjEuMTc0MzA1NTY4Ny4wLjAuMTc3MjY5MTY1MQ.."
@@ -322,7 +314,7 @@
   {
     "title": "Üç Cisim Problemi",
     "author": "Cixin Liu",
-    "status": "Done",
+    "status": "Okundu",
     "category": "Okuma",
     "date": "2025-05-01",
     "cover": "https://img.kitapyurdu.com/v1/getImage/fn:11332315/wh:true/wi:220"
@@ -330,7 +322,7 @@
   {
     "title": "Keşfetmenin Hazzı",
     "author": "Richard P. Feynman",
-    "status": "Done",
+    "status": "Okundu",
     "category": "Okuma",
     "date": "2025-05-20",
     "cover": "https://img.kitapyurdu.com/v1/getImage/fn:11671783/wh:true/wi:220"
@@ -338,7 +330,7 @@
   {
     "title": "Ülkesiz Bir Adam",
     "author": "Kurt Vonnegut",
-    "status": "Done",
+    "status": "Okundu",
     "category": "Okuma",
     "date": "2025-05-25",
     "cover": "https://img.kitapyurdu.com/v1/getImage/fn:11001466/wh:true/wi:220"
@@ -346,7 +338,7 @@
   {
     "title": "Gençlerle Başbaşa",
     "author": "Ord. Prof. Dr. Ali Fuad Başgil",
-    "status": "Done",
+    "status": "Okundu",
     "category": "Okuma",
     "date": "2025-05-26",
     "cover": "https://img.kitapyurdu.com/v1/getImage/fn:11381715/wh:true/wi:800"
@@ -354,7 +346,7 @@
   {
     "title": "İrade Eğitimi",
     "author": "Jules Payot",
-    "status": "Done",
+    "status": "Okundu",
     "category": "Okuma",
     "date": "2025-05-27",
     "cover": "https://img.kitapyurdu.com/v1/getImage/fn:11450457/wh:true/wi:220"
@@ -362,7 +354,7 @@
   {
     "title": "Olma Sanatı",
     "author": "Erich Fromm",
-    "status": "Done",
+    "status": "Okundu",
     "category": "Okuma",
     "date": "2025-05-27",
     "cover": "https://img.kitapyurdu.com/v1/getImage/fn:11597354/wh:true/wi:800"
@@ -370,7 +362,7 @@
   {
     "title": "Kendini Tanımak / The School of Life",
     "author": "Alain De Botton",
-    "status": "Done",
+    "status": "Okundu",
     "category": "Okuma",
     "date": "2025-05-29",
     "cover": "https://img.kitapyurdu.com/v1/getImage/fn:11666856/wh:true/wi:220"
@@ -378,7 +370,7 @@
   {
     "title": "Sadece Aptallar 8 Saat Uyur ",
     "author": "Erdal Demirkıran",
-    "status": "Done",
+    "status": "Okundu",
     "category": "Okuma",
     "date": "2025-05-30",
     "cover": "https://img.kitapyurdu.com/v1/getImage/fn:52170/wh:true/wi:256"
@@ -386,7 +378,7 @@
   {
     "title": "Rahel Tanrı’yla Hesaplaşıyor",
     "author": "Stefan Zweig",
-    "status": "Done",
+    "status": "Okundu",
     "category": "Okuma",
     "date": "2025-06-04",
     "cover": "https://img.kitapyurdu.com/v1/getImage/fn:7048949/wh:true/wi:220"
@@ -394,7 +386,7 @@
   {
     "title": "Gerçek Bir Hikaye",
     "author": "Lukianos",
-    "status": "Done",
+    "status": "Okundu",
     "category": "Okuma",
     "date": "2025-06-06",
     "cover": "https://img.kitapyurdu.com/v1/getImage/fn:11458940/wh:true/wi:220"
@@ -402,7 +394,7 @@
   {
     "title": "Eylembilim / Bütün Eserleri 7",
     "author": "Oğuz Atay",
-    "status": "Done",
+    "status": "Okundu",
     "category": "Okuma",
     "date": "2025-06-06",
     "cover": "https://img.kitapyurdu.com/v1/getImage/fn:11209255/wh:true/wi:800"
@@ -410,7 +402,7 @@
   {
     "title": "Prozac'ı Bırak Platon'a Bak Felsefe Terapisi",
     "author": "Prof. Lou Marinoff",
-    "status": "Done",
+    "status": "Okundu",
     "category": "Okuma",
     "date": "2025-06-07",
     "cover": "https://img.kitapyurdu.com/v1/getImage/fn:77719/wh:true/wi:220"
@@ -418,7 +410,7 @@
   {
     "title": "Felsefe Okuma Rehberi",
     "author": "Nigel Warburton",
-    "status": "Done",
+    "status": "Okundu",
     "category": "Okuma",
     "date": "2025-06-08",
     "cover": "https://img.kitapyurdu.com/v1/getImage/fn:11842342/wh:true/wi:220"
@@ -426,7 +418,7 @@
   {
     "title": "Bilgeliğin Sarsılmazlığı Üzerine - İnziva Üzerine",
     "author": "Seneca",
-    "status": "Done",
+    "status": "Okundu",
     "category": "Okuma",
     "date": "2025-06-02",
     "cover": "https://img.kitapyurdu.com/v1/getImage/fn:4618179/wh:true/wi:220"
@@ -434,7 +426,7 @@
   {
     "title": "Şeriat Böyle",
     "author": "Turan Dursun",
-    "status": "Done",
+    "status": "Okundu",
     "category": "Okuma",
     "date": "2025-06-14",
     "cover": "https://img.kitapyurdu.com/v1/getImage/fn:10447788/wh:true/wi:220"
@@ -442,7 +434,7 @@
   {
     "title": "Öğrenmeyi Öğretmek",
     "author": "Marcel Prevost",
-    "status": "In progress",
+    "status": "Okunacak",
     "category": "Okuma",
     "date": "2025-06-13",
     "cover": "https://img.kitapyurdu.com/v1/getImage/fn:11738071/wh:true/wi:220"
@@ -450,7 +442,7 @@
   {
     "title": "Boş Sayfa İnsan Doğasının Modern İnkar",
     "author": "Steven Pinker",
-    "status": "Not started",
+    "status": "Okunacak",
     "category": "Okuma",
     "date": "-",
     "cover": "https://img.kitapyurdu.com/v1/getImage/fn:139523/wh:true/wi:220"
@@ -458,7 +450,7 @@
   {
     "title": "Felsefenin Tesellisi",
     "author": "Boethius",
-    "status": "In progress",
+    "status": "Okunacak",
     "category": "Okuma",
     "date": "2025-06-16",
     "cover": "https://img.kitapyurdu.com/v1/getImage/fn:11802207/wh:true/wi:220"
@@ -466,7 +458,7 @@
   {
     "title": "İnsan ve Sembolleri",
     "author": "Carl Gustav Jung",
-    "status": "Not started",
+    "status": "Okunacak",
     "category": "Okuma",
     "date": "-",
     "cover": "https://img.kitapyurdu.com/v1/getImage/fn:11165571/wh:true/wi:220"
@@ -474,7 +466,7 @@
   {
     "title": "A'mak-ı Hayal-Hayalin Derinliklerinde Yolculuk",
     "author": "Şehbenderzade Filibeli Ahmed Hilmi",
-    "status": "Not started",
+    "status": "Okunacak",
     "category": "Okuma",
     "date": "-",
     "cover": "https://img.kitapyurdu.com/v1/getImage/fn:11294882/wh:true/wi:220"
@@ -482,7 +474,7 @@
   {
     "title": "Keşfedilmemiş Benlik",
     "author": "Carl Gustav Jung",
-    "status": "Done",
+    "status": "Okundu",
     "category": "Okuma",
     "date": "2025-06-15",
     "cover": "https://img.kitapyurdu.com/v1/getImage/fn:40310/wh:true/wi:220"
@@ -490,7 +482,7 @@
   {
     "title": "Dinle Küçük Adam",
     "author": "Wilhelm Reich",
-    "status": "Done",
+    "status": "Okundu",
     "category": "Okuma",
     "date": "2025-06-23",
     "cover": "https://cdn.bkmkitap.com/dinle-kucuk-adam-342181-11329759-34-B.jpg"
@@ -498,7 +490,7 @@
   {
     "title": "Okumak, Yazmak ve Yaşamak Üzerine",
     "author": "Arthur Schopenhauer",
-    "status": "Done",
+    "status": "Okundu",
     "category": "Okuma",
     "date": "2025-07-01",
     "cover": "https://img.kitapyurdu.com/v1/getImage/fn:11590123/wh:true/wi:220"
@@ -506,7 +498,7 @@
   {
     "title": "Kültür Emperyalizmi",
     "author": "Aytunç Altındal",
-    "status": "Done",
+    "status": "Okundu",
     "category": "Okuma",
     "date": "2025-07-11",
     "cover": "https://m.media-amazon.com/images/I/91-GAuM1mRL._SY522_.jpg"
@@ -514,7 +506,7 @@
   {
     "title": "Palyatif Toplum",
     "author": "Byung-Chul Han",
-    "status": "Done",
+    "status": "Okundu",
     "category": "Okuma",
     "date": "2025-07-11",
     "cover": "https://img.kitapyurdu.com/v1/getImage/fn:11974203/wh:true/wi:220"
@@ -522,7 +514,7 @@
   {
     "title": "Sürünün İçinde: Dijital Dünyaya Bakışlar",
     "author": "Byung-Chul Han",
-    "status": "Done",
+    "status": "Okundu",
     "category": "Okuma",
     "date": "2025-07-13",
     "cover": "https://img.kitapyurdu.com/v1/getImage/fn:11884229/wh:true/wi:220"
@@ -530,7 +522,7 @@
   {
     "title": "Yorgunluk Toplumu",
     "author": "Byung-Chul Han",
-    "status": "Done",
+    "status": "Okundu",
     "category": "Okuma",
     "date": "2025-07-12",
     "cover": "https://m.media-amazon.com/images/I/51XXcfHeOnL._SY385_.jpg"
@@ -538,7 +530,7 @@
   {
     "title": "Doksan Beş Tez",
     "author": "Martin Luther",
-    "status": "Done",
+    "status": "Okundu",
     "category": "Okuma",
     "date": "2025-07-14",
     "cover": "https://img.kitapyurdu.com/v1/getImage/fn:5392235/wh:true/wi:220"
@@ -546,7 +538,7 @@
   {
     "title": "Sivil İtaatsizlik",
     "author": "Sivil İtaatsizlik",
-    "status": "Done",
+    "status": "Okundu",
     "category": "Okuma",
     "date": "2025-07-13",
     "cover": "https://img.kitapyurdu.com/v1/getImage/fn:91993/wh:true/wi:220"
@@ -554,7 +546,7 @@
   {
     "title": "Çağdaş Toplumların Geleceği ",
     "author": "Erich Fromm",
-    "status": "Done",
+    "status": "Okundu",
     "category": "Okuma",
     "date": "2025-07-13",
     "cover": "https://img.kitapyurdu.com/v1/getImage/fn:266525/wh:true/wi:800"
@@ -562,7 +554,7 @@
   {
     "title": "He Can Who Thinks He Can",
     "author": "Orison Swett Marden",
-    "status": "Done",
+    "status": "Okundu",
     "category": "Okuma",
     "date": "2025-07-16",
     "cover": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSH4z-dFK07aYiZtjlQ4k7og6V8XIBAtO7D6S12MFrm914tEJOp"
@@ -570,7 +562,7 @@
   {
     "title": "Aşkın Öğrenme",
     "author": "Scott H. Young",
-    "status": "Done",
+    "status": "Okundu",
     "category": "Okuma",
     "date": "2025-07-01",
     "cover": "https://img.kitapyurdu.com/v1/getImage/fn:11858509/wh:true/wi:220"
@@ -578,7 +570,7 @@
   {
     "title": "Mit ve Anlam",
     "author": "Claude Levi-Strauss",
-    "status": "Done",
+    "status": "Okundu",
     "category": "Okuma",
     "date": "2025-07-27",
     "cover": "https://img.kitapyurdu.com/v1/getImage/fn:5538059/wh:true/wi:220"
@@ -586,7 +578,7 @@
   {
     "title": "Eros'un Istırabı",
     "author": "Byung-Chul Han",
-    "status": "Done",
+    "status": "Okundu",
     "category": "Okuma",
     "date": "2025-08-04",
     "cover": "https://img.kitapyurdu.com/v1/getImage/fn:11565550/wh:true/wi:800"
@@ -594,7 +586,7 @@
   {
     "title": "Mutsuzluğa Doyum ",
     "author": "Peter Handke",
-    "status": "Done",
+    "status": "Okundu",
     "category": "Okuma",
     "date": "2025-08-18",
     "cover": "https://img.kitapyurdu.com/v1/getImage/fn:12000137/wh:true/wi:220"
@@ -602,7 +594,7 @@
   {
     "title": "Rothschild Hanedanlığı Para, Güç ve İktidarın Sırları",
     "author": "John Coleman",
-    "status": "Done",
+    "status": "Okundu",
     "category": "Okuma",
     "date": "2025-08-18",
     "cover": "https://img.kitapyurdu.com/v1/getImage/fn:114879/wh:true/wi:220"
@@ -610,7 +602,7 @@
   {
     "title": "Zacharius Usta",
     "author": "Jules Verne",
-    "status": "Done",
+    "status": "Okundu",
     "category": "Okuma",
     "date": "2025-07-29",
     "cover": "https://img.kitapyurdu.com/v1/getImage/fn:5392284/wh:true/wi:220"
@@ -618,7 +610,7 @@
   {
     "title": "Bu Su",
     "author": "David Foster Wallace",
-    "status": "Done",
+    "status": "Okundu",
     "category": "Okuma",
     "date": "2025-08-18",
     "cover": "https://img.kitapyurdu.com/v1/getImage/fn:11575407/wh:true/wi:220"
@@ -626,7 +618,7 @@
   {
     "title": "Kanlı Düş",
     "author": "Eray Hacıosmanoğlu",
-    "status": "Done",
+    "status": "Okundu",
     "category": "Okuma",
     "date": "2025-07-30",
     "cover": "https://img.kitapyurdu.com/v1/getImage/fn:11792619/wh:true/wi:220"
@@ -634,7 +626,7 @@
   {
     "title": "Prens ",
     "author": "Niccolo Machiavelli",
-    "status": "Done",
+    "status": "Okundu",
     "category": "Okuma",
     "date": "2025-08-24",
     "cover": "https://img.kitapyurdu.com/v1/getImage/fn:11330492/wh:true/wi:220"
@@ -642,7 +634,7 @@
   {
     "title": "Yürümek",
     "author": "Henry David Thoreau",
-    "status": "Done",
+    "status": "Okundu",
     "category": "Okuma",
     "date": "2025-09-06",
     "cover": "https://img.kitapyurdu.com/v1/getImage/fn:11437742/wh:true/wi:220"
@@ -650,7 +642,7 @@
   {
     "title": "Kitleler Psikolojisi",
     "author": "Gustave Le Bon",
-    "status": "Done",
+    "status": "Okundu",
     "category": "Okuma",
     "date": "2025-09-13",
     "cover": "https://img.kitapyurdu.com/v1/getImage/fn:11318952/wh:true/wi:220"
@@ -658,7 +650,7 @@
   {
     "title": "Modern Dünyanın Bunalımı",
     "author": "Rene Guenon",
-    "status": "Done",
+    "status": "Okundu",
     "category": "Okuma",
     "date": "2025-09-15",
     "cover": "https://img.kitapyurdu.com/v1/getImage/fn:12088917/wh:true/wi:220"
@@ -666,7 +658,7 @@
   {
     "title": "Bir Matematikçinin Savunması",
     "author": "G.H. Hardy",
-    "status": "Done",
+    "status": "Okundu",
     "category": "Okuma",
     "date": "2025-09-11",
     "cover": "https://img.kitapyurdu.com/v1/getImage/fn:9827904/wh:true/wi:220"
@@ -674,7 +666,7 @@
   {
     "title": "Gölge",
     "author": "Eray Hacıosmanoğlu",
-    "status": "Done",
+    "status": "Okundu",
     "category": "Okuma",
     "date": "2025-09-29",
     "cover": "https://img.kitapyurdu.com/v1/getImage/fn:11965736/wh:true/wi:220"
@@ -682,7 +674,7 @@
   {
     "title": "Görüş Devrimi",
     "author": "Mark Changizi",
-    "status": "Done",
+    "status": "Okundu",
     "category": "Okuma",
     "date": "2025-09-30",
     "cover": "https://img.kitapyurdu.com/v1/getImage/fn:11603202/wh:true/wi:220"
@@ -690,7 +682,7 @@
   {
     "title": "Kuşların Felsefesi",
     "author": "Philippe J. Dubois, Elise Rousseau",
-    "status": "Done",
+    "status": "Okundu",
     "category": "Okuma",
     "date": "2025-10-03",
     "cover": "https://img.kitapyurdu.com/v1/getImage/fn:11316750/wh:true/wi:220"
@@ -698,7 +690,7 @@
   {
     "title": "Ustaca Sevmek",
     "author": "Don Miguel Ruiz",
-    "status": "Done",
+    "status": "Okundu",
     "category": "Okuma",
     "date": "2025-11-18",
     "cover": "https://img.kitapyurdu.com/v1/getImage/fn:9657137/wh:true/wi:220"
@@ -706,7 +698,7 @@
   {
     "title": "Kybalion Hermetik Felsefe ve Yedi Kozmik Yasa",
     "author": "Üç İnisiye",
-    "status": "Done",
+    "status": "Okundu",
     "category": "Okuma",
     "date": "2025-12-01",
     "cover": "https://img.kitapyurdu.com/v1/getImage/fn:11978548/wh:true/wi:220"
@@ -714,7 +706,7 @@
   {
     "title": "Körler Ülkesi",
     "author": "Herbert George Wells",
-    "status": "Done",
+    "status": "Okundu",
     "category": "Okuma",
     "date": "2025-12-24",
     "cover": "https://img.kitapyurdu.com/v1/getImage/fn:1009116/wh:true/wi:220"
@@ -722,7 +714,7 @@
   {
     "title": "Algı Kapıları Cennet ve Cehennem",
     "author": "Aldous Huxley",
-    "status": "Done",
+    "status": "Okundu",
     "category": "Okuma",
     "date": "2025-12-29",
     "cover": "https://img.kitapyurdu.com/v1/getImage/fn:5730883/wi:220/wh:ba8e54ba3https://img.kitapyurdu.com/v1/getImage/fn:5730883/wi:220/wh:ba8e54ba3"
@@ -730,7 +722,7 @@
   {
     "title": "Düşünce ve Tartışma Özgürlüğü Üzerine",
     "author": "John Stuart Mill",
-    "status": "Done",
+    "status": "Okundu",
     "category": "Okuma",
     "date": "2026-01-05",
     "cover": "https://img.kitapyurdu.com/v1/getImage/fn:11434502/wi:220/wh:fbba2e574"
@@ -738,7 +730,7 @@
   {
     "title": "Aklı Karışıklar için Kılavuz",
     "author": "E.F. Schumacher",
-    "status": "Done",
+    "status": "Okundu",
     "category": "Okuma",
     "date": "2026-01-29",
     "cover": "https://img.kitapyurdu.com/v1/getImage/fn:12029723/wi:220/wh:99d79c7bc"
@@ -746,7 +738,7 @@
   {
     "title": "Mitolojinin Gücü",
     "author": "Joseph Campbell, Bill Moyers",
-    "status": "Done",
+    "status": "Okundu",
     "category": "Okuma",
     "date": "2026-02-04",
     "cover": "https://img.kitapyurdu.com/v1/getImage/fn:121603/wi:220/wh:8d3bda678"

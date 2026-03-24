@@ -1,27 +1,11 @@
 [
   {
-    "title": "Programming Robots with ROS: A Practical Introduction to the Robot Operating System Ch4",
-    "author": "William D. Smart",
-    "status": "Okunacak",
-    "category": "Ders",
-    "date": "2024-09-02",
-    "cover": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcT7oowDfN9Fn5EiaO0iG2LbCT8P3bRrEiKQ&s"
-  },
-  {
     "title": "Bilinçaltının Gücü",
     "author": "Joseph Murphy",
     "status": "Okundu",
     "category": "Okuma",
     "date": "-",
     "cover": "https://img.kitapyurdu.com/v1/getImage/fn:191539/wh:true/wi:800"
-  },
-  {
-    "title": "Electrical Engineering 101 Ch2",
-    "author": "Darren Ashby",
-    "status": "Okunacak",
-    "category": "Ders",
-    "date": "2024-09-12",
-    "cover": "https://cdn.sparkfun.com/assets/parts/3/1/6/4/09458-03.jpg"
   },
   {
     "title": "Statü Endişesi",
@@ -109,7 +93,7 @@
     "status": "Okundu",
     "category": "Makale",
     "date": "-",
-    "cover": "https://prod-files-secure.s3.us-west-2.amazonaws.com/55f0f05b-978f-4779-bf05-466228bdf559/b694daa7-1466-4d6a-bec7-192f8152ff77/a.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4663EH4N6QR%2F20260323%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260323T212215Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjELr%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIQCi0pCL2idsk25LIu38LkWFswaqkC6aaUUFTpb73NCQBwIgb1faGELKYNHzeBkpCEKu6xqmxaNZ8a98Q78jOSCM%2BEgqiAQIg%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDJp%2BwCAIKML653ZkgSrcAzw4HUcCZcsk4904QI3ZA7ZMDKEpDKyWVeSDTRrt1%2B8H1Z4Sct2jVBO1HB04YiJBFBoZVgQ13vBKctd584l8onIGeAsGzW%2B89nMOlriD4FkkFXNc2gE7ReMGdrAa6GVtnsqow1LWra99ycIksHMjcgpMWux7Hu89m71FKiBWwVOpqS1%2Bcz8G3EFtY33QXcgSuW5dOc45f4w6pCNtp5iQ6gvq872n%2BHTatWm64i%2BCPLpu2RZiR5DiCbw3DIFpYNs67XvSkwBwookBMYhQbI09L3s2uzs7zz0A8aWJH6Ej6vxf%2BT%2BTjdb5%2F3eQhgRIzVpV23My1pjCiFJIKCnN9ACm65drYVHk57BNBmkrK9DJdo%2BcHxEY2gV6O8aoyJExg86HBkfEC3mJnakIb7aONBH4aKvnVIMXhjwi37iG9vHdoZKoVob66NSvGVONdu%2Ffz5Xv57urnv3Z7BCknCEp6pf%2B%2Ffxo%2BhIiPbNyXWWbXFKpTvncRavnWzNTJ2nFh%2Boue7nIy7fC7AZFAEWAdqwzXLoJxs7dGoutCDHjAMmANV5cQOwbBS%2BDp%2FwlXfMsVnEWbgR6p37%2FHPsW5492LEd997HVDIvHa7QX6qquw2mKb%2FvpnoEHYuMhFrOBJ2ln2Cc%2BMMeGhs4GOqUB3ywcykY9XjbyYCSyjmYw6vi8S%2FzWYbiIqLOIWxa8uHNhoOjQh3FYrI%2FH44n4ASNBOtNnQKFXbSuk6ZEkCZqZqCXYNKu5R73%2F2nzEoloooFflBq4PbmJvP3SyZ%2BeWd4PMSgjKKF1QumRfyvbMvEkNjZgRlICg6AJ2CMf3wHJ%2BCy6VhyMOIrauV0T%2BT1Z6V7ksQ2YG7N5LEgqCUIhzwA651jWrsHYG&X-Amz-Signature=2fbcc2b9579e963008b44bb1ff63f3c203b06be673e48ac45eb7ed2c93ebb066&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+    "cover": "https://prod-files-secure.s3.us-west-2.amazonaws.com/55f0f05b-978f-4779-bf05-466228bdf559/b694daa7-1466-4d6a-bec7-192f8152ff77/a.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4663RMYXW4Y%2F20260324%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260324T023711Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEML%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIQC845%2BMRxNy5l8V2YU8tYMcrBgCSS8CxsHRJlnVNBVXRQIgZFeeuLBRFSwzHVD%2BGRpyU40uYRFgBWnMfAsfP4uy4wwqiAQIi%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDIS7r6Fv3godpBfVDyrcAzxw7Fx1WWaouEO2aHPBUWs%2FGzvuUEu6dm%2FnfA5Pb4DGvcURTfVsFMzrBwZi1Wc6hu1kHcL3ak84jl%2F17TaRvAYv9bRGLUsWpVSNcac04n1lOBJDx795m5wXPDHPkRF2iBgjsKBoPe%2FDOko1aPf2i2YC0HFVzaMpPKtMRgRXavdj4JZ6nTBJ8X42VUIcUxrFSxlk3q4Nh%2BnNvH7%2BTXsXyswDJm1qqZDaCKWZ1Q9UJz8omZOFXkL098qPYFIneysYiJhziTVOE01wRG7Tea6xDGVkCsxIESjCtyOn3XTbOvUkbjNjeufYgK55tM%2Bp%2BXMiOJgmSmEt%2F%2FK3qBenAXJX12lEpRla%2BGvS32w2zc2onCOufHB5lcsZ7S6%2B9tcpspLDkPHlyvCocSYeg%2BRD%2Fp%2Fafds%2BlVVwYbTxideJ3tZHZK11o5A%2FnWTr%2BPapIG%2BNJtsQ8MRg68gLgj7O1%2FajugqwyZdlAX%2BaTz6NehPO9c52U6bSCKcWtPe36ykV30SuMqXaVayDSxq%2F%2FOOxvGMfgapLywABwa6vMBn1ajkZxwiQTF7gE7GsFTR2pRmAUYi%2FfDDR9wGyIDMyHM5duEeeD9n9Dubwy7wN1iAFezsZIZM%2F0dgMNLjqaX%2Fr4qLoNtk5MJ%2FYh84GOqUBvp2Vskaa2Jqp6QEsLIMwJ2RQOD7b8pJiXJ7am8GasPhx8vOhvJnyR3bLLIWDSlHm%2FgsVxKuhkc0QRDmMXiZikWjqfrzOmuo7CE2UNYRabZ5mn9ifg69Mfqtqush61MTPLiwA5tEdXfOuVWWRcbCNz6uuehdD5Qqvb5sRpF0YLsCe9rQLz3izzftkVXosKmLRPKReO6GswiJnyaOGqkm6B5AP0rTS&X-Amz-Signature=8c5c15c617ea67433c3a5259eff6c5ed701fdf24722c52c35aff7e2af7d2ae03&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
   },
   {
     "title": "Ego",
@@ -269,7 +253,7 @@
     "status": "Okundu",
     "category": "Okuma",
     "date": "2025-03-12",
-    "cover": "https://prod-files-secure.s3.us-west-2.amazonaws.com/55f0f05b-978f-4779-bf05-466228bdf559/d793e32d-60fa-41a3-b3c9-c152012c75d7/a.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4663EH4N6QR%2F20260323%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260323T212215Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjELr%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIQCi0pCL2idsk25LIu38LkWFswaqkC6aaUUFTpb73NCQBwIgb1faGELKYNHzeBkpCEKu6xqmxaNZ8a98Q78jOSCM%2BEgqiAQIg%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDJp%2BwCAIKML653ZkgSrcAzw4HUcCZcsk4904QI3ZA7ZMDKEpDKyWVeSDTRrt1%2B8H1Z4Sct2jVBO1HB04YiJBFBoZVgQ13vBKctd584l8onIGeAsGzW%2B89nMOlriD4FkkFXNc2gE7ReMGdrAa6GVtnsqow1LWra99ycIksHMjcgpMWux7Hu89m71FKiBWwVOpqS1%2Bcz8G3EFtY33QXcgSuW5dOc45f4w6pCNtp5iQ6gvq872n%2BHTatWm64i%2BCPLpu2RZiR5DiCbw3DIFpYNs67XvSkwBwookBMYhQbI09L3s2uzs7zz0A8aWJH6Ej6vxf%2BT%2BTjdb5%2F3eQhgRIzVpV23My1pjCiFJIKCnN9ACm65drYVHk57BNBmkrK9DJdo%2BcHxEY2gV6O8aoyJExg86HBkfEC3mJnakIb7aONBH4aKvnVIMXhjwi37iG9vHdoZKoVob66NSvGVONdu%2Ffz5Xv57urnv3Z7BCknCEp6pf%2B%2Ffxo%2BhIiPbNyXWWbXFKpTvncRavnWzNTJ2nFh%2Boue7nIy7fC7AZFAEWAdqwzXLoJxs7dGoutCDHjAMmANV5cQOwbBS%2BDp%2FwlXfMsVnEWbgR6p37%2FHPsW5492LEd997HVDIvHa7QX6qquw2mKb%2FvpnoEHYuMhFrOBJ2ln2Cc%2BMMeGhs4GOqUB3ywcykY9XjbyYCSyjmYw6vi8S%2FzWYbiIqLOIWxa8uHNhoOjQh3FYrI%2FH44n4ASNBOtNnQKFXbSuk6ZEkCZqZqCXYNKu5R73%2F2nzEoloooFflBq4PbmJvP3SyZ%2BeWd4PMSgjKKF1QumRfyvbMvEkNjZgRlICg6AJ2CMf3wHJ%2BCy6VhyMOIrauV0T%2BT1Z6V7ksQ2YG7N5LEgqCUIhzwA651jWrsHYG&X-Amz-Signature=2322831d30c7215b377ba819364bc91358753b55bdc4675dbf7b072b94bb0793&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+    "cover": "https://prod-files-secure.s3.us-west-2.amazonaws.com/55f0f05b-978f-4779-bf05-466228bdf559/d793e32d-60fa-41a3-b3c9-c152012c75d7/a.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4663RMYXW4Y%2F20260324%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260324T023711Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEML%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIQC845%2BMRxNy5l8V2YU8tYMcrBgCSS8CxsHRJlnVNBVXRQIgZFeeuLBRFSwzHVD%2BGRpyU40uYRFgBWnMfAsfP4uy4wwqiAQIi%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDIS7r6Fv3godpBfVDyrcAzxw7Fx1WWaouEO2aHPBUWs%2FGzvuUEu6dm%2FnfA5Pb4DGvcURTfVsFMzrBwZi1Wc6hu1kHcL3ak84jl%2F17TaRvAYv9bRGLUsWpVSNcac04n1lOBJDx795m5wXPDHPkRF2iBgjsKBoPe%2FDOko1aPf2i2YC0HFVzaMpPKtMRgRXavdj4JZ6nTBJ8X42VUIcUxrFSxlk3q4Nh%2BnNvH7%2BTXsXyswDJm1qqZDaCKWZ1Q9UJz8omZOFXkL098qPYFIneysYiJhziTVOE01wRG7Tea6xDGVkCsxIESjCtyOn3XTbOvUkbjNjeufYgK55tM%2Bp%2BXMiOJgmSmEt%2F%2FK3qBenAXJX12lEpRla%2BGvS32w2zc2onCOufHB5lcsZ7S6%2B9tcpspLDkPHlyvCocSYeg%2BRD%2Fp%2Fafds%2BlVVwYbTxideJ3tZHZK11o5A%2FnWTr%2BPapIG%2BNJtsQ8MRg68gLgj7O1%2FajugqwyZdlAX%2BaTz6NehPO9c52U6bSCKcWtPe36ykV30SuMqXaVayDSxq%2F%2FOOxvGMfgapLywABwa6vMBn1ajkZxwiQTF7gE7GsFTR2pRmAUYi%2FfDDR9wGyIDMyHM5duEeeD9n9Dubwy7wN1iAFezsZIZM%2F0dgMNLjqaX%2Fr4qLoNtk5MJ%2FYh84GOqUBvp2Vskaa2Jqp6QEsLIMwJ2RQOD7b8pJiXJ7am8GasPhx8vOhvJnyR3bLLIWDSlHm%2FgsVxKuhkc0QRDmMXiZikWjqfrzOmuo7CE2UNYRabZ5mn9ifg69Mfqtqush61MTPLiwA5tEdXfOuVWWRcbCNz6uuehdD5Qqvb5sRpF0YLsCe9rQLz3izzftkVXosKmLRPKReO6GswiJnyaOGqkm6B5AP0rTS&X-Amz-Signature=ace532ea0bae88f12d608ce553923747ff5e03c800a40572113f966fcbbaaa4d&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
   },
   {
     "title": "Makine Öğrenmesi",
@@ -434,7 +418,7 @@
   {
     "title": "Öğrenmeyi Öğretmek",
     "author": "Marcel Prevost",
-    "status": "Okunacak",
+    "status": "Okundu",
     "category": "Okuma",
     "date": "2025-06-13",
     "cover": "https://img.kitapyurdu.com/v1/getImage/fn:11738071/wh:true/wi:220"
@@ -446,22 +430,6 @@
     "category": "Okuma",
     "date": "-",
     "cover": "https://img.kitapyurdu.com/v1/getImage/fn:139523/wh:true/wi:220"
-  },
-  {
-    "title": "Felsefenin Tesellisi",
-    "author": "Boethius",
-    "status": "Okunacak",
-    "category": "Okuma",
-    "date": "2025-06-16",
-    "cover": "https://img.kitapyurdu.com/v1/getImage/fn:11802207/wh:true/wi:220"
-  },
-  {
-    "title": "İnsan ve Sembolleri",
-    "author": "Carl Gustav Jung",
-    "status": "Okunacak",
-    "category": "Okuma",
-    "date": "-",
-    "cover": "https://img.kitapyurdu.com/v1/getImage/fn:11165571/wh:true/wi:220"
   },
   {
     "title": "A'mak-ı Hayal-Hayalin Derinliklerinde Yolculuk",

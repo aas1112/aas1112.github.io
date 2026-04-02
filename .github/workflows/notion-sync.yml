@@ -23,16 +23,20 @@ jobs:
       - name: Install Dependencies
         run: pip install requests
 
-      - name: Run Fetch Script
+      - name: Run Fetch Scripts
         env:
           NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
           NOTION_DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}
-        run: python scripts/fetch_notion.py
+          NOTION_GAMIFICATION_ID: ${{ secrets.NOTION_GAMIFICATION_ID }}
+        run: |
+          python scripts/fetch_notion.py
+          python scripts/fetch_gamification.py
 
       - name: Commit and Push Changes
         run: |
           git config --global user.name "aas1112"
-          git config --global user.email "ahmetardaszgnaas@gmail.com"
+          git config --global user.email "ahmetardaszgnas@gmail.com"
           git add kitaplar.json
-          git commit -m "Auto-update :books: library from Notion"
+          git add gamification.json || true
+          git commit -m "Auto-update :books: data from Notion"
           git push

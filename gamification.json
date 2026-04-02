@@ -1,0 +1,56 @@
+[
+  {
+    "id": "1",
+    "name": "Nisan 2",
+    "date": "2026-04-02",
+    "habits": {
+      "Erken Kalkmak": true,
+      "Soğuk Duş": false,
+      "Bakım": true,
+      "Spor": true,
+      "Ders": true,
+      "Makale": false,
+      "Okuma": true,
+      "Yabancı Dil": false,
+      "Felsefe": false,
+      "İş-Proje": true,
+      "Gün Planı": true
+    }
+  },
+  {
+    "id": "2",
+    "name": "Nisan 1",
+    "date": "2026-04-01",
+    "habits": {
+      "Erken Kalkmak": false,
+      "Soğuk Duş": false,
+      "Bakım": true,
+      "Spor": false,
+      "Ders": false,
+      "Makale": false,
+      "Okuma": false,
+      "Yabancı Dil": false,
+      "Felsefe": true,
+      "İş-Proje": true,
+      "Gün Planı": true
+    }
+  },
+  {
+    "id": "3",
+    "name": "Mart 31",
+    "date": "2026-03-31",
+    "habits": {
+      "Erken Kalkmak": true,
+      "Soğuk Duş": true,
+      "Bakım": true,
+      "Spor": true,
+      "Ders": true,
+      "Makale": true,
+      "Okuma": true,
+      "Yabancı Dil": true,
+      "Felsefe": false,
+      "İş-Proje": true,
+      "Gün Planı": true
+    }
+  }
+]

@@ -4,8 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hayatı Oyunlaştırma - Ahmet Arda Sezgin</title>
+    <title>Gelişim & Başarım Ağı - Ahmet Arda Sezgin</title>
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- ApexCharts -->
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/gamification.css">
 </head>
@@ -35,240 +38,91 @@
                 <li><a href="projects.html">Projeler</a></li>
                 <li><a href="certificates.html">Sertifikalar</a></li>
                 <li><a href="library.html">Kütüphane</a></li>
-                <li><a href="gamification.html" class="active">Hayatı Oyunlaştır</a></li>
+                <li><a href="gamification.html" class="active">Gelişim & Başarım</a></li>
             </ul>
         </nav>
     </header>
 
     <main class="gamification-page">
-        <!-- Kullanıcı Girişi Modal -->
-        <div id="userModal" class="modal">
-            <div class="modal-overlay"></div>
-            <div class="modal-content modal-small">
-                <div class="modal-header">
-                    <h2><i class="fas fa-fingerprint"></i> SİSTEM GİRİŞİ</h2>
-                </div>
-                <div class="modal-body">
-                    <div class="input-group">
-                        <i class="fas fa-user-astronaut"></i>
-                        <input type="text" id="usernameInput" placeholder="Kullanıcı Adı" maxlength="20"
-                            autocomplete="off">
-                    </div>
-                    <div class="input-group">
-                        <i class="fas fa-key"></i>
-                        <input type="password" id="passwordInput" placeholder="Erişim Şifresi" maxlength="20">
-                    </div>
-                    <div class="modal-buttons">
-                        <button id="saveUsernameBtn" class="btn btn-primary btn-block">SİSTEME BAĞLAN</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
         <!-- Hero Section -->
         <section class="gamification-hero">
             <div class="container">
                 <div class="hero-content">
-                    <h1>Hayatı Oyunlaştır</h1>
-                    <p>Görevlerini tamamla, XP kazan, level atla ve hayat ağacını büyüt!</p>
+                    <h1>Gelişim & Başarım Ağı</h1>
+                    <p>Notion'a girdiğim günlük disiplinlerin görsel veritabanı. Sürekli gelişim.</p>
                 </div>
-
-                <!-- Kullanıcı Bilgileri -->
+                
+                <!-- Player Status Card -->
                 <div class="user-info-card">
                     <div class="user-avatar-container">
-                        <canvas id="userAvatar" width="64" height="64"></canvas>
+                        <i class="fas fa-user-astronaut fa-3x" style="color:var(--primary-color)"></i>
                     </div>
                     <div class="user-stats">
                         <div class="stat-item">
-                            <span class="stat-label">Kullanıcı</span>
-                            <span class="stat-value" id="currentUsername">Misafir</span>
+                            <span class="stat-label">Sistem Görüntüsü</span>
+                            <span class="stat-value" id="currentUsername">AAS1112</span>
                         </div>
                         <div class="stat-item">
-                            <span class="stat-label">Level</span>
-                            <span class="stat-value" id="userLevel">1</span>
+                            <span class="stat-label">Disiplin Modülü</span>
+                            <span class="stat-value" id="userLevel">0</span> 
+                            <span style="font-size: 0.8rem; opacity:0.7">GN (Gün)</span>
                         </div>
                         <div class="stat-item">
-                            <span class="stat-label">XP</span>
+                            <span class="stat-label">Toplam Başarım Oranı</span>
                             <span class="stat-value" id="userXP">0</span>
-                            <span class="stat-value-small">/ <span id="nextLevelXP">100</span></span>
-                        </div>
-                    </div>
-                    <div class="xp-bar-container">
-                        <div class="xp-bar">
-                            <div class="xp-bar-fill" id="xpBarFill"></div>
-                        </div>
-                    </div>
-                    <div class="user-actions">
-                        <button id="changeCharacterBtn" class="btn btn-primary btn-small">
-                            <i class="fas fa-user-edit"></i> Karakter Değiştir
-                        </button>
-                        <button id="changeUserBtn" class="btn btn-secondary btn-small">
-                            <i class="fas fa-users"></i> Kullanıcı Değiştir
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Ana İçerik -->
-        <section class="gamification-content">
-            <div class="container">
-                <div class="content-grid">
-                    <!-- Sol Panel: Karakter Editörü -->
-                    <div class="panel character-panel">
-                        <div class="panel-header">
-                            <h2><i class="fas fa-paint-brush"></i> Karakter Editörü</h2>
-                            <button id="toggleCharacterEditor" class="btn-toggle">
-                                <i class="fas fa-chevron-down"></i>
-                            </button>
-                        </div>
-                        <div class="panel-content collapsed" id="characterEditorContent">
-                            <!-- Hazır Karakterler -->
-                            <div class="preset-characters-section">
-                                <h3><i class="fas fa-star"></i> Hazır Karakterler</h3>
-                                <p class="section-description">Hazır karakterlerden birini seçerek başlayabilir veya
-                                    kendi karakterinizi oluşturabilirsiniz.</p>
-                                <div class="preset-characters-grid" id="presetCharactersGrid">
-                                    <!-- Hazır karakterler buraya eklenecek -->
-                                </div>
-                            </div>
-
-                            <div class="character-editor">
-                                <h3><i class="fas fa-paint-brush"></i> Kendi Karakterini Oluştur</h3>
-                                <div class="editor-controls">
-                                    <div class="canvas-container">
-                                        <canvas id="pixelCanvas" width="32" height="32"></canvas>
-                                        <div class="canvas-grid" id="canvasGrid"></div>
-                                    </div>
-                                    <div class="editor-tools">
-                                        <div class="tool-section">
-                                            <label>Canvas Boyutu:</label>
-                                            <select id="canvasSize">
-                                                <option value="16">16x16</option>
-                                                <option value="32" selected>32x32</option>
-                                                <option value="48">48x48</option>
-                                                <option value="64">64x64</option>
-                                            </select>
-                                        </div>
-                                        <div class="tool-section">
-                                            <label>Renk Seçici:</label>
-                                            <input type="color" id="colorPicker" value="#8b5cf6">
-                                        </div>
-                                        <div class="tool-section">
-                                            <label>Hızlı Renkler:</label>
-                                            <div class="quick-colors" id="quickColors"></div>
-                                        </div>
-                                        <div class="tool-section">
-                                            <button id="clearCanvas" class="btn btn-danger btn-small">
-                                                <i class="fas fa-trash"></i> Temizle
-                                            </button>
-                                            <button id="fillCanvas" class="btn btn-secondary btn-small">
-                                                <i class="fas fa-fill"></i> Doldur
-                                            </button>
-                                        </div>
-                                        <div class="tool-section">
-                                            <input type="text" id="characterName" placeholder="Karakter adı"
-                                                maxlength="20">
-                                            <button id="saveCharacter" class="btn btn-primary btn-small">
-                                                <i class="fas fa-save"></i> Kaydet ve Seç
-                                            </button>
-                                        </div>
-                                        <div class="tool-section">
-                                            <label>Kayıtlı Karakterler:</label>
-                                            <select id="savedCharacters" class="character-select">
-                                                <option value="">Yeni karakter oluştur</option>
-                                            </select>
-                                            <button id="loadCharacter" class="btn btn-secondary btn-small">
-                                                <i class="fas fa-download"></i> Yükle
-                                            </button>
-                                            <button id="deleteCharacter" class="btn btn-danger btn-small">
-                                                <i class="fas fa-trash"></i> Sil
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Orta Panel: Görevler -->
-                    <div class="panel tasks-panel">
-                        <div class="panel-header">
-                            <h2><i class="fas fa-tasks"></i> Görevler</h2>
-                            <button id="toggleTasksPanel" class="btn-toggle">
-                                <i class="fas fa-chevron-down"></i>
-                            </button>
-                        </div>
-                        <div class="panel-content" id="tasksPanelContent">
-                            <div class="add-task-section">
-                                <h3>Yeni Görev Ekle</h3>
-                                <div class="task-form">
-                                    <input type="text" id="taskTitle" placeholder="Görev başlığı" maxlength="50">
-                                    <textarea id="taskDescription" placeholder="Görev açıklaması"
-                                        maxlength="200"></textarea>
-                                    <select id="taskDifficulty">
-                                        <option value="easy">Kolay (10 XP)</option>
-                                        <option value="medium" selected>Orta (25 XP)</option>
-                                        <option value="hard">Zor (50 XP)</option>
-                                        <option value="expert">Uzman (100 XP)</option>
-                                    </select>
-                                    <button id="addTaskBtn" class="btn btn-primary">
-                                        <i class="fas fa-plus"></i> Görev Ekle
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="tasks-list" id="tasksList">
-                                <!-- Görevler buraya eklenecek -->
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Sağ Panel: Hayat Ağacı -->
-                    <div class="panel tree-panel">
-                        <div class="panel-header">
-                            <h2><i class="fas fa-tree"></i> Hayat Ağacı</h2>
-                            <button id="toggleTreePanel" class="btn-toggle">
-                                <i class="fas fa-chevron-down"></i>
-                            </button>
-                        </div>
-                        <div class="panel-content" id="treePanelContent">
-                            <div class="life-garden">
-                                <canvas id="gardenCanvas" width="400" height="400"></canvas>
-                                <div class="garden-info">
-                                    <p>Level atladıkça ağacın büyüyecek ve bahçen zenginleşecek!</p>
-                                    <div class="garden-level-info">
-                                        <span>Mevcut Level: <strong id="gardenLevel">1</strong></span>
-                                    </div>
-                                </div>
-                            </div>
+                            <span class="stat-value-small">%</span>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Level Up Modal -->
-        <div id="levelUpModal" class="modal">
-            <div class="modal-overlay"></div>
-            <div class="modal-content modal-levelup">
-                <div class="levelup-animation">
-                    <div class="levelup-icon">🎉</div>
-                    <h2>Tebrikler!</h2>
-                    <p class="levelup-text">Level <span id="newLevel">2</span>'ye ulaştın!</p>
-                    <div class="levelup-rewards">
-                        <div class="reward-item">
-                            <i class="fas fa-star"></i>
-                            <span>Yeni özellikler açıldı!</span>
-                        </div>
-                        <div class="reward-item">
-                            <i class="fas fa-tree"></i>
-                            <span>Hayat ağacın büyüdü!</span>
-                        </div>
-                    </div>
-                    <button id="closeLevelUpBtn" class="btn btn-primary">Harika!</button>
-                </div>
-            </div>
+        <!-- Loading Indicator -->
+        <div id="loading" class="container" style="text-align: center; padding: 40px; color: var(--text-color);">
+            <i class="fas fa-circle-notch fa-spin fa-3x"></i>
+            <p style="margin-top: 10px;">Notion veritabanı ile senkronize ediliyor...</p>
         </div>
+
+        <!-- Dashboard Content -->
+        <section id="dashboardContent" class="gamification-content" style="display: none;">
+            <div class="container">
+                <div class="dashboard-grid">
+                    
+                    <!-- Recent Efforts Snapshot -->
+                    <div class="dashboard-card today-card">
+                        <h3><i class="fas fa-bolt"></i> Yakın Dönem Eforu</h3>
+                        <p class="text-muted" style="margin-bottom: 25px; font-size: 0.9rem;">Son 5 güne ait disiplin barı</p>
+                        
+                        <div id="recentDaysList" class="recent-days-list">
+                            <!-- JS ile üretilecek progress barlar -->
+                        </div>
+                    </div>
+
+                    <!-- Radar Chart: Disiplin Dağılımı -->
+                    <div class="dashboard-card chart-card">
+                        <h3><i class="fas fa-spider"></i> Alışkanlık Odak Dağılımı</h3>
+                        <p class="text-muted" style="margin-bottom: 10px; font-size: 0.9rem;">Hangi alanlarda daha istikrarlıyım?</p>
+                        <div id="radarChart"></div>
+                    </div>
+
+                    <!-- Github Style Heatmap (Activity Calendar) -->
+                    <div class="dashboard-card heatmap-card" style="grid-column: 1 / -1;">
+                        <h3><i class="fas fa-calendar-check"></i> Tarihsel Devamlılık Ağı (Son 30 Gün)</h3>
+                        <p class="text-muted" style="margin-bottom: 20px; font-size: 0.9rem;">Günlük disiplin yoğunluğu</p>
+                        <div id="heatmapChart"></div>
+                    </div>
+
+                    <!-- Trend Line -->
+                    <div class="dashboard-card line-card" style="grid-column: 1 / -1;">
+                        <h3><i class="fas fa-chart-line"></i> Başarım Trendi</h3>
+                        <p class="text-muted" style="margin-bottom: 20px; font-size: 0.9rem;">Zaman içerisindeki gelişim yüzdesi</p>
+                        <div id="lineChart"></div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
     </main>
 
     <!-- Footer -->
@@ -291,7 +145,7 @@
                     <li><a href="projects.html">Projeler</a></li>
                     <li><a href="certificates.html">Sertifikalar</a></li>
                     <li><a href="library.html">Kütüphane</a></li>
-                    <li><a href="gamification.html">Hayatı Oyunlaştır</a></li>
+                    <li><a href="gamification.html">Gelişim & Başarım</a></li>
                 </ul>
             </div>
 
@@ -309,7 +163,7 @@
         </div>
 
         <div class="footer-bottom">
-            <p>&copy; 2025 Ahmet Arda Sezgin. Tüm hakları saklıdır.</p>
+            <p>&copy; 2026 Ahmet Arda Sezgin. Tüm hakları saklıdır.</p>
         </div>
     </footer>
 

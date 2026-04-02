@@ -1,56 +1,40 @@
 [
   {
-    "id": "1",
-    "name": "Nisan 2",
+    "id": "336df6cd-2b29-80d1-8ff9-dc52d595e9bf",
+    "name": "2026-04-02",
     "date": "2026-04-02",
     "habits": {
-      "Erken Kalkmak": true,
-      "Soğuk Duş": false,
-      "Bakım": true,
-      "Spor": true,
-      "Ders": true,
+      "Spor": false,
+      "İş-Proje": false,
       "Makale": false,
-      "Okuma": true,
+      "Ders": false,
       "Yabancı Dil": false,
       "Felsefe": false,
-      "İş-Proje": true,
-      "Gün Planı": true
+      "Soğuk Duş": false,
+      "Sosyal": false,
+      "Gün Planı": false,
+      "Erken Kalkmak": false,
+      "Bakım": false,
+      "Okuma": false
     }
   },
   {
-    "id": "2",
-    "name": "Nisan 1",
+    "id": "335df6cd-2b29-80a0-be30-cb844aba2480",
+    "name": "2026-04-01",
     "date": "2026-04-01",
     "habits": {
-      "Erken Kalkmak": false,
-      "Soğuk Duş": false,
-      "Bakım": true,
       "Spor": false,
-      "Ders": false,
+      "İş-Proje": true,
       "Makale": false,
-      "Okuma": false,
+      "Ders": false,
       "Yabancı Dil": false,
-      "Felsefe": true,
-      "İş-Proje": true,
-      "Gün Planı": true
-    }
-  },
-  {
-    "id": "3",
-    "name": "Mart 31",
-    "date": "2026-03-31",
-    "habits": {
-      "Erken Kalkmak": true,
-      "Soğuk Duş": true,
-      "Bakım": true,
-      "Spor": true,
-      "Ders": true,
-      "Makale": true,
-      "Okuma": true,
-      "Yabancı Dil": true,
       "Felsefe": false,
-      "İş-Proje": true,
-      "Gün Planı": true
+      "Soğuk Duş": false,
+      "Sosyal": false,
+      "Gün Planı": true,
+      "Erken Kalkmak": false,
+      "Bakım": true,
+      "Okuma": false
     }
   }
 ]

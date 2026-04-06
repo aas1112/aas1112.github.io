@@ -1,5 +1,24 @@
 [
   {
+    "id": "339df6cd-2b29-8120-b21d-c5c54defa4e2",
+    "name": "2026-04-06",
+    "date": "2026-04-05",
+    "habits": {
+      "Spor": false,
+      "İş-Proje": false,
+      "Makale": false,
+      "Ders": false,
+      "Yabancı Dil": false,
+      "Felsefe": false,
+      "Soğuk Duş": false,
+      "Sosyal": false,
+      "Gün Planı": false,
+      "Erken Kalkmak": false,
+      "Bakım": false,
+      "Okuma": false
+    }
+  },
+  {
     "id": "338df6cd-2b29-813c-a817-f6bdb6c3fa79",
     "name": "2026-04-05",
     "date": "2026-04-04",
@@ -31,7 +50,7 @@
       "Felsefe": false,
       "Soğuk Duş": true,
       "Sosyal": false,
-      "Gün Planı": false,
+      "Gün Planı": true,
       "Erken Kalkmak": true,
       "Bakım": true,
       "Okuma": false

@@ -55,6 +55,19 @@ function computeLevel(totalExp) {
     return { level, progress: Math.min(progress, 99), expToNext, totalExp, expForNext };
 }
 
+/**
+ * Maps a global level number to a Turkish RPG title.
+ */
+function levelTitle(globalLevel) {
+    if (globalLevel <= 2)  return 'Acemi 🌱';
+    if (globalLevel <= 5)  return 'Deneyimli ⚔️';
+    if (globalLevel <= 9)  return 'Uzman 💫';
+    if (globalLevel <= 14) return 'Usta 🔥';
+    if (globalLevel <= 19) return 'Elit ⚡';
+    if (globalLevel <= 29) return 'Efsanevi 👑';
+    return 'Tanrısal 🌌';
+}
+
 // ─── Aggregate category EXPs from all records ────────────────────────────────
 
 function aggregateCategoryEXP(records) {
@@ -72,8 +85,8 @@ function aggregateCategoryEXP(records) {
             // (in case JSON is old format)
             const raw = day.habits || {};
             const FALLBACK = {
-                Mental:    { 'Ders-90': 90, 'Makale-30': 30, 'Okuma-60': 60, 'Yabancı Dil-30': 30, 'Felsefe-60': 60 },
-                Career:    { 'Kişisel Proje-90': 90, 'İş Arama-30': 30 },
+                Mental:    { 'Ders-90': 90, 'Makale-30': 30, 'Okuma-60': 60, 'Yabancı Dil-30': 30, 'Felsefe-60': 60, 'Mühendislik Haberleri-30': 30 },
+                Career:    { 'Kişisel Proje-90': 90, 'İş Arama-30': 30, 'Proje Fikri-30': 30 },
                 Stamina:   { 'Spor-180': 180, 'Soğuk Duş-15': 15, 'Bakım-15': 15 },
                 Willpower: { 'Sosyal-75': 75, 'Gün Planı-15': 15 },
             };
@@ -130,14 +143,9 @@ function renderLevelCards(categoryTotals) {
     if (!container) return;
     container.innerHTML = '';
 
-    let globalExpSum = 0;
-    let globalLevelSum = 0;
-
     for (const [cat, meta] of Object.entries(CATEGORIES)) {
         const totalExp = categoryTotals[cat] || 0;
         const levelData = computeLevel(totalExp);
-        globalExpSum  += totalExp;
-        globalLevelSum += levelData.level;
 
         const card = document.createElement('div');
         card.className = 'level-card';
@@ -168,38 +176,6 @@ function renderLevelCards(categoryTotals) {
         container.appendChild(card);
     }
 
-    // ── Global Level Card ────────────────────────────────────────────────
-    const globalAvgLevel = Math.round(globalLevelSum / Object.keys(CATEGORIES).length);
-    const globalLevelData = computeLevel(Math.round(globalExpSum / Object.keys(CATEGORIES).length));
-
-    const globalCard = document.createElement('div');
-    globalCard.className = 'level-card level-card-global';
-    globalCard.style.setProperty('--cat-color', '#a78bfa');
-    globalCard.style.setProperty('--cat-glow',  'rgba(167,139,250,0.6)');
-
-    globalCard.innerHTML = `
-        <div class="level-card-header">
-            <span class="cat-icon">👑</span>
-            <span class="cat-label">Global Karakter</span>
-            <span class="cat-level-badge global-badge">LVL ${globalAvgLevel}</span>
-        </div>
-        <div class="level-card-body">
-            <div class="exp-numbers">
-                <span class="exp-current">${Math.round(globalExpSum / Object.keys(CATEGORIES).length)} <small>Ort. EXP</small></span>
-                <span class="exp-next">→ ${globalLevelData.expForNext} EXP</span>
-            </div>
-            <div class="level-progress-track">
-                <div class="level-progress-fill" style="width: 0%"
-                     data-target="${globalLevelData.progress}"></div>
-            </div>
-            <div class="progress-label">
-                <span>4 kategorinin ağırlıklı ortalaması</span>
-                <span>${globalLevelData.progress}%</span>
-            </div>
-        </div>
-    `;
-    container.appendChild(globalCard);
-
     // Animate bars
     requestAnimationFrame(() => {
         setTimeout(() => {
@@ -208,11 +184,45 @@ function renderLevelCards(categoryTotals) {
             });
         }, 300);
     });
-
-    // Update hero global level display
-    const heroLevel = document.getElementById('userLevel');
-    if (heroLevel) heroLevel.innerText = globalAvgLevel;
 }
+
+// ─── Hero mini category bars ─────────────────────────────────────────────────
+
+function renderHeroCatBars(categoryTotals) {
+    const container = document.getElementById('heroCatBars');
+    if (!container) return;
+    container.innerHTML = '';
+
+    for (const [cat, meta] of Object.entries(CATEGORIES)) {
+        const totalExp  = categoryTotals[cat] || 0;
+        const levelData = computeLevel(totalExp);
+
+        const bar = document.createElement('div');
+        bar.className = 'hero-cat-bar-row';
+        bar.innerHTML = `
+            <div class="hcb-meta">
+                <span class="hcb-icon">${meta.icon}</span>
+                <span class="hcb-name">${meta.label}</span>
+                <span class="hcb-lvl" style="color:${meta.color}">LVL ${levelData.level}</span>
+            </div>
+            <div class="hcb-track">
+                <div class="hcb-fill" style="width:0%; background:${meta.color};
+                     box-shadow:0 0 8px ${meta.glow};"
+                     data-target="${levelData.progress}"></div>
+            </div>
+        `;
+        container.appendChild(bar);
+    }
+
+    requestAnimationFrame(() => {
+        setTimeout(() => {
+            container.querySelectorAll('.hcb-fill').forEach(f => {
+                f.style.width = f.dataset.target + '%';
+            });
+        }, 500);
+    });
+}
+
 
 // ─── Radar Chart (ApexCharts) ─────────────────────────────────────────────────
 
@@ -424,7 +434,23 @@ function updateHeroCharacterCard(categoryTotals) {
 
     // Level number
     const lvlEl = document.getElementById('heroGlobalLevel');
-    if (lvlEl) lvlEl.innerText = globalLvl;
+    if (lvlEl) {
+        lvlEl.innerText = globalLvl;
+        // Entrance animation
+        lvlEl.style.transform = 'scale(0.6)';
+        lvlEl.style.opacity = '0';
+        requestAnimationFrame(() => {
+            setTimeout(() => {
+                lvlEl.style.transition = 'transform 0.8s cubic-bezier(0.22,1,0.36,1), opacity 0.6s ease';
+                lvlEl.style.transform = 'scale(1)';
+                lvlEl.style.opacity = '1';
+            }, 200);
+        });
+    }
+
+    // Dynamic title label
+    const titleEl = document.getElementById('heroTitleLabel');
+    if (titleEl) titleEl.innerText = levelTitle(globalLvl);
 
     // EXP text
     const expEl = document.getElementById('heroGlobalExp');
@@ -442,10 +468,10 @@ function updateHeroCharacterCard(categoryTotals) {
     if (pct)  pct.innerText  = levelData.progress + '%';
     if (next) next.innerText = levelData.expToNext + ' EXP kaldı';
 
-    // SVG ring: circumference = 326.7, offset = circ * (1 - progress/100)
+    // SVG ring: circumference for r=88 → 2π×88 ≈ 553
     const ring = document.getElementById('heroRingFill');
     if (ring) {
-        const circ   = 326.7;
+        const circ   = 553;
         const offset = circ * (1 - levelData.progress / 100);
         requestAnimationFrame(() => {
             setTimeout(() => { ring.style.strokeDashoffset = offset; }, 400);

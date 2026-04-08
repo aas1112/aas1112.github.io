@@ -7,6 +7,10 @@
     <title>Gelişim & Başarım Ağı - Ahmet Arda Sezgin</title>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@700;800;900&display=swap" rel="stylesheet">
     <!-- ApexCharts -->
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
     <link rel="stylesheet" href="css/style.css">
@@ -44,80 +48,107 @@
     </header>
 
     <main class="gamification-page">
-        <!-- Hero Section — Redesigned Character Sheet -->
+
+        <!-- ══════════════════════════════════════════════════════
+             HERO — Premium Character Showcase
+        ══════════════════════════════════════════════════════ -->
         <section class="gamification-hero">
+
+            <!-- Animated background particles -->
+            <div class="hero-bg-grid" aria-hidden="true"></div>
+            <div class="hero-orb hero-orb-1" aria-hidden="true"></div>
+            <div class="hero-orb hero-orb-2" aria-hidden="true"></div>
+
             <div class="container">
-                <div class="hero-content">
-                    <h1>Gelişim & Başarım Ağı</h1>
-                    <p>Notion'a girdiğim günlük disiplinlerin görsel veritabanı. Sürekli gelişim.</p>
-                </div>
+                <div class="hero-layout">
 
-                <!-- ── Premium Character Card ─────────────────────── -->
-                <div class="character-card">
+                    <!-- ── LEFT: Level Showcase ── -->
+                    <div class="hero-level-side">
 
-                    <!-- Left: Avatar + level ring -->
-                    <div class="char-avatar-side">
-                        <div class="char-ring-wrap">
-                            <!-- SVG level ring -->
-                            <svg class="ring-svg" viewBox="0 0 120 120">
-                                <circle class="ring-track" cx="60" cy="60" r="52"/>
-                                <circle class="ring-fill" id="heroRingFill" cx="60" cy="60" r="52"
-                                        stroke-dasharray="326.7"
-                                        stroke-dashoffset="326.7"/>
+                        <!-- Outer glow ring -->
+                        <div class="level-ring-outer">
+                            <svg class="level-ring-svg" viewBox="0 0 200 200">
+                                <defs>
+                                    <linearGradient id="ringGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" stop-color="#818cf8"/>
+                                        <stop offset="50%" stop-color="#a78bfa"/>
+                                        <stop offset="100%" stop-color="#ec4899"/>
+                                    </linearGradient>
+                                </defs>
+                                <!-- Track -->
+                                <circle class="lr-track" cx="100" cy="100" r="88"/>
+                                <!-- Progress fill -->
+                                <circle class="lr-fill" id="heroRingFill" cx="100" cy="100" r="88"
+                                        stroke="url(#ringGradient)"
+                                        stroke-dasharray="553"
+                                        stroke-dashoffset="553"
+                                        transform="rotate(-90 100 100)"/>
                             </svg>
-                            <div class="char-avatar-inner">
-                                <i class="fas fa-user-astronaut"></i>
+
+                            <!-- Inner content -->
+                            <div class="level-ring-inner">
+                                <span class="lvl-tag">GLOBAL LEVEL</span>
+                                <span class="lvl-number" id="heroGlobalLevel">–</span>
+                                <span class="lvl-subtitle" id="heroTitleLabel">Yükleniyor...</span>
                             </div>
                         </div>
-                        <span class="char-level-label">LVL</span>
-                        <span class="char-level-num" id="heroGlobalLevel">–</span>
-                    </div>
 
-                    <!-- Divider -->
-                    <div class="char-divider"></div>
-
-                    <!-- Right: Stats grid -->
-                    <div class="char-stats-side">
-                        <div class="char-handle">
-                            <span class="handle-badge"><i class="fas fa-terminal"></i></span>
-                            <span class="handle-name">AAS1112</span>
-                        </div>
-
-                        <div class="char-stats-grid">
-                            <!-- Global XP bar -->
-                            <div class="char-stat-block full">
-                                <div class="char-stat-header">
-                                    <span class="char-stat-label">GLOBAL EXP</span>
-                                    <span class="char-stat-value" id="heroGlobalExp">–</span>
-                                </div>
-                                <div class="char-xp-track">
-                                    <div class="char-xp-fill" id="heroXpFill" style="width:0%"></div>
-                                </div>
-                                <div class="char-xp-meta">
-                                    <span id="heroXpPct">–%</span>
-                                    <span id="heroXpToNext">Yükleniyor…</span>
-                                </div>
+                        <!-- XP progress bar below ring -->
+                        <div class="hero-xp-section">
+                            <div class="hero-xp-labels">
+                                <span class="xp-label-left">⚡ <span id="heroGlobalExp">– EXP</span></span>
+                                <span class="xp-label-right" id="heroXpToNext">...</span>
                             </div>
-
-                            <!-- Overall success rate -->
-                            <div class="char-stat-block">
-                                <span class="char-stat-label">BAŞARIM ORANI</span>
-                                <span class="char-stat-big" id="userXP">–</span>
-                                <span class="char-stat-unit">%</span>
-                            </div>
-
-                            <!-- Days tracked -->
-                            <div class="char-stat-block">
-                                <span class="char-stat-label">TAKİP GÜN</span>
-                                <span class="char-stat-big" id="userLevel">–</span>
-                                <span class="char-stat-unit">GN</span>
+                            <div class="hero-xp-track">
+                                <div class="hero-xp-fill" id="heroXpFill" style="width:0%"></div>
+                                <span class="hero-xp-pct" id="heroXpPct">0%</span>
                             </div>
                         </div>
-                    </div>
 
-                </div><!-- /character-card -->
+                    </div><!-- /hero-level-side -->
+
+                    <!-- ── CENTER: Divider ── -->
+                    <div class="hero-vdivider" aria-hidden="true"></div>
+
+                    <!-- ── RIGHT: Info & Stats ── -->
+                    <div class="hero-info-side">
+
+                        <div class="hero-handle-row">
+                            <div class="hero-handle-badge"><i class="fas fa-terminal"></i></div>
+                            <div>
+                                <div class="hero-username">AAS1112</div>
+                                <div class="hero-subtitle">Gelişim & Başarım Ağı</div>
+                            </div>
+                        </div>
+
+                        <p class="hero-desc">
+                            Notion'a girdiğim günlük disiplinlerin görsel veritabanı.<br>
+                            Her gün biraz daha ileri. Sürekli gelişim.
+                        </p>
+
+                        <!-- Overall success rate — BIG number -->
+                        <div class="hero-success-rate">
+                            <span class="hsr-number" id="userXP">–</span>
+                            <span class="hsr-unit">%</span>
+                            <span class="hsr-label">Ortalama Başarım Oranı</span>
+                        </div>
+
+                        <!-- Mini category bars -->
+                        <div class="hero-cat-bars" id="heroCatBars">
+                            <!-- Filled by JS -->
+                        </div>
+
+                        <div class="hero-days-row">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span id="userLevel">–</span> gün takip edildi
+                        </div>
+
+                    </div><!-- /hero-info-side -->
+
+                </div><!-- /hero-layout -->
             </div>
         </section>
+
 
         <!-- Loading Indicator -->
         <div id="loading" class="container" style="text-align: center; padding: 40px; color: var(--text-color);">

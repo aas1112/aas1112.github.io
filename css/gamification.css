@@ -1,51 +1,439 @@
-/* Gamification Web - RPG HUD Style */
+/* ═══════════════════════════════════════════════════════════════════
+   Gamification Dashboard — RPG HUD v3.0
+   Full hero + dashboard styles
+═══════════════════════════════════════════════════════════════════ */
 body {
     background-color: #0b0c10;
     color: #e2e8f0;
+    font-family: 'Inter', 'Outfit', system-ui, sans-serif;
 }
 
+/* ── Hero Section ─────────────────────────────────────────── */
 .gamification-hero {
-    padding: 80px 0 40px;
-    background: radial-gradient(circle at 50% 0%, #1f1b2e 0%, #0b0c10 70%);
-    text-align: center;
-    border-bottom: 1px solid rgba(139, 92, 246, 0.2);
+    padding: 70px 0 50px;
+    background:
+        radial-gradient(ellipse 80% 60% at 50% 0%,  rgba(109,40,217,0.18) 0%, transparent 70%),
+        radial-gradient(ellipse 60% 40% at 10% 80%, rgba(236,72,153,0.10) 0%, transparent 60%),
+        #0b0c10;
+    border-bottom: 1px solid rgba(139,92,246,0.2);
     position: relative;
     overflow: hidden;
 }
 
-.gamification-hero::before {
+/* Dot-grid overlay */
+.hero-bg-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+        radial-gradient(circle, rgba(255,255,255,0.06) 1px, transparent 1px);
+    background-size: 28px 28px;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Floating ambient orbs */
+.hero-orb {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+    filter: blur(60px);
+    animation: orbFloat 8s ease-in-out infinite alternate;
+}
+.hero-orb-1 {
+    width: 340px; height: 340px;
+    background: radial-gradient(circle, rgba(139,92,246,0.22), transparent 70%);
+    top: -100px; left: -80px;
+}
+.hero-orb-2 {
+    width: 260px; height: 260px;
+    background: radial-gradient(circle, rgba(236,72,153,0.16), transparent 70%);
+    bottom: -80px; right: -50px;
+    animation-delay: -4s;
+}
+
+@keyframes orbFloat {
+    from { transform: translate(0,0) scale(1); }
+    to   { transform: translate(30px, 20px) scale(1.08); }
+}
+
+/* ── Two-panel Layout ─────────────────────────────────────── */
+.hero-layout {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: 0;
+    max-width: 900px;
+    margin: 0 auto;
+    background: rgba(15,23,42,0.72);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border: 1px solid rgba(139,92,246,0.28);
+    border-radius: 28px;
+    padding: 40px 44px;
+    box-shadow:
+        0 0 0 1px rgba(139,92,246,0.08),
+        0 24px 64px rgba(0,0,0,0.55),
+        inset 0 1px 0 rgba(255,255,255,0.06);
+    overflow: hidden;
+}
+
+/* aurora corners */
+.hero-layout::before {
     content: '';
     position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: url('data:image/svg+xml;utf8,<svg width="20" height="20" xmlns="http://www.w3.org/2000/svg"><circle cx="2" cy="2" r="1" fill="rgba(255,255,255,0.05)"/></svg>');
+    top: -70px; left: -70px;
+    width: 220px; height: 220px;
+    background: radial-gradient(circle, rgba(139,92,246,0.14), transparent 70%);
+    pointer-events: none;
+}
+.hero-layout::after {
+    content: '';
+    position: absolute;
+    bottom: -70px; right: -70px;
+    width: 220px; height: 220px;
+    background: radial-gradient(circle, rgba(236,72,153,0.10), transparent 70%);
     pointer-events: none;
 }
 
-.hero-content h1 {
-    font-size: 3rem;
+/* ── Left: Level Ring Side ────────────────────────────────── */
+.hero-level-side {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    flex-shrink: 0;
+    padding-right: 44px;
+}
+
+/* Circular ring */
+.level-ring-outer {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    flex-shrink: 0;
+}
+
+.level-ring-svg {
+    width: 200px;
+    height: 200px;
+    transform: rotate(-90deg);
+    filter: drop-shadow(0 0 16px rgba(139,92,246,0.5));
+}
+
+.lr-track {
+    fill: none;
+    stroke: rgba(255,255,255,0.07);
+    stroke-width: 9;
+}
+
+.lr-fill {
+    fill: none;
+    stroke-width: 9;
+    stroke-linecap: round;
+    transition: stroke-dashoffset 1.6s cubic-bezier(0.22,1,0.36,1);
+}
+
+/* Inner text inside the ring */
+.level-ring-inner {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    pointer-events: none;
+}
+
+.lvl-tag {
+    font-size: 0.6rem;
     font-weight: 800;
-    margin-bottom: 10px;
-    background: linear-gradient(135deg, #a78bfa 0%, #6d28d9 100%);
+    letter-spacing: 4px;
+    color: #64748b;
+    text-transform: uppercase;
+}
+
+.lvl-number {
+    font-size: 3.6rem;
+    font-weight: 900;
+    line-height: 1;
+    background: linear-gradient(135deg, #a78bfa 0%, #ec4899 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    text-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
+    filter: drop-shadow(0 0 12px rgba(167,139,250,0.6));
+    font-family: 'Outfit', sans-serif;
+    animation: levelPulse 3s ease-in-out infinite;
 }
 
-.hero-content p {
+@keyframes levelPulse {
+    0%, 100% { filter: drop-shadow(0 0 12px rgba(167,139,250,0.6)); }
+    50%       { filter: drop-shadow(0 0 22px rgba(167,139,250,0.9)); }
+}
+
+.lvl-subtitle {
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: #a78bfa;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-top: 2px;
+}
+
+/* XP bar below ring */
+.hero-xp-section {
+    width: 100%;
+    max-width: 200px;
+}
+
+.hero-xp-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.72rem;
+    color: #64748b;
+    margin-bottom: 6px;
+    font-weight: 600;
+}
+
+.xp-label-left { color: #a78bfa; }
+
+.hero-xp-track {
+    height: 8px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 99px;
+    overflow: hidden;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.4);
+    position: relative;
+}
+
+.hero-xp-fill {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #7c3aed, #a78bfa, #ec4899);
+    border-radius: 99px;
+    box-shadow: 0 0 10px rgba(167,139,250,0.7);
+    transition: width 1.4s cubic-bezier(0.22,1,0.36,1);
+    position: relative;
+}
+
+.hero-xp-fill::after {
+    content: '';
+    position: absolute;
+    top: 0; left: -100%; bottom: 0;
+    width: 60%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    animation: shimmer 2.5s infinite;
+}
+
+.hero-xp-pct {
+    font-size: 0.65rem;
+    color: #475569;
+    margin-top: 4px;
+    display: block;
+    text-align: right;
+}
+
+/* ── Vertical Divider ─────────────────────────────────────── */
+.hero-vdivider {
+    width: 1px;
+    align-self: stretch;
+    background: linear-gradient(
+        180deg,
+        transparent 0%,
+        rgba(139,92,246,0.5) 25%,
+        rgba(236,72,153,0.5) 75%,
+        transparent 100%
+    );
+    flex-shrink: 0;
+    margin: 0 44px 0 0;
+}
+
+/* ── Right: Info & Stats Side ─────────────────────────────── */
+.hero-info-side {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.hero-handle-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.hero-handle-badge {
+    width: 36px; height: 36px;
+    background: linear-gradient(135deg, #7c3aed, #db2777);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 0.9rem;
+    box-shadow: 0 0 14px rgba(124,58,237,0.5);
+    flex-shrink: 0;
+}
+
+.hero-username {
+    font-size: 1.2rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: #e2e8f0;
+    text-transform: uppercase;
+    font-family: 'Outfit', sans-serif;
+}
+
+.hero-subtitle {
+    font-size: 0.78rem;
+    color: #64748b;
+    letter-spacing: 0.5px;
+    margin-top: 1px;
+}
+
+.hero-desc {
+    font-size: 0.88rem;
     color: #94a3b8;
-    font-size: 1.1rem;
-    max-width: 600px;
-    margin: 0 auto 30px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Big success rate */
+.hero-success-rate {
+    display: flex;
+    align-items: baseline;
+    gap: 4px;
+    flex-wrap: wrap;
+}
+
+.hsr-number {
+    font-size: 3.2rem;
+    font-weight: 900;
+    line-height: 1;
+    background: linear-gradient(135deg, #34d399, #06b6d4);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: 'Outfit', sans-serif;
+}
+
+.hsr-unit {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #34d399;
+    -webkit-text-fill-color: #34d399;
+}
+
+.hsr-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: #64748b;
+    text-transform: uppercase;
+    flex-basis: 100%;
+    margin-top: -2px;
+}
+
+/* Mini category progress bars in hero */
+.hero-cat-bars {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.hero-cat-bar-row {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.hcb-meta {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.78rem;
+}
+
+.hcb-icon { font-size: 0.85rem; }
+
+.hcb-name {
+    flex: 1;
+    color: #cbd5e1;
+    font-weight: 600;
+}
+
+.hcb-lvl {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.hcb-track {
+    height: 6px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 99px;
+    overflow: hidden;
+}
+
+.hcb-fill {
+    height: 100%;
+    width: 0%;
+    border-radius: 99px;
+    transition: width 1.4s cubic-bezier(0.22,1,0.36,1);
+    position: relative;
+}
+
+.hcb-fill::after {
+    content: '';
+    position: absolute;
+    top: 0; left: -100%; bottom: 0;
+    width: 60%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
+    animation: shimmer 2.8s infinite;
+}
+
+/* Days tracked row */
+.hero-days-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.82rem;
+    color: #64748b;
+    font-weight: 500;
+}
+
+.hero-days-row i { color: #a78bfa; }
+
+/* ── Responsive ───────────────────────────────────────────── */
+@media (max-width: 768px) {
+    .hero-layout {
+        flex-direction: column;
+        padding: 32px 24px;
+        gap: 28px;
+    }
+    .hero-level-side {
+        padding-right: 0;
+    }
+    .hero-vdivider {
+        width: 100%;
+        height: 1px;
+        align-self: auto;
+        margin: 0;
+        background: linear-gradient(90deg, transparent, rgba(139,92,246,0.4), transparent);
+    }
+    .hsr-number { font-size: 2.6rem; }
+    .lvl-number  { font-size: 3rem; }
+    .level-ring-outer { width: 170px; height: 170px; }
+    .level-ring-svg   { width: 170px; height: 170px; }
 }
 
 
 /* ═══════════════════════════════════════════════════════════════════
-   PREMIUM CHARACTER CARD (hero section)
+   [LEGACY CARD — kept for reference only, not used in new hero]
 ═══════════════════════════════════════════════════════════════════ */
-.character-card {
+.character-card--UNUSED {
     display: flex;
     align-items: center;
     gap: 0;

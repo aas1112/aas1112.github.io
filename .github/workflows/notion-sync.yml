@@ -1,42 +1,47 @@
-name: Notion Library Sync
+name: Notion Data Sync
 
 on:
   push:
     branches: [ "main" ]
   schedule:
-    # Runs every day at midnight UTC
-    - cron: '0 0 * * *'
-  workflow_dispatch: # Allows manual trigger from github actions UI
+    # Her 30 dakikada bir çalıştır (UTC)
+    - cron: '*/30 * * * *'
+  workflow_dispatch: # GitHub Actions UI'dan manuel tetikleme
 
 jobs:
-  update-library:
+  sync-notion-data:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
       - name: Setup Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
-          python-version: '3.10'
+          python-version: '3.11'
 
       - name: Install Dependencies
         run: pip install requests
 
-      - name: Run Fetch Scripts
+      - name: Fetch Library Data (Notion → kitaplar.json)
         env:
           NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
           NOTION_DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}
+        run: python scripts/fetch_notion.py
+
+      - name: Fetch Gamification Data (Notion → gamification.json)
+        env:
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
           NOTION_GAMIFICATION_ID: ${{ secrets.NOTION_GAMIFICATION_ID }}
-        run: |
-          python scripts/fetch_notion.py
-          python scripts/fetch_gamification.py
+        run: python scripts/fetch_gamification.py
 
       - name: Commit and Push Changes
         run: |
-          git config --global user.name "aas1112"
-          git config --global user.email "ahmetardaszgnas@gmail.com"
-          git add kitaplar.json
-          git add gamification.json || true
-          git commit -m "Auto-update :books: data from Notion"
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add kitaplar.json gamification.json
+          git diff --staged --quiet || git commit -m "chore: auto-sync Notion data [$(date -u '+%Y-%m-%d %H:%M UTC')]"
           git push

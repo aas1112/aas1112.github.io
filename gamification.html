@@ -44,36 +44,78 @@
     </header>
 
     <main class="gamification-page">
-        <!-- Hero Section -->
+        <!-- Hero Section — Redesigned Character Sheet -->
         <section class="gamification-hero">
             <div class="container">
                 <div class="hero-content">
                     <h1>Gelişim & Başarım Ağı</h1>
                     <p>Notion'a girdiğim günlük disiplinlerin görsel veritabanı. Sürekli gelişim.</p>
                 </div>
-                
-                <!-- Player Status Card -->
-                <div class="user-info-card">
-                    <div class="user-avatar-container">
-                        <i class="fas fa-user-astronaut fa-3x" style="color:var(--primary-color)"></i>
+
+                <!-- ── Premium Character Card ─────────────────────── -->
+                <div class="character-card">
+
+                    <!-- Left: Avatar + level ring -->
+                    <div class="char-avatar-side">
+                        <div class="char-ring-wrap">
+                            <!-- SVG level ring -->
+                            <svg class="ring-svg" viewBox="0 0 120 120">
+                                <circle class="ring-track" cx="60" cy="60" r="52"/>
+                                <circle class="ring-fill" id="heroRingFill" cx="60" cy="60" r="52"
+                                        stroke-dasharray="326.7"
+                                        stroke-dashoffset="326.7"/>
+                            </svg>
+                            <div class="char-avatar-inner">
+                                <i class="fas fa-user-astronaut"></i>
+                            </div>
+                        </div>
+                        <span class="char-level-label">LVL</span>
+                        <span class="char-level-num" id="heroGlobalLevel">–</span>
                     </div>
-                    <div class="user-stats">
-                        <div class="stat-item">
-                            <span class="stat-label">Sistem Görüntüsü</span>
-                            <span class="stat-value" id="currentUsername">AAS1112</span>
+
+                    <!-- Divider -->
+                    <div class="char-divider"></div>
+
+                    <!-- Right: Stats grid -->
+                    <div class="char-stats-side">
+                        <div class="char-handle">
+                            <span class="handle-badge"><i class="fas fa-terminal"></i></span>
+                            <span class="handle-name">AAS1112</span>
                         </div>
-                        <div class="stat-item">
-                            <span class="stat-label">Disiplin Modülü</span>
-                            <span class="stat-value" id="userLevel">0</span> 
-                            <span style="font-size: 0.8rem; opacity:0.7">GN (Gün)</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-label">Toplam Başarım Oranı</span>
-                            <span class="stat-value" id="userXP">0</span>
-                            <span class="stat-value-small">%</span>
+
+                        <div class="char-stats-grid">
+                            <!-- Global XP bar -->
+                            <div class="char-stat-block full">
+                                <div class="char-stat-header">
+                                    <span class="char-stat-label">GLOBAL EXP</span>
+                                    <span class="char-stat-value" id="heroGlobalExp">–</span>
+                                </div>
+                                <div class="char-xp-track">
+                                    <div class="char-xp-fill" id="heroXpFill" style="width:0%"></div>
+                                </div>
+                                <div class="char-xp-meta">
+                                    <span id="heroXpPct">–%</span>
+                                    <span id="heroXpToNext">Yükleniyor…</span>
+                                </div>
+                            </div>
+
+                            <!-- Overall success rate -->
+                            <div class="char-stat-block">
+                                <span class="char-stat-label">BAŞARIM ORANI</span>
+                                <span class="char-stat-big" id="userXP">–</span>
+                                <span class="char-stat-unit">%</span>
+                            </div>
+
+                            <!-- Days tracked -->
+                            <div class="char-stat-block">
+                                <span class="char-stat-label">TAKİP GÜN</span>
+                                <span class="char-stat-big" id="userLevel">–</span>
+                                <span class="char-stat-unit">GN</span>
+                            </div>
                         </div>
                     </div>
-                </div>
+
+                </div><!-- /character-card -->
             </div>
         </section>
 
@@ -87,28 +129,35 @@
         <section id="dashboardContent" class="gamification-content" style="display: none;">
             <div class="container">
                 <div class="dashboard-grid">
-                    
+
+                    <!-- ══ SKILL LEVEL CARDS (full width) ══ -->
+                    <div class="dashboard-card skill-cards-wrapper" style="grid-column: 1 / -1;">
+                        <h3><i class="fas fa-layer-group"></i> Yetenek Seviyeleri</h3>
+                        <p class="text-muted" style="margin-bottom: 25px; font-size: 0.9rem;">
+                            Birikimli EXP → Level dönüşümü &nbsp;|&nbsp;
+                            <code style="background:rgba(255,255,255,0.05);padding:2px 6px;border-radius:4px;font-size:0.8rem;">EXP Eşiği&nbsp;=&nbsp;100 × level<sup>1.5</sup></code>
+                        </p>
+                        <div id="levelCardsContainer" class="level-cards-grid"></div>
+                    </div>
+
                     <!-- Recent Efforts Snapshot -->
                     <div class="dashboard-card today-card">
                         <h3><i class="fas fa-bolt"></i> Yakın Dönem Eforu</h3>
                         <p class="text-muted" style="margin-bottom: 25px; font-size: 0.9rem;">Son 5 güne ait disiplin barı</p>
-                        
-                        <div id="recentDaysList" class="recent-days-list">
-                            <!-- JS ile üretilecek progress barlar -->
-                        </div>
+                        <div id="recentDaysList" class="recent-days-list"></div>
                     </div>
 
-                    <!-- Radar Chart: Disiplin Dağılımı -->
+                    <!-- Radar Chart: Today's Snapshot -->
                     <div class="dashboard-card chart-card">
-                        <h3><i class="fas fa-spider"></i> Alışkanlık Odak Dağılımı</h3>
-                        <p class="text-muted" style="margin-bottom: 10px; font-size: 0.9rem;">Hangi alanlarda daha istikrarlıyım?</p>
+                        <h3><i class="fas fa-spider"></i> Bugünkü Yetenek Haritası</h3>
+                        <p class="text-muted" style="margin-bottom: 10px; font-size: 0.9rem;">Günlük tamamlanma yüzdelerine göre 4 kategori radari</p>
                         <div id="radarChart"></div>
                     </div>
 
-                    <!-- Github Style Heatmap (Activity Calendar) -->
+                    <!-- Github Style Heatmap -->
                     <div class="dashboard-card heatmap-card" style="grid-column: 1 / -1;">
                         <h3><i class="fas fa-calendar-check"></i> Tarihsel Devamlılık Ağı (Son 30 Gün)</h3>
-                        <p class="text-muted" style="margin-bottom: 20px; font-size: 0.9rem;">Günlük disiplin yoğunluğu</p>
+                        <p class="text-muted" style="margin-bottom: 20px; font-size: 0.9rem;">Günlük genel disiplin yoğunluğu</p>
                         <div id="heatmapChart"></div>
                     </div>
 

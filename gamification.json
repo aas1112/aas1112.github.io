@@ -22,12 +22,12 @@
     "categories": {
       "Mental": {
         "completedMinutes": 0,
-        "maxMinutes": 270,
+        "maxMinutes": 300,
         "exp": 0
       },
       "Career": {
         "completedMinutes": 0,
-        "maxMinutes": 120,
+        "maxMinutes": 150,
         "exp": 0
       },
       "Stamina": {
@@ -64,13 +64,13 @@
     },
     "categories": {
       "Mental": {
-        "completedMinutes": 90,
-        "maxMinutes": 270,
-        "exp": 33
+        "completedMinutes": 120,
+        "maxMinutes": 300,
+        "exp": 40
       },
       "Career": {
         "completedMinutes": 0,
-        "maxMinutes": 120,
+        "maxMinutes": 150,
         "exp": 0
       },
       "Stamina": {
@@ -108,13 +108,13 @@
     "categories": {
       "Mental": {
         "completedMinutes": 0,
-        "maxMinutes": 270,
+        "maxMinutes": 300,
         "exp": 0
       },
       "Career": {
-        "completedMinutes": 30,
-        "maxMinutes": 120,
-        "exp": 25
+        "completedMinutes": 60,
+        "maxMinutes": 150,
+        "exp": 40
       },
       "Stamina": {
         "completedMinutes": 15,

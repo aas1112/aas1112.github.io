@@ -9,8 +9,8 @@
       "Makale-30": false,
       "Ders-90": false,
       "Yabancı Dil-30": false,
-      "Felsefe-60": false,
-      "Mühendislik Haberleri-30": false,
+      "Felsefe-60": true,
+      "Mühendislik Haberleri-30": true,
       "Soğuk Duş-15": true,
       "Proje Fikri-30": false,
       "Sosyal-75": false,
@@ -21,9 +21,9 @@
     },
     "categories": {
       "Mental": {
-        "completedMinutes": 0,
+        "completedMinutes": 90,
         "maxMinutes": 300,
-        "exp": 0
+        "exp": 30
       },
       "Career": {
         "completedMinutes": 0,

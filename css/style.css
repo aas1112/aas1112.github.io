@@ -190,7 +190,57 @@ body {
     cursor: pointer;
 }
 
-/* Hero Section */
+/* Hero CTA Buttons */
+.hero-cta-row {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.btn-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.85rem 2rem;
+    border-radius: 50px;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    letter-spacing: 0.3px;
+}
+
+.btn-primary-cta {
+    background: var(--gradient-primary);
+    color: #fff;
+    border: none;
+    box-shadow: 0 8px 24px -4px rgba(99, 102, 241, 0.5);
+}
+
+.btn-primary-cta:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 32px -4px rgba(99, 102, 241, 0.65);
+    filter: brightness(1.1);
+}
+
+.btn-secondary-cta {
+    background: transparent;
+    color: var(--text-color);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.btn-secondary-cta:hover {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(99, 102, 241, 0.5);
+    color: white;
+    transform: translateY(-3px);
+}
+
+/* Social links */
+
 .hero {
     min-height: 100vh;
     display: flex;

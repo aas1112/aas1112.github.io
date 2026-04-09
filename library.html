@@ -3,8 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kütüphane - Ahmet Arda Sezgin</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <meta name="description" content="Ahmet Arda Sezgin'in okuduğu kitaplar, makaleler ve ders notlarından oluşan kişisel bilgi arşivi. Notion ile otomatik güncellenir.">
+    <title>Kütüphane — Ahmet Arda Sezgin</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;700;800&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/library.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js/dist/chart.umd.js"></script>
@@ -43,38 +47,38 @@
         <div class="container">
             <h1 class="library-title">Kütüphane</h1>
 
-            <!-- YENİ SIRA: 1. Bu Yıl Okuduklarım -->
+            <!-- 1. Bu Yıl Okuduklarım (Raf Filmi) -->
             <div class="showcase-shelf-container">
-                <h2 class="shelf-title"><i class="fas fa-book-open"></i> Bu Yıl Okuduklarım</h2>
+                <h2 class="shelf-title"><i class="fas fa-bookmark"></i> Bu Yıl Okuduklarım</h2>
                 <div class="wooden-shelf" id="yearly-shelf">
                     <!-- JS tarafından kitaplar buraya eklenecek -->
                 </div>
             </div>
 
-            <!-- YENİ SIRA: 2. Aylık Okuma İstatistikleri -->
+            <!-- 2. Aylık Okuma İstatistikleri -->
             <div class="stats-container">
-                <h2 class="stats-title"><i class="fas fa-chart-bar"></i> Aylık Okuma İstatistikleri</h2>
+                <h2 class="stats-title"><i class="fas fa-chart-column"></i> Aylık Okuma İstatistikleri</h2>
                 <div class="chart-wrapper">
                     <canvas id="readingStatsChart"></canvas>
                 </div>
             </div>
 
-            <!-- YENİ SIRA: 3. Kategori ve Durum Filtreleri -->
+            <!-- 3. Kategori ve Durum Filtreleri -->
             <div class="library-filters">
                 <div class="filter-group">
-                    <span class="filter-label"><i class="fas fa-book-reader"></i> Durum:</span>
+                    <span class="filter-label"><i class="fas fa-signal"></i> Durum:</span>
                     <button class="filter-btn status-btn active" data-filter="all">Tümü</button>
                     <button class="filter-btn status-btn" data-filter="Okunuyor">Okunuyor</button>
                     <button class="filter-btn status-btn" data-filter="Okundu">Okundu</button>
                     <button class="filter-btn status-btn" data-filter="Okunacak">Okunacak</button>
                 </div>
-                
+
                 <div class="filter-group" id="dynamic-filters">
-                    <!-- Dinamik Kategori Butonları Gelecek -->
+                    <!-- Dinamik Kategori Butonları — JS tarafından oluşturulur -->
                 </div>
             </div>
 
-            <!-- YENİ SIRA: 4. Kitap Listesi -->
+            <!-- 4. Tüm İçerik Izgarası -->
             <h2 class="grid-title"><i class="fas fa-layer-group"></i> Tüm Kütüphane</h2>
             <div class="books-grid" id="books-grid">
                 <!-- JS tarafından doldurulacak -->

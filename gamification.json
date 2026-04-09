@@ -13,7 +13,7 @@
       "Mühendislik Haberleri-30": true,
       "Soğuk Duş-15": true,
       "Proje Fikri-30": false,
-      "Sosyal-75": false,
+      "Sosyal-75": true,
       "Gün Planı-15": false,
       "Kişisel Proje-90": true,
       "Bakım-15": true,
@@ -36,9 +36,9 @@
         "exp": 20
       },
       "Willpower": {
-        "completedMinutes": 0,
+        "completedMinutes": 75,
         "maxMinutes": 150,
-        "exp": 0
+        "exp": 50
       }
     }
   },

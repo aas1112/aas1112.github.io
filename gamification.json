@@ -6,7 +6,7 @@
     "habits": {
       "Spor-180": false,
       "İş Arama-30": false,
-      "Makale-30": false,
+      "Makale-30": true,
       "Ders-90": false,
       "Yabancı Dil-30": false,
       "Felsefe-60": true,
@@ -21,9 +21,9 @@
     },
     "categories": {
       "Mental": {
-        "completedMinutes": 90,
+        "completedMinutes": 120,
         "maxMinutes": 300,
-        "exp": 30
+        "exp": 40
       },
       "Career": {
         "completedMinutes": 0,

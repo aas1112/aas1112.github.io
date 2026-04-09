@@ -6,10 +6,10 @@
  *
  *  Categories & max daily minutes
  *  ─────────────────────────────────────────────────────────────────
- *  Mental    (Zihinsel)  : Ders-90, Makale-30, Okuma-60, Yabancı Dil-30, Felsefe-60   → 270 dk
- *  Career    (Kariyer)   : Kişisel Proje-90, İş Arama-30                               → 120 dk
- *  Stamina   (Fiziksel)  : Spor-180, Soğuk Duş-15, Bakım-15                           → 210 dk
- *  Willpower (İrade)     : Sosyal-75, Gün Planı-15                                     → 90 dk
+ *  Mental    (Zihinsel)  : Ders-120, Makale-30, Felsefe-60                            → 210 dk
+ *  Career    (Kariyer)   : Kişisel Proje-90, İş Arama-30, Proje Fikri-30, Mühendislik Haberleri-30, Yabancı Dil-30 → 210 dk
+ *  Stamina   (Fiziksel)  : Spor-120, Soğuk Duş-15, Bakım-15                           → 150 dk
+ *  Willpower (İrade)     : Sosyal-75, Gün Planı-15, Okuma-60                          → 150 dk
  *
  *  Normalised EXP formula (per day, per category):
  *    EXP = round( (completedMinutes / maxMinutes) × 100 )
@@ -24,10 +24,10 @@
 
 // ─── Category meta ──────────────────────────────────────────────────────────
 const CATEGORIES = {
-    Mental:    { label: 'Mental',    icon: '🧠', color: '#818cf8', glow: 'rgba(129,140,248,0.5)', maxMinutes: 270 },
-    Career:    { label: 'Career',    icon: '⚡', color: '#34d399', glow: 'rgba(52,211,153,0.5)',  maxMinutes: 120 },
-    Stamina:   { label: 'Stamina',   icon: '🔥', color: '#f472b6', glow: 'rgba(244,114,182,0.5)', maxMinutes: 210 },
-    Willpower: { label: 'Willpower', icon: '🛡️', color: '#fbbf24', glow: 'rgba(251,191,36,0.5)',  maxMinutes: 90  },
+    Mental:    { label: 'Mental',    icon: '🧠', color: '#818cf8', glow: 'rgba(129,140,248,0.5)', maxMinutes: 210 },
+    Career:    { label: 'Career',    icon: '⚡', color: '#34d399', glow: 'rgba(52,211,153,0.5)',  maxMinutes: 210 },
+    Stamina:   { label: 'Stamina',   icon: '🔥', color: '#f472b6', glow: 'rgba(244,114,182,0.5)', maxMinutes: 150 },
+    Willpower: { label: 'Willpower', icon: '🛡️', color: '#fbbf24', glow: 'rgba(251,191,36,0.5)',  maxMinutes: 150  },
 };
 
 // ─── Levelling helpers ───────────────────────────────────────────────────────
@@ -94,10 +94,10 @@ function aggregateCategoryEXP(records) {
             // (in case JSON is old format)
             const raw = day.habits || {};
             const FALLBACK = {
-                Mental:    { 'Ders-90': 90, 'Makale-30': 30, 'Okuma-60': 60, 'Yabancı Dil-30': 30, 'Felsefe-60': 60, 'Mühendislik Haberleri-30': 30 },
-                Career:    { 'Kişisel Proje-90': 90, 'İş Arama-30': 30, 'Proje Fikri-30': 30 },
-                Stamina:   { 'Spor-180': 180, 'Soğuk Duş-15': 15, 'Bakım-15': 15 },
-                Willpower: { 'Sosyal-75': 75, 'Gün Planı-15': 15 },
+                Mental:    { 'Ders-120': 120, 'Makale-30': 30, 'Felsefe-60': 60 },
+                Career:    { 'Kişisel Proje-90': 90, 'İş Arama-30': 30, 'Proje Fikri-30': 30, 'Mühendislik Haberleri-30': 30, 'Yabancı Dil-30': 30 },
+                Stamina:   { 'Spor-120': 120, 'Soğuk Duş-15': 15, 'Bakım-15': 15 },
+                Willpower: { 'Sosyal-75': 75, 'Gün Planı-15': 15, 'Okuma-60': 60 },
             };
             for (const [cat, tasks] of Object.entries(FALLBACK)) {
                 const maxMins  = Object.values(tasks).reduce((a, b) => a + b, 0);

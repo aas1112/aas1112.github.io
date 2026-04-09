@@ -17,26 +17,26 @@ headers = {
 # ─────────────────────────────────────────────────────────────────────────────
 CATEGORY_CONFIG = {
     "Mental": {
-        "Ders-90":                   90,
+        "Ders-120":                  120,
         "Makale-30":                 30,
-        "Okuma-60":                  60,
-        "Yabancı Dil-30":            30,
         "Felsefe-60":                60,
-        "Mühendislik Haberleri-30":  30,   # Notion'dan gelen gerçek isim
     },
     "Career": {
         "Kişisel Proje-90": 90,
         "İş Arama-30":      30,
         "Proje Fikri-30":   30,            # Notion'dan gelen gerçek isim
+        "Mühendislik Haberleri-30":  30,
+        "Yabancı Dil-30":            30,
     },
     "Stamina": {
-        "Spor-180":      180,
+        "Spor-120":      120,
         "Soğuk Duş-15":   15,
         "Bakım-15":        15,
     },
     "Willpower": {
         "Sosyal-75":    75,
         "Gün Planı-15": 15,
+        "Okuma-60":     60,
     },
 }
 

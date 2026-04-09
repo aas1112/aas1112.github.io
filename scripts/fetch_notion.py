@@ -85,6 +85,11 @@ def fetch_all_blocks(page_id):
         else:
             break
 
+    # Recursively fetch children for blocks that have them (especially handling tables and list items)
+    for b in blocks:
+        if b.get("has_children"):
+            b["children"] = fetch_all_blocks(b["id"])
+
     return blocks
 
 
@@ -227,11 +232,16 @@ def main():
         print(f"   ↳ {art['title'][:50]!r} ({pid[:8]}…)")
         blocks = fetch_all_blocks(pid)
 
-        # Sadece frontend'in ihtiyaç duyduğu alanları bırak (bant genişliği tasarrufu)
-        slim_blocks = []
-        for b in blocks:
-            slim = {"type": b["type"], b["type"]: b.get(b["type"], {})}
-            slim_blocks.append(slim)
+        def shrink_blocks(block_list):
+            out = []
+            for b in block_list:
+                slim = {"type": b["type"], b["type"]: b.get(b["type"], {})}
+                if "children" in b:
+                    slim["children"] = shrink_blocks(b["children"])
+                out.append(slim)
+            return out
+
+        slim_blocks = shrink_blocks(blocks)
 
         out_path = os.path.join(ARTICLE_DIR, f"{pid}.json")
         with open(out_path, "w", encoding="utf-8") as f:

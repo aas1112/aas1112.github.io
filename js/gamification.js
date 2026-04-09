@@ -226,22 +226,23 @@ function renderHeroCatBars(categoryTotals) {
 
 // ─── Radar Chart (ApexCharts) ─────────────────────────────────────────────────
 
-function renderRadarChart(records) {
-    if (records.length === 0) return;
-
-    const todayData  = getTodayRadarData(records);
+function renderRadarChart(categoryTotals) {
     const labels     = Object.keys(CATEGORIES);
-    const seriesData = labels.map(cat => todayData[cat] || 0);
+    const seriesData = labels.map(cat => computeLevel(categoryTotals[cat] || 0).level);
     const colors     = labels.map(cat => CATEGORIES[cat].color);
 
+    // Find the max level to set the radar axis properly
+    const maxLevel   = Math.max(...seriesData, 5);
+
     const options = {
-        series: [{ name: "Bugünkü Tamamlanma (%)", data: seriesData }],
+        series: [{ name: "Yetenek Seviyesi", data: seriesData }],
         chart: {
-            height: 360,
+            height: 480, // Increased height for larger container
             type: 'radar',
             toolbar: { show: false },
             background: 'transparent',
-            animations: { enabled: true, easing: 'easeinout', speed: 900 }
+            animations: { enabled: true, easing: 'easeinout', speed: 900 },
+            parentHeightOffset: 0
         },
         theme: { mode: 'dark' },
         labels,
@@ -251,6 +252,7 @@ function renderRadarChart(records) {
         markers: { size: 5, colors: ['#fff'], strokeColors: '#a78bfa', strokeWidth: 2 },
         plotOptions: {
             radar: {
+                size: 130, // Reduced from 180 to fit labels horizontally and prevent clipping
                 polygons: {
                     strokeColors:      'rgba(255,255,255,0.07)',
                     connectorColors:   'rgba(255,255,255,0.07)',
@@ -260,26 +262,33 @@ function renderRadarChart(records) {
         },
         yaxis: {
             min: 0,
-            max: 100,
-            tickAmount: 5,
+            max: maxLevel + 1,
+            tickAmount: maxLevel + 1,
             labels: {
-                formatter: v => v.toFixed(0) + '%',
+                formatter: v => Math.floor(v),
                 style: { colors: ['#94a3b8'], fontSize: '11px' }
             }
         },
         xaxis: {
             labels: {
-                style: { colors: labels.map(cat => CATEGORIES[cat].color), fontSize: '13px', fontWeight: 700 }
+                style: { colors: labels.map(cat => CATEGORIES[cat].color), fontSize: '14px', fontWeight: 700 }
             }
         },
         tooltip: {
-            y: { formatter: v => v + ' EXP puan' }
+            y: { formatter: v => 'Level ' + v }
         }
     };
 
     const el = document.querySelector('#radarChart');
     if (!el) return;
     el.innerHTML = '';
+    
+    // Change heading title to reflect total logic
+    const titleEl = el.parentElement.querySelector('h2');
+    if (titleEl) {
+        titleEl.innerHTML = '<i class="fas fa-spider"></i> Karakter Yetenek Dağılımı';
+    }
+
     new ApexCharts(el, options).render();
 }
 
@@ -290,14 +299,26 @@ function renderRecentEfforts(recordsDesc) {
     if (!listDiv) return;
     listDiv.innerHTML = '';
 
-    recordsDesc.slice(0, 5).forEach(day => {
+    recordsDesc.slice(0, 7).forEach(day => {
         const pct = getDailyOverallPct(day);
+
+        // API'den gelen day.date ayni olabilir, bu yuzden de day.name (asıl gün adı YYYY-MM-DD olarak gelir) kontrol edelim.
+        const dateStr = /^\d{4}-\d{2}-\d{2}$/.test(day.name) ? day.name : day.date;
+        const d = new Date(dateStr);
+        const dayNames = ['Pazar', 'Pazartesi', 'Salı', 'Çarşamba', 'Perşembe', 'Cuma', 'Cumartesi'];
+        const monthNames = ['Ocak', 'Şubat', 'Mart', 'Nisan', 'Mayıs', 'Haziran', 'Temmuz', 'Ağustos', 'Eylül', 'Ekim', 'Kasım', 'Aralık'];
+        
+        const isToday = new Date().toISOString().split('T')[0] === dateStr;
+        const dayName = isToday ? 'Bugün' : dayNames[d.getDay()];
+        const formattedDate = `${d.getDate().toString().padStart(2, '0')} ${monthNames[d.getMonth()]}`;
+
+        const subLabel = dateStr !== day.name ? day.name : day.date; // Use the other string as small sublabel
 
         const row = document.createElement('div');
         row.className = 'recent-day-row';
         row.innerHTML = `
             <div class="recent-day-header">
-                <span><strong>${day.date}</strong> <span style="opacity:0.6; font-size:0.8rem">- ${day.name}</span></span>
+                <span><strong style="font-size: 1.05em; font-weight: 700;">${dayName}</strong> <span style="opacity:0.6; font-size:0.8rem; margin-left: 6px;">${formattedDate}</span> <span style="opacity:0.4; font-size:0.75rem; margin-left: 4px;">• ${subLabel}</span></span>
                 <span style="font-weight:700; color:#a78bfa; text-shadow: 0 0 5px rgba(167,139,250,0.4);">${pct}%</span>
             </div>
             <div class="progress-bar-container" style="height: 10px; margin-bottom: 0;">
@@ -510,8 +531,8 @@ document.addEventListener('DOMContentLoaded', async () => {
         updateHeroCharacterCard(categoryTotals);
 
 
-        // ③ Radar chart (today's snapshot)
-        renderRadarChart(recordsDesc);
+        // ③ Radar chart (overall Character Build)
+        renderRadarChart(categoryTotals);
 
         // ④ Recent 5 days
         renderRecentEfforts(recordsDesc);

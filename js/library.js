@@ -648,13 +648,13 @@ document.addEventListener('DOMContentLoaded', () => {
     function renderTable(tableBlock) {
         const rows = tableBlock.table?.rows || tableBlock.children || [];
         if (!rows.length) return '';
-        let t = '<table class="notion-table"><tbody>';
+        let t = '<div class="notion-table-container" style="overflow-x: auto;"><table class="notion-table"><tbody>';
         rows.forEach((row, ri) => {
             const cells = row.table_row?.cells || [];
             const tag   = ri === 0 && tableBlock.table?.has_column_header ? 'th' : 'td';
             t += '<tr>' + cells.map(cell => `<${tag}>${richTextToHtml(cell)}</${tag}>`).join('') + '</tr>';
         });
-        return t + '</tbody></table>';
+        return t + '</tbody></table></div>';
     }
 
     /* ── HTML escape ── */

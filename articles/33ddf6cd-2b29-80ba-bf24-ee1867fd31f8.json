@@ -581,7 +581,93 @@
         }
       ],
       "color": "default"
-    }
+    },
+    "children": [
+      {
+        "type": "bulleted_list_item",
+        "bulleted_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Fiziksel Model Tabanlı:",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": true,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Fiziksel Model Tabanlı:",
+              "href": null
+            },
+            {
+              "type": "text",
+              "text": {
+                "content": " Görüntünün ne kadar puslu olduğunu tahmin eden \"karanlık kanal önceliği\" (dark channel prior) veya dalga boyu telafisi gibi yöntemlerle derinlik haritaları çıkarılarak görüntü netleştirilir.",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": " Görüntünün ne kadar puslu olduğunu tahmin eden \"karanlık kanal önceliği\" (dark channel prior) veya dalga boyu telafisi gibi yöntemlerle derinlik haritaları çıkarılarak görüntü netleştirilir.",
+              "href": null
+            }
+          ],
+          "color": "default"
+        }
+      },
+      {
+        "type": "bulleted_list_item",
+        "bulleted_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Fiziksel Olmayan Model Tabanlı:",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": true,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Fiziksel Olmayan Model Tabanlı:",
+              "href": null
+            },
+            {
+              "type": "text",
+              "text": {
+                "content": " Görüntünün histogramını eşitleyerek (CLAHE vb.) veya farklı pozlanmış görüntüleri birleştirerek (HDR fusion) kontrastı artırır. Ancak bu yöntemlerde bazen renk bozulmaları yaşanabilir.",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": " Görüntünün histogramını eşitleyerek (CLAHE vb.) veya farklı pozlanmış görüntüleri birleştirerek (HDR fusion) kontrastı artırır. Ancak bu yöntemlerde bazen renk bozulmaları yaşanabilir.",
+              "href": null
+            }
+          ],
+          "color": "default"
+        }
+      }
+    ]
   },
   {
     "type": "bulleted_list_item",
@@ -717,6 +803,1504 @@
       "table_width": 3,
       "has_column_header": false,
       "has_row_header": false
-    }
+    },
+    "children": [
+      {
+        "type": "table_row",
+        "table_row": {
+          "cells": [
+            [
+              {
+                "type": "text",
+                "text": {
+                  "content": "Algorithm",
+                  "link": null
+                },
+                "annotations": {
+                  "bold": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                },
+                "plain_text": "Algorithm",
+                "href": null
+              }
+            ],
+            [
+              {
+                "type": "text",
+                "text": {
+                  "content": "Model's characteristics",
+                  "link": null
+                },
+                "annotations": {
+                  "bold": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                },
+                "plain_text": "Model's characteristics",
+                "href": null
+              }
+            ],
+            [
+              {
+                "type": "text",
+                "text": {
+                  "content": "Method & Full Reference",
+                  "link": null
+                },
+                "annotations": {
+                  "bold": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                },
+                "plain_text": "Method & Full Reference",
+                "href": null
+              }
+            ]
+          ]
+        }
+      },
+      {
+        "type": "table_row",
+        "table_row": {
+          "cells": [
+            [
+              {
+                "type": "text",
+                "text": {
+                  "content": "Review",
+                  "link": null
+                },
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                },
+                "plain_text": "Review",
+                "href": null
+              }
+            ],
+            [
+              {
+                "type": "text",
+                "text": {
+                  "content": "-",
+                  "link": null
+                },
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                },
+                "plain_text": "-",
+                "href": null
+              }
+            ],
+            [
+              {
+                "type": "text",
+                "text": {
+                  "content": "Kocak D, Dalgleish F, Caimi F, Schechner Y (2008) A focus on recent developments and trends in underwater imaging. Mar Technol Soc J 42(1):52-67 ",
+                  "link": null
+                },
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                },
+                "plain_text": "Kocak D, Dalgleish F, Caimi F, Schechner Y (2008) A focus on recent developments and trends in underwater imaging. Mar Technol Soc J 42(1):52-67 ",
+                "href": null
+              }
+            ]
+          ]
+        }
+      },
+      {
+        "type": "table_row",
+        "table_row": {
+          "cells": [
+            [],
+            [
+              {
+                "type": "text",
+                "text": {
+                  "content": "-",
+                  "link": null
+                },
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                },
+                "plain_text": "-",
+                "href": null
+              }
+            ],
+            [
+              {
+                "type": "text",
+                "text": {
+                  "content": "Lu H, Li Y, Serikawa S (2016) Computer vision for ocean observing. Artificial Intelligence and Computer Vision:1-16 ",
+                  "link": null
+                },
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                },
+                "plain_text": "Lu H, Li Y, Serikawa S (2016) Computer vision for ocean observing. Artificial Intelligence and Computer Vision:1-16 ",
+                "href": null
+              }
+            ]
+          ]
+        }
+      },
+      {
+        "type": "table_row",
+        "table_row": {
+          "cells": [
+            [],
+            [
+              {
+                "type": "text",
+                "text": {
+                  "content": "-",
+                  "link": null
+                },
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                },
+                "plain_text": "-",
+                "href": null
+              }
+            ],
+            [
+              {
+                "type": "text",
+                "text": {
+                  "content": "Schettini R, Corchs S (2010) Underwater image processing: state of the art of restoration and image enhancement methods. EURASIP Journal on Advances in Signal Processing 2010:1-14 ",
+                  "link": null
+                },
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                },
+                "plain_text": "Schettini R, Corchs S (2010) Underwater image processing: state of the art of restoration and image enhancement methods. EURASIP Journal on Advances in Signal Processing 2010:1-14 ",
+                "href": null
+              }
+            ]
+          ]
+        }
+      },
+      {
+        "type": "table_row",
+        "table_row": {
+          "cells": [
+            [],
+            [
+              {
+                "type": "text",
+                "text": {
+                  "content": "-",
+                  "link": null
+                },
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                },
+                "plain_text": "-",
+                "href": null
+              }
+            ],
+            [
+              {
+                "type": "text",
+                "text": {
+                  "content": "Hou W (2013) Ocean sensing and monitoring. SPIE Press ",
+                  "link": null
+                },
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                },
+                "plain_text": "Hou W (2013) Ocean sensing and monitoring. SPIE Press ",
+                "href": null
+              }
+            ]
+          ]
+        }
+      },
+      {
+        "type": "table_row",
+        "table_row": {
+          "cells": [
+            [
+              {
+                "type": "text",
+                "text": {
+                  "content": "Hardware-based methods",
+                  "link": null
+                },
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                },
+                "plain_text": "Hardware-based methods",
+                "href": null
+              }
+            ],
+            [
+              {
+                "type": "text",
+                "text": {
+                  "content": "Polarization",
+                  "link": null
+                },
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                },
+                "plain_text": "Polarization",
+                "href": null
+              }
+            ],
+            [
+              {
+                "type": "text",
+                "text": {
+                  "content": "Two channel polarization\n Yemelyanov K, Lin S, Pugh E, Engheta N (2006) Adaptive algorithms for two-channel polarization sensing under various polarization statistics with nonuniform distributions. Appl Opt 45(22): 5504-5520 ",
+                  "link": null
+                },
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                },
+                "plain_text": "Two channel polarization\n Yemelyanov K, Lin S, Pugh E, Engheta N (2006) Adaptive algorithms for two-channel polarization sensing under various polarization statistics with nonuniform distributions. Appl Opt 45(22): 5504-5520 ",
+                "href": null
+              }
+            ]
+          ]
+        }
+      },
+      {
+        "type": "table_row",
+        "table_row": {
+          "cells": [
+            [],
+            [],
+            [
+              {
+                "type": "text",
+                "text": {
+                  "content": "Polarization filtering\n Schechner Y, Averbuch Y (2007) Regularized image recovery in scattering media. IEEE Trans Pattern Anal Mach Intell 29(9): 1655-1660 ",
+                  "link": null
+                },
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                },
+                "plain_text": "Polarization filtering\n Schechner Y, Averbuch Y (2007) Regularized image recovery in scattering media. IEEE Trans Pattern Anal Mach Intell 29(9): 1655-1660 ",
+                "href": null
+              }
+            ]
+          ]
+        }
+      },
+      {
+        "type": "table_row",
+        "table_row": {
+          "cells": [
+            [],
+            [
+              {
+                "type": "text",
+                "text": {
+                  "content": "Range-gated imaging",
+                  "link": null
+                },
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                },
+                "plain_text": "Range-gated imaging",
+                "href": null
+              }
+            ],
+            [
+              {
+                "type": "text",
+                "text": {
+                  "content": "Range-gated underwater laser imaging\n",
+                  "link": null
+                },
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                },
+                "plain_text": "Range-gated underwater laser imaging\n",
+                "href": null
+              },
+              {
+                "type": "text",
+                "text": {
+                  "content": "Tan C, Sluzek A, Jiang T (2007) Range gated imaging system for underwater robotic vehicle. In: Proceedings of IEEE international symposium on the applications of ferroelectrics, pp 1-7",
+                  "link": null
+                },
+                "annotations": {
+                  "bold": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                },
+                "plain_text": "Tan C, Sluzek A, Jiang T (2007) Range gated imaging system for underwater robotic vehicle. In: Proceedings of IEEE international symposium on the applications of ferroelectrics, pp 1-7",
+                "href": null
+              },
+              {
+                "type": "text",
+                "text": {
+                  "content": "\n Tan C, Sluzek G, He D (2005) A novel application of range-gated underwater laser imaging system in near target turbid medium. Opt Lasers Eng 43(9):995-1009 ",
+                  "link": null
+                },
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                },
+                "plain_text": "\n Tan C, Sluzek G, He D (2005) A novel application of range-gated underwater laser imaging system in near target turbid medium. Opt Lasers Eng 43(9):995-1009 ",
+                "href": null
+              }
+            ]
+          ]
+        }
+      },
+      {
+        "type": "table_row",
+        "table_row": {
+          "cells": [
+            [],
+            [],
+            [
+              {
+                "type": "text",
+                "text": {
+                  "content": "Speckle reduction of range-gated imaging\n Li H, Wang X, Bai T, Jin W, Huang Y, Ding K (2009) Speckle noise suppression of range gated underwater imaging system. Appl Opt 38(18):3937-3944 ",
+                  "link": null
+                },
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                },
+                "plain_text": "Speckle reduction of range-gated imaging\n Li H, Wang X, Bai T, Jin W, Huang Y, Ding K (2009) Speckle noise suppression of range gated underwater imaging system. Appl Opt 38(18):3937-3944 ",
+                "href": null
+              }
+            ]
+          ]
+        }
+      },
+      {
+        "type": "table_row",
+        "table_row": {
+          "cells": [
+            [],
+            [
+              {
+                "type": "text",
+                "text": {
+                  "content": "Fluorescence imaging",
+                  "link": null
+                },
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                },
+                "plain_text": "Fluorescence imaging",
+                "href": null
+              }
+            ],
+            [
+              {
+                "type": "text",
+                "text": {
+                  "content": "Multi-lighting\n Murez Z, Treibitz T, Ramamoorthi R, and Kriegman D (2015) Photometric stereo in a scattering medium. In: Proceedings of IEEE international conference on computer vision, pp 3415-3423 ",
+                  "link": null
+                },
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                },
+                "plain_text": "Multi-lighting\n Murez Z, Treibitz T, Ramamoorthi R, and Kriegman D (2015) Photometric stereo in a scattering medium. In: Proceedings of IEEE international conference on computer vision, pp 3415-3423 ",
+                "href": null
+              }
+            ]
+          ]
+        }
+      },
+      {
+        "type": "table_row",
+        "table_row": {
+          "cells": [
+            [],
+            [],
+            [
+              {
+                "type": "text",
+                "text": {
+                  "content": "Multi-images fusion\n Treibitz T, Schechner Y (2012) Turbid scene enhancement using multi-directional illumination fusion. IEEE Trans Image Process 21(11):4662-4667 ",
+                  "link": null
+                },
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                },
+                "plain_text": "Multi-images fusion\n Treibitz T, Schechner Y (2012) Turbid scene enhancement using multi-directional illumination fusion. IEEE Trans Image Process 21(11):4662-4667 ",
+                "href": null
+              }
+            ]
+          ]
+        }
+      },
+      {
+        "type": "table_row",
+        "table_row": {
+          "cells": [
+            [],
+            [
+              {
+                "type": "text",
+                "text": {
+                  "content": "Stereo imaging",
+                  "link": null
+                },
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                },
+                "plain_text": "Stereo imaging",
+                "href": null
+              }
+            ],
+            [
+              {
+                "type": "text",
+                "text": {
+                  "content": "Visibility coefficients estimation\n Roser M, Dunbabin M, and Geiger A (2014) Simultaneous underwater visibility assessment, enhancement and improved stereo. In: Proceedings of IEEE international conference on robotics and automation, pp 1-8 ",
+                  "link": null
+                },
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                },
+                "plain_text": "Visibility coefficients estimation\n Roser M, Dunbabin M, and Geiger A (2014) Simultaneous underwater visibility assessment, enhancement and improved stereo. In: Proceedings of IEEE international conference on robotics and automation, pp 1-8 ",
+                "href": null
+              }
+            ]
+          ]
+        }
+      },
+      {
+        "type": "table_row",
+        "table_row": {
+          "cells": [
+            [
+              {
+                "type": "text",
+                "text": {
+                  "content": "Software-based methods",
+                  "link": null
+                },
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                },
+                "plain_text": "Software-based methods",
+                "href": null
+              }
+            ],
+            [
+              {
+                "type": "text",
+                "text": {
+                  "content": "Wavelength compensation (Physical Model)",
+                  "link": null
+                },
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                },
+                "plain_text": "Wavelength compensation (Physical Model)",
+                "href": null
+              }
+            ],
+            [
+              {
+                "type": "text",
+                "text": {
+                  "content": "PCA dehazing\n Fattal R (2008) Single image dehazing. ACM Trans Graph 27(3):1-8 ",
+                  "link": null
+                },
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                },
+                "plain_text": "PCA dehazing\n Fattal R (2008) Single image dehazing. ACM Trans Graph 27(3):1-8 ",
+                "href": null
+              }
+            ]
+          ]
+        }
+      },
+      {
+        "type": "table_row",
+        "table_row": {
+          "cells": [
+            [],
+            [],
+            [
+              {
+                "type": "text",
+                "text": {
+                  "content": "Color-lines dehazing\n Fattal R. (2014) Dehazing using color-lines. ACM Trans Graph 34(1):1-10 ",
+                  "link": null
+                },
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                },
+                "plain_text": "Color-lines dehazing\n Fattal R. (2014) Dehazing using color-lines. ACM Trans Graph 34(1):1-10 ",
+                "href": null
+              }
+            ]
+          ]
+        }
+      },
+      {
+        "type": "table_row",
+        "table_row": {
+          "cells": [
+            [],
+            [],
+            [
+              {
+                "type": "text",
+                "text": {
+                  "content": "DCP\n He K, Sun J, Tang X (2011) Single image haze removal using dark channel prior. IEEE Trans Pattern Anal Mach Intell 33(12):2341-2353 ",
+                  "link": null
+                },
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                },
+                "plain_text": "DCP\n He K, Sun J, Tang X (2011) Single image haze removal using dark channel prior. IEEE Trans Pattern Anal Mach Intell 33(12):2341-2353 ",
+                "href": null
+              }
+            ]
+          ]
+        }
+      },
+      {
+        "type": "table_row",
+        "table_row": {
+          "cells": [
+            [],
+            [],
+            [
+              {
+                "type": "text",
+                "text": {
+                  "content": "WCID\n Chiang J, Chen Y (2012) Underwater image enhancement by wavelength compensation and dehazing. IEEE Trans Image Process 21(4):1756-1769 ",
+                  "link": null
+                },
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                },
+                "plain_text": "WCID\n Chiang J, Chen Y (2012) Underwater image enhancement by wavelength compensation and dehazing. IEEE Trans Image Process 21(4):1756-1769 ",
+                "href": null
+              }
+            ]
+          ]
+        }
+      },
+      {
+        "type": "table_row",
+        "table_row": {
+          "cells": [
+            [],
+            [],
+            [
+              {
+                "type": "text",
+                "text": {
+                  "content": "De-flickering De-scattering\n Lu H, Li Y, Zhang L, Serikawa S (2015) Contrast enhancement for images in turbid water. Journal of Optical Society of America A 32(5):886-893 ",
+                  "link": null
+                },
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                },
+                "plain_text": "De-flickering De-scattering\n Lu H, Li Y, Zhang L, Serikawa S (2015) Contrast enhancement for images in turbid water. Journal of Optical Society of America A 32(5):886-893 ",
+                "href": null
+              }
+            ]
+          ]
+        }
+      },
+      {
+        "type": "table_row",
+        "table_row": {
+          "cells": [
+            [],
+            [
+              {
+                "type": "text",
+                "text": {
+                  "content": "Wavelength compensation (Non-physical model)",
+                  "link": null
+                },
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                },
+                "plain_text": "Wavelength compensation (Non-physical model)",
+                "href": null
+              }
+            ],
+            [
+              {
+                "type": "text",
+                "text": {
+                  "content": "Local histogram equalization\n Garcia R, Nicosevici T, and Cufi C (2002) On the way to solve lighting problems in underwater imaging. In Proc. of MTS/IEEE Oceans 02, pp 1018-1024 ",
+                  "link": null
+                },
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                },
+                "plain_text": "Local histogram equalization\n Garcia R, Nicosevici T, and Cufi C (2002) On the way to solve lighting problems in underwater imaging. In Proc. of MTS/IEEE Oceans 02, pp 1018-1024 ",
+                "href": null
+              }
+            ]
+          ]
+        }
+      },
+      {
+        "type": "table_row",
+        "table_row": {
+          "cells": [
+            [],
+            [],
+            [
+              {
+                "type": "text",
+                "text": {
+                  "content": "Contrast limited adaptive histogram equalization\n Zuiderveld K (1994) Contrast limited adaptive histogram equalization. Academic Press, Graphics gems IV, pp 474-485 ",
+                  "link": null
+                },
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                },
+                "plain_text": "Contrast limited adaptive histogram equalization\n Zuiderveld K (1994) Contrast limited adaptive histogram equalization. Academic Press, Graphics gems IV, pp 474-485 ",
+                "href": null
+              }
+            ]
+          ]
+        }
+      },
+      {
+        "type": "table_row",
+        "table_row": {
+          "cells": [
+            [],
+            [],
+            [
+              {
+                "type": "text",
+                "text": {
+                  "content": "HDR fusion\n Ancuti C, Ancuti CO, Haber T, and Bekaert P (2012) Enhancing underwater images and videos by fusion. In Proceedings of IEEE Conference on Computer Vision and Pattern Recognition, Providence, USA, pp 81-88 ",
+                  "link": null
+                },
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                },
+                "plain_text": "HDR fusion\n Ancuti C, Ancuti CO, Haber T, and Bekaert P (2012) Enhancing underwater images and videos by fusion. In Proceedings of IEEE Conference on Computer Vision and Pattern Recognition, Providence, USA, pp 81-88 ",
+                "href": null
+              }
+            ]
+          ]
+        }
+      },
+      {
+        "type": "table_row",
+        "table_row": {
+          "cells": [
+            [],
+            [],
+            [
+              {
+                "type": "text",
+                "text": {
+                  "content": "Red channel dehazing\n Galdran A, Pardo D, Picon A, Gila AA (2015) Automatic red-channel underwater image restoration. J Vis Commun Image Represent 26:132-145 ",
+                  "link": null
+                },
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                },
+                "plain_text": "Red channel dehazing\n Galdran A, Pardo D, Picon A, Gila AA (2015) Automatic red-channel underwater image restoration. J Vis Commun Image Represent 26:132-145 ",
+                "href": null
+              }
+            ]
+          ]
+        }
+      },
+      {
+        "type": "table_row",
+        "table_row": {
+          "cells": [
+            [],
+            [],
+            [
+              {
+                "type": "text",
+                "text": {
+                  "content": "Wiener filtering\n Gibson K (2015) Preliminary results in using a joint contrast enhancement and turbulence mitigation method for underwater optical imaging. In Proc of IEEE Oceans 2015:1-5. ",
+                  "link": null
+                },
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                },
+                "plain_text": "Wiener filtering\n Gibson K (2015) Preliminary results in using a joint contrast enhancement and turbulence mitigation method for underwater optical imaging. In Proc of IEEE Oceans 2015:1-5. ",
+                "href": null
+              }
+            ]
+          ]
+        }
+      },
+      {
+        "type": "table_row",
+        "table_row": {
+          "cells": [
+            [],
+            [],
+            [
+              {
+                "type": "text",
+                "text": {
+                  "content": "Single image dehazing\n Serikawa S, Lu H (2014) Underwater image dehazing using joint trilateral filter. Comput Electr Eng 40(1):41-50 ",
+                  "link": null
+                },
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                },
+                "plain_text": "Single image dehazing\n Serikawa S, Lu H (2014) Underwater image dehazing using joint trilateral filter. Comput Electr Eng 40(1):41-50 ",
+                "href": null
+              }
+            ]
+          ]
+        }
+      },
+      {
+        "type": "table_row",
+        "table_row": {
+          "cells": [
+            [],
+            [],
+            [
+              {
+                "type": "text",
+                "text": {
+                  "content": "Pre-filtering\n Bazeille S, Quidu I, Jaulin L, and Malkasse JP (2006) Automatic underwater image pre-processing. In: Proceedings of Caracterisation Du Milieu Marin, pp 1-8 ",
+                  "link": null
+                },
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                },
+                "plain_text": "Pre-filtering\n Bazeille S, Quidu I, Jaulin L, and Malkasse JP (2006) Automatic underwater image pre-processing. In: Proceedings of Caracterisation Du Milieu Marin, pp 1-8 ",
+                "href": null
+              }
+            ]
+          ]
+        }
+      },
+      {
+        "type": "table_row",
+        "table_row": {
+          "cells": [
+            [],
+            [],
+            [
+              {
+                "type": "text",
+                "text": {
+                  "content": "Integrated color model\n Iqbal K, Salam R, Osman A, Talib A (2007) Underwater image enhancement using an integrated color model. Int J Comput Sci 34(2):1-8 ",
+                  "link": null
+                },
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                },
+                "plain_text": "Integrated color model\n Iqbal K, Salam R, Osman A, Talib A (2007) Underwater image enhancement using an integrated color model. Int J Comput Sci 34(2):1-8 ",
+                "href": null
+              }
+            ]
+          ]
+        }
+      },
+      {
+        "type": "table_row",
+        "table_row": {
+          "cells": [
+            [],
+            [],
+            [
+              {
+                "type": "text",
+                "text": {
+                  "content": "Pre-processing\n Arnold-Bos A, Malkasse J, and Kerven G (2005) A pre-processing framework for automatic underwater images denoising. In: Proceedings of the European conference on propagation and systems, breast, France, pp 1-8 ",
+                  "link": null
+                },
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                },
+                "plain_text": "Pre-processing\n Arnold-Bos A, Malkasse J, and Kerven G (2005) A pre-processing framework for automatic underwater images denoising. In: Proceedings of the European conference on propagation and systems, breast, France, pp 1-8 ",
+                "href": null
+              }
+            ]
+          ]
+        }
+      },
+      {
+        "type": "table_row",
+        "table_row": {
+          "cells": [
+            [],
+            [],
+            [
+              {
+                "type": "text",
+                "text": {
+                  "content": "Unsupervised global and local color correction\n Rizzi A, Gatta C, Marini D (2003) A new algorithm for unsupervised global and local color correction. Pattern Recogn Lett 24(11): 1663-1677 ",
+                  "link": null
+                },
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                },
+                "plain_text": "Unsupervised global and local color correction\n Rizzi A, Gatta C, Marini D (2003) A new algorithm for unsupervised global and local color correction. Pattern Recogn Lett 24(11): 1663-1677 ",
+                "href": null
+              }
+            ]
+          ]
+        }
+      },
+      {
+        "type": "table_row",
+        "table_row": {
+          "cells": [
+            [],
+            [],
+            [
+              {
+                "type": "text",
+                "text": {
+                  "content": "Model-free denoising\n Arnold-Bos A, Malkasset J, and Kervern G (2005) Towards a model-free denoising of underwater optical images. In: Proceedings of the IEEE Europe Oceans Conference, pp 527-532 ",
+                  "link": null
+                },
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                },
+                "plain_text": "Model-free denoising\n Arnold-Bos A, Malkasset J, and Kervern G (2005) Towards a model-free denoising of underwater optical images. In: Proceedings of the IEEE Europe Oceans Conference, pp 527-532 ",
+                "href": null
+              }
+            ]
+          ]
+        }
+      },
+      {
+        "type": "table_row",
+        "table_row": {
+          "cells": [
+            [],
+            [],
+            [
+              {
+                "type": "text",
+                "text": {
+                  "content": "Color constancy\n Chambah M, Dernani D, Renouf A, Courtellemont P, and Rizzi A (2004) Underwater color constancy: enhancement of automatic live fish recognition. In Proceedings of SPIE, pp 157-168 ",
+                  "link": null
+                },
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                },
+                "plain_text": "Color constancy\n Chambah M, Dernani D, Renouf A, Courtellemont P, and Rizzi A (2004) Underwater color constancy: enhancement of automatic live fish recognition. In Proceedings of SPIE, pp 157-168 ",
+                "href": null
+              }
+            ]
+          ]
+        }
+      },
+      {
+        "type": "table_row",
+        "table_row": {
+          "cells": [
+            [],
+            [
+              {
+                "type": "text",
+                "text": {
+                  "content": "Color reconstruction",
+                  "link": null
+                },
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                },
+                "plain_text": "Color reconstruction",
+                "href": null
+              }
+            ],
+            [
+              {
+                "type": "text",
+                "text": {
+                  "content": "Markov Random Field learning\n Torres-Mendez L, and Dudek G (2005) Color correction of underwater images for aquatic robot inspection. In: Proc. of 5th International workshop on energy minimization method in computer vision and pattern recognition, pp 60-73 ",
+                  "link": null
+                },
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                },
+                "plain_text": "Markov Random Field learning\n Torres-Mendez L, and Dudek G (2005) Color correction of underwater images for aquatic robot inspection. In: Proc. of 5th International workshop on energy minimization method in computer vision and pattern recognition, pp 60-73 ",
+                "href": null
+              }
+            ]
+          ]
+        }
+      },
+      {
+        "type": "table_row",
+        "table_row": {
+          "cells": [
+            [],
+            [],
+            [
+              {
+                "type": "text",
+                "text": {
+                  "content": "Hyperspectral imaging\n Ahlen J, Sundgren D, Bengtsson E (2007) Application of underwater hyperspectral data for color correction purposes. Pattern Recognition and Image Analysis 17(1):170-173 ",
+                  "link": null
+                },
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                },
+                "plain_text": "Hyperspectral imaging\n Ahlen J, Sundgren D, Bengtsson E (2007) Application of underwater hyperspectral data for color correction purposes. Pattern Recognition and Image Analysis 17(1):170-173 ",
+                "href": null
+              }
+            ]
+          ]
+        }
+      },
+      {
+        "type": "table_row",
+        "table_row": {
+          "cells": [
+            [],
+            [],
+            [
+              {
+                "type": "text",
+                "text": {
+                  "content": "Light attenuation inversion\n Petie F, Capelle-Laize A, and Carre P (2009) Underwater image enhancement by attenuation inversion with quaternions. In: Proceedings of IEEE international conference on acoustics, speech, and signal processing, pp 1177-1180 ",
+                  "link": null
+                },
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                },
+                "plain_text": "Light attenuation inversion\n Petie F, Capelle-Laize A, and Carre P (2009) Underwater image enhancement by attenuation inversion with quaternions. In: Proceedings of IEEE international conference on acoustics, speech, and signal processing, pp 1177-1180 ",
+                "href": null
+              }
+            ]
+          ]
+        }
+      },
+      {
+        "type": "table_row",
+        "table_row": {
+          "cells": [
+            [],
+            [],
+            [
+              {
+                "type": "text",
+                "text": {
+                  "content": "Spectral response function\n Lu H, Li Y, and Serikawa S (2015) Single underwater image descattering and color correction. In: Proc. of IEEE International Conference on Acoustics, Speech and Signal Processing, pp 1623-1627 ",
+                  "link": null
+                },
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                },
+                "plain_text": "Spectral response function\n Lu H, Li Y, and Serikawa S (2015) Single underwater image descattering and color correction. In: Proc. of IEEE International Conference on Acoustics, Speech and Signal Processing, pp 1623-1627 ",
+                "href": null
+              }
+            ]
+          ]
+        }
+      },
+      {
+        "type": "table_row",
+        "table_row": {
+          "cells": [
+            [
+              {
+                "type": "text",
+                "text": {
+                  "content": "Image quality assessment",
+                  "link": null
+                },
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                },
+                "plain_text": "Image quality assessment",
+                "href": null
+              }
+            ],
+            [
+              {
+                "type": "text",
+                "text": {
+                  "content": "Reference",
+                  "link": null
+                },
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                },
+                "plain_text": "Reference",
+                "href": null
+              }
+            ],
+            [
+              {
+                "type": "text",
+                "text": {
+                  "content": "SSIM\n Wang Z, Bovik A, Sheikh H, Simoncelli E (2004) Image quality assessment: from error visibility to structural similarity. IEEE Trans Image Process 13(4):600-612 ",
+                  "link": null
+                },
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                },
+                "plain_text": "SSIM\n Wang Z, Bovik A, Sheikh H, Simoncelli E (2004) Image quality assessment: from error visibility to structural similarity. IEEE Trans Image Process 13(4):600-612 ",
+                "href": null
+              }
+            ]
+          ]
+        }
+      },
+      {
+        "type": "table_row",
+        "table_row": {
+          "cells": [
+            [],
+            [],
+            [
+              {
+                "type": "text",
+                "text": {
+                  "content": "Qu\n Lu H, Li Y, Xu X, He L, Dansereau D, and Serikawa S (2016) Underwater image descattering and quality assessment. In: Proceedings of IEEE international conference on image processing, pp. 1998-2002 ",
+                  "link": null
+                },
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                },
+                "plain_text": "Qu\n Lu H, Li Y, Xu X, He L, Dansereau D, and Serikawa S (2016) Underwater image descattering and quality assessment. In: Proceedings of IEEE international conference on image processing, pp. 1998-2002 ",
+                "href": null
+              }
+            ]
+          ]
+        }
+      },
+      {
+        "type": "table_row",
+        "table_row": {
+          "cells": [
+            [],
+            [],
+            [
+              {
+                "type": "text",
+                "text": {
+                  "content": "Mean angular error\n Arredondo M, and Lebart K (2005) A methodology for the systematic assessment of underwater video processing algorithms. In: Proceedings of IEEE Europe oceans conference, pp 362-367 ",
+                  "link": null
+                },
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                },
+                "plain_text": "Mean angular error\n Arredondo M, and Lebart K (2005) A methodology for the systematic assessment of underwater video processing algorithms. In: Proceedings of IEEE Europe oceans conference, pp 362-367 ",
+                "href": null
+              }
+            ]
+          ]
+        }
+      },
+      {
+        "type": "table_row",
+        "table_row": {
+          "cells": [
+            [],
+            [
+              {
+                "type": "text",
+                "text": {
+                  "content": "Non-reference",
+                  "link": null
+                },
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                },
+                "plain_text": "Non-reference",
+                "href": null
+              }
+            ],
+            [
+              {
+                "type": "text",
+                "text": {
+                  "content": "UIQM\n Panetta K, Gao C, Agaian S (2015) Human visual system inspired underwater image quality measures. IEEE J Ocean Eng:1-11 ",
+                  "link": null
+                },
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                },
+                "plain_text": "UIQM\n Panetta K, Gao C, Agaian S (2015) Human visual system inspired underwater image quality measures. IEEE J Ocean Eng:1-11 ",
+                "href": null
+              }
+            ]
+          ]
+        }
+      },
+      {
+        "type": "table_row",
+        "table_row": {
+          "cells": [
+            [],
+            [],
+            [
+              {
+                "type": "text",
+                "text": {
+                  "content": "QMOS\n Lu H, and Serikawa S (2014) Underwater scene enhancement using weighted guided median filter. In: Proceedings of IEEE international conference on multimedia and expo, pp. 1-6 ",
+                  "link": null
+                },
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                },
+                "plain_text": "QMOS\n Lu H, and Serikawa S (2014) Underwater scene enhancement using weighted guided median filter. In: Proceedings of IEEE international conference on multimedia and expo, pp. 1-6 ",
+                "href": null
+              }
+            ]
+          ]
+        }
+      },
+      {
+        "type": "table_row",
+        "table_row": {
+          "cells": [
+            [],
+            [],
+            [
+              {
+                "type": "text",
+                "text": {
+                  "content": "UCIQUE\n Yang M, Sowmya A (2015) An underwater color image quality evaluation metric. IEEE Trans Image Process 24(12):6062-6071 ",
+                  "link": null
+                },
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                },
+                "plain_text": "UCIQUE\n Yang M, Sowmya A (2015) An underwater color image quality evaluation metric. IEEE Trans Image Process 24(12):6062-6071 ",
+                "href": null
+              }
+            ]
+          ]
+        }
+      },
+      {
+        "type": "table_row",
+        "table_row": {
+          "cells": [
+            [],
+            [],
+            [
+              {
+                "type": "text",
+                "text": {
+                  "content": "WGSA metric\n Hou W, Weidemann A (2007) Objectively assessing underwater image quality for the purpose of automated restoration. Proc SPIE 6575:1-10 ",
+                  "link": null
+                },
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                },
+                "plain_text": "WGSA metric\n Hou W, Weidemann A (2007) Objectively assessing underwater image quality for the purpose of automated restoration. Proc SPIE 6575:1-10 ",
+                "href": null
+              }
+            ]
+          ]
+        }
+      }
+    ]
   }
 ]

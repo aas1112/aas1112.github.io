@@ -15,7 +15,7 @@
       "Proje Fikri-30": false,
       "Sosyal-75": false,
       "Gün Planı-15": false,
-      "Kişisel Proje-90": false,
+      "Kişisel Proje-90": true,
       "Bakım-15": true,
       "Okuma-60": false
     },
@@ -26,9 +26,9 @@
         "exp": 40
       },
       "Career": {
-        "completedMinutes": 0,
+        "completedMinutes": 90,
         "maxMinutes": 150,
-        "exp": 0
+        "exp": 60
       },
       "Stamina": {
         "completedMinutes": 30,

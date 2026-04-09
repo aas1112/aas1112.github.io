@@ -1,0 +1,722 @@
+[
+  {
+    "type": "paragraph",
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "Temel Zorluklar:",
+            "link": null
+          },
+          "annotations": {
+            "bold": true,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "Temel Zorluklar:",
+          "href": null
+        }
+      ],
+      "icon": null,
+      "color": "default"
+    }
+  },
+  {
+    "type": "bulleted_list_item",
+    "bulleted_list_item": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "Saçılma (Scattering):",
+            "link": null
+          },
+          "annotations": {
+            "bold": true,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "Saçılma (Scattering):",
+          "href": null
+        },
+        {
+          "type": "text",
+          "text": {
+            "content": " Işığın su içindeki parçacıklara çarparak yön değiştirmesi sonucu görüntülerde bulanıklık oluşur.",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": " Işığın su içindeki parçacıklara çarparak yön değiştirmesi sonucu görüntülerde bulanıklık oluşur.",
+          "href": null
+        }
+      ],
+      "color": "default"
+    }
+  },
+  {
+    "type": "bulleted_list_item",
+    "bulleted_list_item": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "Işık Emilimi (Absorption):",
+            "link": null
+          },
+          "annotations": {
+            "bold": true,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "Işık Emilimi (Absorption):",
+          "href": null
+        },
+        {
+          "type": "text",
+          "text": {
+            "content": " Su, ışığın farklı dalga boylarını farklı oranlarda emer; bu da görüntülerde renk kaybına neden olur (örneğin saf suda mavi renk daha az emilirken, kırmızı daha çabuk kaybolur).",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": " Su, ışığın farklı dalga boylarını farklı oranlarda emer; bu da görüntülerde renk kaybına neden olur (örneğin saf suda mavi renk daha az emilirken, kırmızı daha çabuk kaybolur).",
+          "href": null
+        }
+      ],
+      "color": "default"
+    }
+  },
+  {
+    "type": "bulleted_list_item",
+    "bulleted_list_item": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "Gürültü ve Tortular:",
+            "link": null
+          },
+          "annotations": {
+            "bold": true,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "Gürültü ve Tortular:",
+          "href": null
+        },
+        {
+          "type": "text",
+          "text": {
+            "content": " Suda asılı kalan tortular ve deniz canlıları görüntü kalitesini düşürür.",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": " Suda asılı kalan tortular ve deniz canlıları görüntü kalitesini düşürür.",
+          "href": null
+        }
+      ],
+      "color": "default"
+    }
+  },
+  {
+    "type": "bulleted_list_item",
+    "bulleted_list_item": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "Düzensiz Aydınlatma:",
+            "link": null
+          },
+          "annotations": {
+            "bold": true,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "Düzensiz Aydınlatma:",
+          "href": null
+        },
+        {
+          "type": "text",
+          "text": {
+            "content": " Yapay ışık kullanımı görüntülerde vinyet (köşe kararması) ve parlama (flickering) yaratır.",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": " Yapay ışık kullanımı görüntülerde vinyet (köşe kararması) ve parlama (flickering) yaratır.",
+          "href": null
+        }
+      ],
+      "color": "default"
+    }
+  },
+  {
+    "type": "paragraph",
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "Makale, bu sorunları çözmek için geliştirilen yöntemleri ",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "Makale, bu sorunları çözmek için geliştirilen yöntemleri ",
+          "href": null
+        },
+        {
+          "type": "text",
+          "text": {
+            "content": "Donanım Tabanlı",
+            "link": null
+          },
+          "annotations": {
+            "bold": true,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "Donanım Tabanlı",
+          "href": null
+        },
+        {
+          "type": "text",
+          "text": {
+            "content": " ve ",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": " ve ",
+          "href": null
+        },
+        {
+          "type": "text",
+          "text": {
+            "content": "Yazılım Tabanlı",
+            "link": null
+          },
+          "annotations": {
+            "bold": true,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "Yazılım Tabanlı",
+          "href": null
+        },
+        {
+          "type": "text",
+          "text": {
+            "content": " olmak üzere iki ana kategoriye ayırır.",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": " olmak üzere iki ana kategoriye ayırır.",
+          "href": null
+        }
+      ],
+      "icon": null,
+      "color": "default"
+    }
+  },
+  {
+    "type": "paragraph",
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "1. Donanım Tabanlı Yöntemler",
+            "link": null
+          },
+          "annotations": {
+            "bold": true,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "1. Donanım Tabanlı Yöntemler",
+          "href": null
+        },
+        {
+          "type": "text",
+          "text": {
+            "content": "Kamera ve sensör teknolojilerine fiziksel müdahaleleri içerir:",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "Kamera ve sensör teknolojilerine fiziksel müdahaleleri içerir:",
+          "href": null
+        }
+      ],
+      "icon": null,
+      "color": "default"
+    }
+  },
+  {
+    "type": "bulleted_list_item",
+    "bulleted_list_item": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "Polarizasyon (Polarization):",
+            "link": null
+          },
+          "annotations": {
+            "bold": true,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "Polarizasyon (Polarization):",
+          "href": null
+        },
+        {
+          "type": "text",
+          "text": {
+            "content": " Işığın yansımalarını ve geri saçılmasını azaltmak için kameranın önüne polarize filtreler eklenir veya polarize ışık kaynakları kullanılır.",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": " Işığın yansımalarını ve geri saçılmasını azaltmak için kameranın önüne polarize filtreler eklenir veya polarize ışık kaynakları kullanılır.",
+          "href": null
+        }
+      ],
+      "color": "default"
+    }
+  },
+  {
+    "type": "bulleted_list_item",
+    "bulleted_list_item": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "Mesafe Kapılı Görüntüleme (Range-gated imaging):",
+            "link": null
+          },
+          "annotations": {
+            "bold": true,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "Mesafe Kapılı Görüntüleme (Range-gated imaging):",
+          "href": null
+        },
+        {
+          "type": "text",
+          "text": {
+            "content": " Bulanık sularda lazer tabanlı bir sistemdir. Lazer nesneye çarpıp dönene kadar kameranın deklanşörü kapalı kalır, böylece aradaki saçılan ışık engellenir.",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": " Bulanık sularda lazer tabanlı bir sistemdir. Lazer nesneye çarpıp dönene kadar kameranın deklanşörü kapalı kalır, böylece aradaki saçılan ışık engellenir.",
+          "href": null
+        }
+      ],
+      "color": "default"
+    }
+  },
+  {
+    "type": "bulleted_list_item",
+    "bulleted_list_item": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "Floresan Görüntüleme (Fluorescence imaging):",
+            "link": null
+          },
+          "annotations": {
+            "bold": true,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "Floresan Görüntüleme (Fluorescence imaging):",
+          "href": null
+        },
+        {
+          "type": "text",
+          "text": {
+            "content": " Mercan resiflerindeki mikroorganizmaları tespit etmek veya sualtı sahnelerinin şeklini çıkarmak için kullanılır.",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": " Mercan resiflerindeki mikroorganizmaları tespit etmek veya sualtı sahnelerinin şeklini çıkarmak için kullanılır.",
+          "href": null
+        }
+      ],
+      "color": "default"
+    }
+  },
+  {
+    "type": "bulleted_list_item",
+    "bulleted_list_item": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "Stereo Görüntüleme:",
+            "link": null
+          },
+          "annotations": {
+            "bold": true,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "Stereo Görüntüleme:",
+          "href": null
+        },
+        {
+          "type": "text",
+          "text": {
+            "content": " Otonom sualtı araçlarında (AUV) gerçek zamanlı olarak görüş mesafesini tahmin ederek görüntüleri iyileştirir.",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": " Otonom sualtı araçlarında (AUV) gerçek zamanlı olarak görüş mesafesini tahmin ederek görüntüleri iyileştirir.",
+          "href": null
+        }
+      ],
+      "color": "default"
+    }
+  },
+  {
+    "type": "paragraph",
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "2. Yazılım Tabanlı Yöntemler",
+            "link": null
+          },
+          "annotations": {
+            "bold": true,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "2. Yazılım Tabanlı Yöntemler",
+          "href": null
+        },
+        {
+          "type": "text",
+          "text": {
+            "content": "Görüntü çekildikten sonra uygulanan algoritmik çözümlerdir:",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "Görüntü çekildikten sonra uygulanan algoritmik çözümlerdir:",
+          "href": null
+        }
+      ],
+      "icon": null,
+      "color": "default"
+    }
+  },
+  {
+    "type": "bulleted_list_item",
+    "bulleted_list_item": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "Saçılma Giderme (De-scattering):",
+            "link": null
+          },
+          "annotations": {
+            "bold": true,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "Saçılma Giderme (De-scattering):",
+          "href": null
+        },
+        {
+          "type": "text",
+          "text": {
+            "content": " İki farklı modelle çalışır:",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": " İki farklı modelle çalışır:",
+          "href": null
+        }
+      ],
+      "color": "default"
+    }
+  },
+  {
+    "type": "bulleted_list_item",
+    "bulleted_list_item": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "Renk Restorasyonu:",
+            "link": null
+          },
+          "annotations": {
+            "bold": true,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "Renk Restorasyonu:",
+          "href": null
+        },
+        {
+          "type": "text",
+          "text": {
+            "content": " Markov Rastgele Alanları (MRF), hiperspektral görüntüleme veya ışık zayıflamasını tersine çeviren matematiksel algoritmalar kullanılarak sualtında kaybolan renkler aslına uygun hale getirilir.",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": " Markov Rastgele Alanları (MRF), hiperspektral görüntüleme veya ışık zayıflamasını tersine çeviren matematiksel algoritmalar kullanılarak sualtında kaybolan renkler aslına uygun hale getirilir.",
+          "href": null
+        }
+      ],
+      "color": "default"
+    }
+  },
+  {
+    "type": "paragraph",
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "Görüntü Kalitesi Değerlendirme ve Gelecek Trendleri:",
+            "link": null
+          },
+          "annotations": {
+            "bold": true,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "Görüntü Kalitesi Değerlendirme ve Gelecek Trendleri:",
+          "href": null
+        },
+        {
+          "type": "text",
+          "text": {
+            "content": "Farklı algoritmaların başarısını ölçmek için referans tabanlı (SSIM) ve referanssız (UIQM, UCIQE) kalite değerlendirme metrikleri kullanılır.",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "Farklı algoritmaların başarısını ölçmek için referans tabanlı (SSIM) ve referanssız (UIQM, UCIQE) kalite değerlendirme metrikleri kullanılır.",
+          "href": null
+        }
+      ],
+      "icon": null,
+      "color": "default"
+    }
+  },
+  {
+    "type": "paragraph",
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "Table 1:",
+            "link": null
+          },
+          "annotations": {
+            "bold": true,
+            "italic": true,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "Table 1:",
+          "href": null
+        },
+        {
+          "type": "text",
+          "text": {
+            "content": " Categorization of the underwater image restoration methods and their representative studies",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": " Categorization of the underwater image restoration methods and their representative studies",
+          "href": null
+        }
+      ],
+      "icon": null,
+      "color": "default"
+    }
+  },
+  {
+    "type": "table",
+    "table": {
+      "table_width": 3,
+      "has_column_header": false,
+      "has_row_header": false
+    }
+  }
+]

@@ -342,10 +342,13 @@ function renderRecentEfforts(recordsDesc) {
 function renderHeatmap(recordsAsc) {
     if (recordsAsc.length === 0) return;
 
-    const heatmapData = recordsAsc.slice(-30).map(day => ({
-        x: day.date.substring(5),
-        y: getDailyOverallPct(day)
-    }));
+    const heatmapData = recordsAsc.slice(-30).map(day => {
+        const dateStr = /^\d{4}-\d{2}-\d{2}$/.test(day.name) ? day.name : day.date;
+        return {
+            x: dateStr.substring(5),
+            y: getDailyOverallPct(day)
+        };
+    });
 
     const options = {
         series: [{ name: 'Genel Tamamlanma', data: heatmapData }],
@@ -387,7 +390,10 @@ function renderTrendLine(recordsAsc) {
     if (recordsAsc.length === 0) return;
 
     const recent    = recordsAsc.slice(-30);
-    const dates     = recent.map(d => d.date.substring(5));
+    const dates     = recent.map(d => {
+        const dateStr = /^\d{4}-\d{2}-\d{2}$/.test(d.name) ? d.name : d.date;
+        return dateStr.substring(5);
+    });
     const percents  = recent.map(d => getDailyOverallPct(d));
 
     const options = {
@@ -511,8 +517,13 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         const records = await response.json();
 
-        const recordsDesc = [...records].sort((a, b) => new Date(b.date) - new Date(a.date));
-        const recordsAsc  = [...records].sort((a, b) => new Date(a.date) - new Date(b.date));
+        const recordsWithSortDate = records.map(r => {
+            const robustDate = /^\d{4}-\d{2}-\d{2}$/.test(r.name) ? r.name : r.date;
+            return { ...r, _sortDate: robustDate };
+        });
+
+        const recordsDesc = [...recordsWithSortDate].sort((a, b) => new Date(b._sortDate) - new Date(a._sortDate));
+        const recordsAsc  = [...recordsWithSortDate].sort((a, b) => new Date(a._sortDate) - new Date(b._sortDate));
 
         if (recordsDesc.length === 0) {
             document.getElementById('loading').innerHTML = '<p>Henüz kayıt bulunamadı.</p>';

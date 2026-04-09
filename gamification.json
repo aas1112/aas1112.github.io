@@ -4,11 +4,11 @@
     "name": "2026-04-09",
     "date": "2026-04-08",
     "habits": {
-      "Spor-180": false,
+      "Spor-120": false,
       "İş Arama-30": false,
       "Makale-30": true,
-      "Ders-90": false,
-      "Yabancı Dil-30": false,
+      "Ders-120": false,
+      "Yabancı Dil-30": true,
       "Felsefe-60": true,
       "Mühendislik Haberleri-30": true,
       "Soğuk Duş-15": true,
@@ -21,23 +21,23 @@
     },
     "categories": {
       "Mental": {
-        "completedMinutes": 120,
-        "maxMinutes": 300,
-        "exp": 40
+        "completedMinutes": 90,
+        "maxMinutes": 210,
+        "exp": 43
       },
       "Career": {
-        "completedMinutes": 90,
-        "maxMinutes": 150,
-        "exp": 60
+        "completedMinutes": 150,
+        "maxMinutes": 210,
+        "exp": 71
       },
       "Stamina": {
         "completedMinutes": 30,
-        "maxMinutes": 210,
-        "exp": 14
+        "maxMinutes": 150,
+        "exp": 20
       },
       "Willpower": {
         "completedMinutes": 0,
-        "maxMinutes": 90,
+        "maxMinutes": 150,
         "exp": 0
       }
     }
@@ -47,10 +47,10 @@
     "name": "2026-04-08",
     "date": "2026-04-08",
     "habits": {
-      "Spor-180": false,
+      "Spor-120": false,
       "İş Arama-30": true,
       "Makale-30": false,
-      "Ders-90": false,
+      "Ders-120": false,
       "Yabancı Dil-30": true,
       "Felsefe-60": true,
       "Mühendislik Haberleri-30": false,
@@ -64,24 +64,24 @@
     },
     "categories": {
       "Mental": {
-        "completedMinutes": 90,
-        "maxMinutes": 300,
-        "exp": 30
+        "completedMinutes": 60,
+        "maxMinutes": 210,
+        "exp": 29
       },
       "Career": {
-        "completedMinutes": 120,
-        "maxMinutes": 150,
-        "exp": 80
+        "completedMinutes": 150,
+        "maxMinutes": 210,
+        "exp": 71
       },
       "Stamina": {
         "completedMinutes": 0,
-        "maxMinutes": 210,
+        "maxMinutes": 150,
         "exp": 0
       },
       "Willpower": {
         "completedMinutes": 90,
-        "maxMinutes": 90,
-        "exp": 100
+        "maxMinutes": 150,
+        "exp": 60
       }
     }
   }

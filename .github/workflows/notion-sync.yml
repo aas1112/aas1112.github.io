@@ -1,5 +1,11 @@
 name: Notion Data Sync
 
+# Aynı anda birden fazla iş akışının çakışmasını önler.
+# "cancel-in-progress: false" → yeni bir run başladığında eskisi tamamlanana kadar bekler.
+concurrency:
+  group: notion-sync
+  cancel-in-progress: false
+
 on:
   push:
     branches: [ "main" ]
@@ -15,8 +21,11 @@ jobs:
       contents: write
 
     steps:
+      # fetch-depth: 0 → tam git geçmişi çekilir; shallow clone "fetch first" hatasına yol açar.
       - name: Checkout Repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Setup Python
         uses: actions/setup-python@v5
@@ -42,6 +51,26 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+          # Değişen dosyaları stage'e al
           git add kitaplar.json gamification.json articles/
-          git diff --staged --quiet || git commit -m "chore: auto-sync Notion data [$(date -u '+%Y-%m-%d %H:%M UTC')]"
-          git push
+
+          # Stage boşsa commit yapma, push'a gerek yok → işi bitir
+          if git diff --staged --quiet; then
+            echo "✅ Değişiklik yok, push atlanıyor."
+            exit 0
+          fi
+
+          git commit -m "chore: auto-sync Notion data [$(date -u '+%Y-%m-%d %H:%M UTC')]"
+
+          # Push öncesi uzaktaki değişiklikleri rebase ile entegre et.
+          # Bu adım "fetch first / rejected" hatasını önler.
+          git pull --rebase origin main
+
+          # Push → başarısız olursa en fazla 3 kez yeniden dener (race condition koruması).
+          for attempt in 1 2 3; do
+            git push origin main && break || {
+              echo "⚠️  Push başarısız (deneme $attempt/3). Rebase yapılıyor…"
+              git pull --rebase origin main
+            }
+          done

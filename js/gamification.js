@@ -15,10 +15,11 @@
  *    EXP = round( (completedMinutes / maxMinutes) × 100 )
  *
  *  Levelling curve (exponential):
- *    requiredTotalEXP(level) = 100 × level^1.5
- *    → Level 1 :  100 EXP
- *    → Level 5 :  ~1118 EXP
- *    → Level 10 : ~3162 EXP
+ *    requiredTotalEXP(level) = 100 × (level-1)^1.5
+ *    → Level 1 :  0 EXP (Başlangıç)
+ *    → Level 2 :  100 EXP
+ *    → Level 3 :  ~282 EXP
+ *    → Level 10:  ~2700 EXP
  */
 
 // ─── Category meta ──────────────────────────────────────────────────────────
@@ -32,11 +33,12 @@ const CATEGORIES = {
 // ─── Levelling helpers ───────────────────────────────────────────────────────
 
 /**
- * Total EXP required to REACH a given level from level 0.
- * Uses: required = 100 × level^1.5
+ * Total EXP required to REACH a given level from level 1.
+ * Uses: required = 100 × (level-1)^1.5
  */
 function expRequiredForLevel(level) {
-    return Math.floor(100 * Math.pow(level, 1.5));
+    if (level <= 1) return 0;
+    return Math.floor(100 * Math.pow(level - 1, 1.5));
 }
 
 /**
@@ -49,10 +51,17 @@ function computeLevel(totalExp) {
     }
     const expForCurrent = expRequiredForLevel(level);
     const expForNext    = expRequiredForLevel(level + 1);
-    const progress      = Math.round(((totalExp - expForCurrent) / (expForNext - expForCurrent)) * 100);
+    
+    // Prevent negative progress or divide by zero
+    let progress = 0;
+    if (expForNext > expForCurrent) {
+        progress = Math.round(((totalExp - expForCurrent) / (expForNext - expForCurrent)) * 100);
+    }
+    progress = Math.max(0, Math.min(progress, 99)); // Clamp between 0 and 99
+    
     const expToNext     = expForNext - totalExp;
 
-    return { level, progress: Math.min(progress, 99), expToNext, totalExp, expForNext };
+    return { level, progress, expToNext, totalExp, expForNext };
 }
 
 /**

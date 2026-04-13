@@ -1,5 +1,91 @@
 [
   {
+    "id": "33cdf6cd-2b29-8143-b8d9-cfd967095a13",
+    "name": "2026-04-09",
+    "date": "2026-04-08",
+    "habits": {
+      "Spor-120": false,
+      "İş Arama-30": false,
+      "Makale-30": true,
+      "Ders-120": false,
+      "Yabancı Dil-30": true,
+      "Felsefe-60": true,
+      "Mühendislik Haberleri-30": true,
+      "Soğuk Duş-15": true,
+      "Proje Fikri-30": false,
+      "Sosyal-75": true,
+      "Gün Planı-15": false,
+      "Kişisel Proje-90": true,
+      "Bakım-15": true,
+      "Okuma-60": false
+    },
+    "categories": {
+      "Mental": {
+        "completedMinutes": 90,
+        "maxMinutes": 210,
+        "exp": 43
+      },
+      "Career": {
+        "completedMinutes": 150,
+        "maxMinutes": 210,
+        "exp": 71
+      },
+      "Stamina": {
+        "completedMinutes": 30,
+        "maxMinutes": 150,
+        "exp": 20
+      },
+      "Willpower": {
+        "completedMinutes": 75,
+        "maxMinutes": 150,
+        "exp": 50
+      }
+    }
+  },
+  {
+    "id": "33cdf6cd-2b29-804d-b497-ce506eeadc04",
+    "name": "2026-04-08",
+    "date": "2026-04-08",
+    "habits": {
+      "Spor-120": false,
+      "İş Arama-30": true,
+      "Makale-30": false,
+      "Ders-120": false,
+      "Yabancı Dil-30": true,
+      "Felsefe-60": true,
+      "Mühendislik Haberleri-30": false,
+      "Soğuk Duş-15": false,
+      "Proje Fikri-30": false,
+      "Sosyal-75": true,
+      "Gün Planı-15": true,
+      "Kişisel Proje-90": true,
+      "Bakım-15": false,
+      "Okuma-60": false
+    },
+    "categories": {
+      "Mental": {
+        "completedMinutes": 60,
+        "maxMinutes": 210,
+        "exp": 29
+      },
+      "Career": {
+        "completedMinutes": 150,
+        "maxMinutes": 210,
+        "exp": 71
+      },
+      "Stamina": {
+        "completedMinutes": 0,
+        "maxMinutes": 150,
+        "exp": 0
+      },
+      "Willpower": {
+        "completedMinutes": 90,
+        "maxMinutes": 150,
+        "exp": 60
+      }
+    }
+  },
+  {
     "id": "340df6cd-2b29-81ab-91b3-e28e95b0a9e6",
     "name": "2026-04-13",
     "date": "2026-04-12",
@@ -168,92 +254,6 @@
         "completedMinutes": 0,
         "maxMinutes": 150,
         "exp": 0
-      }
-    }
-  },
-  {
-    "id": "33cdf6cd-2b29-8143-b8d9-cfd967095a13",
-    "name": "2026-04-09",
-    "date": "2026-04-08",
-    "habits": {
-      "Spor-120": false,
-      "İş Arama-30": false,
-      "Makale-30": true,
-      "Ders-120": false,
-      "Yabancı Dil-30": true,
-      "Felsefe-60": true,
-      "Mühendislik Haberleri-30": true,
-      "Soğuk Duş-15": true,
-      "Proje Fikri-30": false,
-      "Sosyal-75": true,
-      "Gün Planı-15": false,
-      "Kişisel Proje-90": true,
-      "Bakım-15": true,
-      "Okuma-60": false
-    },
-    "categories": {
-      "Mental": {
-        "completedMinutes": 90,
-        "maxMinutes": 210,
-        "exp": 43
-      },
-      "Career": {
-        "completedMinutes": 150,
-        "maxMinutes": 210,
-        "exp": 71
-      },
-      "Stamina": {
-        "completedMinutes": 30,
-        "maxMinutes": 150,
-        "exp": 20
-      },
-      "Willpower": {
-        "completedMinutes": 75,
-        "maxMinutes": 150,
-        "exp": 50
-      }
-    }
-  },
-  {
-    "id": "33cdf6cd-2b29-804d-b497-ce506eeadc04",
-    "name": "2026-04-08",
-    "date": "2026-04-08",
-    "habits": {
-      "Spor-120": false,
-      "İş Arama-30": true,
-      "Makale-30": false,
-      "Ders-120": false,
-      "Yabancı Dil-30": true,
-      "Felsefe-60": true,
-      "Mühendislik Haberleri-30": false,
-      "Soğuk Duş-15": false,
-      "Proje Fikri-30": false,
-      "Sosyal-75": true,
-      "Gün Planı-15": true,
-      "Kişisel Proje-90": true,
-      "Bakım-15": false,
-      "Okuma-60": false
-    },
-    "categories": {
-      "Mental": {
-        "completedMinutes": 60,
-        "maxMinutes": 210,
-        "exp": 29
-      },
-      "Career": {
-        "completedMinutes": 150,
-        "maxMinutes": 210,
-        "exp": 71
-      },
-      "Stamina": {
-        "completedMinutes": 0,
-        "maxMinutes": 150,
-        "exp": 0
-      },
-      "Willpower": {
-        "completedMinutes": 90,
-        "maxMinutes": 150,
-        "exp": 60
       }
     }
   }

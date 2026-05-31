@@ -1,5 +1,48 @@
 [
   {
+    "id": "371df6cd-2b29-8107-9998-fe93b02cb943",
+    "name": "2026-06-01",
+    "date": "2026-05-31",
+    "habits": {
+      "Spor-120": false,
+      "İş Arama-30": false,
+      "Makale-30": false,
+      "Ders-120": false,
+      "Yabancı Dil-30": false,
+      "Felsefe-60": false,
+      "Mühendislik Haberleri-30": false,
+      "Soğuk Duş-15": false,
+      "Proje Fikri-30": false,
+      "Sosyal-75": false,
+      "Gün Planı-15": false,
+      "Kişisel Proje-90": false,
+      "Bakım-15": false,
+      "Okuma-60": false
+    },
+    "categories": {
+      "Mental": {
+        "completedMinutes": 0,
+        "maxMinutes": 210,
+        "exp": 0
+      },
+      "Career": {
+        "completedMinutes": 0,
+        "maxMinutes": 210,
+        "exp": 0
+      },
+      "Stamina": {
+        "completedMinutes": 0,
+        "maxMinutes": 150,
+        "exp": 0
+      },
+      "Willpower": {
+        "completedMinutes": 0,
+        "maxMinutes": 150,
+        "exp": 0
+      }
+    }
+  },
+  {
     "id": "370df6cd-2b29-817a-b3ed-dad4f114999f",
     "name": "2026-05-31",
     "date": "2026-05-30",

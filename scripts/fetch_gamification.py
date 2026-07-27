@@ -85,7 +85,8 @@ def get_gamification_data():
         formatted_date = created_time.split("T")[0] if created_time else ""
 
         record_name = "Bilinmeyen Gün"
-        raw_habits = {}   # prop_name → bool
+        raw_habits = {}     # prop_name → bool
+        raw_numbers = {}    # prop_name → number
 
         for prop_name, prop_data in props.items():
             prop_type = prop_data.get("type", "")
@@ -114,31 +115,113 @@ def get_gamification_data():
 
             elif prop_type == "checkbox":
                 try:
-                    raw_habits[prop_name] = prop_data["checkbox"]
+                    raw_habits[prop_name] = bool(prop_data.get("checkbox", False))
+                except Exception:
+                    pass
+
+            elif prop_type == "number":
+                try:
+                    val = prop_data.get("number")
+                    raw_numbers[prop_name] = val if val is not None else 0
                 except Exception:
                     pass
 
         # ── Build per-category EXP for this day ──────────────────────────────
         category_data = {}
-        for cat in CATEGORY_CONFIG:
-            completed_minutes = 0
-            for task_name, minutes in CATEGORY_CONFIG[cat].items():
+
+        # 1. Career (Kariyer & Mühendislik)
+        career_mins = 0
+        for k, v in raw_numbers.items():
+            if any(term in k.lower() for term in ["kariyer", "mühendislik", "career"]):
+                career_mins += v
+        # Fallback to legacy habits if no number column found
+        if career_mins == 0:
+            for task_name, mins in CATEGORY_CONFIG["Career"].items():
                 if raw_habits.get(task_name, False):
-                    completed_minutes += minutes
-            max_minutes = CATEGORY_MAX[cat]
-            exp = round((completed_minutes / max_minutes) * 100) if max_minutes > 0 else 0
-            category_data[cat] = {
-                "completedMinutes": completed_minutes,
-                "maxMinutes": max_minutes,
-                "exp": exp          # 0-100, normalised EXP for the day
-            }
+                    career_mins += mins
+
+        career_target = 540  # 9 saat standart iş günü hedefi
+        career_exp = round((career_mins / career_target) * 100) if career_target > 0 else 0
+        category_data["Career"] = {
+            "completedMinutes": career_mins,
+            "maxMinutes": career_target,
+            "exp": min(100, career_exp)
+        }
+
+        # 2. Mental (Zihin & Gelişim)
+        mental_mins = 0
+        for k, v in raw_numbers.items():
+            if any(term in k.lower() for term in ["zihin", "gelişim", "mental", "okuma"]):
+                mental_mins += v
+        if mental_mins == 0:
+            for task_name, mins in CATEGORY_CONFIG["Mental"].items():
+                if raw_habits.get(task_name, False):
+                    mental_mins += mins
+
+        mental_target = 60  # 60 dk günlük okuma/gelişim hedefi
+        mental_exp = round((mental_mins / mental_target) * 100) if mental_target > 0 else 0
+        category_data["Mental"] = {
+            "completedMinutes": mental_mins,
+            "maxMinutes": mental_target,
+            "exp": min(100, mental_exp)
+        }
+
+        # 3. Stamina (Fiziksel & Efor)
+        stamina_mins = 0
+        for k, v in raw_numbers.items():
+            if any(term in k.lower() for term in ["fiziksel", "efor", "spor", "stamina"]):
+                stamina_mins += v
+        if stamina_mins == 0:
+            for task_name, mins in CATEGORY_CONFIG["Stamina"].items():
+                if raw_habits.get(task_name, False):
+                    stamina_mins += mins
+
+        stamina_target = 45  # 45 dk spor/yürüyüş hedefi
+        stamina_exp = round((stamina_mins / stamina_target) * 100) if stamina_target > 0 else 0
+        category_data["Stamina"] = {
+            "completedMinutes": stamina_mins,
+            "maxMinutes": stamina_target,
+            "exp": min(100, stamina_exp)
+        }
+
+        # 4. Willpower (İrade: Sigara, Soul, Bakım)
+        willpower_exp = 0
+        willpower_mins = 0
+
+        # Checkbox points allocation (Sigara = 40, Soul = 30, Bakım = 30 → Total 100)
+        for h_name, is_checked in raw_habits.items():
+            if is_checked:
+                h_lower = h_name.lower()
+                if "sigara" in h_lower:
+                    willpower_exp += 40
+                    willpower_mins += 30
+                elif "soul" in h_lower or "ruh" in h_lower:
+                    willpower_exp += 30
+                    willpower_mins += 30
+                elif "bakım" in h_lower or "bakim" in h_lower:
+                    willpower_exp += 30
+                    willpower_mins += 30
+
+        # Legacy fallback for willpower
+        if willpower_exp == 0 and willpower_mins == 0:
+            for task_name, mins in CATEGORY_CONFIG["Willpower"].items():
+                if raw_habits.get(task_name, False):
+                    willpower_mins += mins
+            willpower_exp = round((willpower_mins / 150) * 100)
+
+        category_data["Willpower"] = {
+            "completedMinutes": willpower_mins,
+            "maxMinutes": 90,
+            "exp": min(100, willpower_exp)
+        }
 
         daily_records.append({
             "id": item["id"],
             "name": record_name,
             "date": formatted_date,
-            "habits": raw_habits,           # raw booleans (kept for backward compat)
-            "categories": category_data     # NEW: per-category EXP breakdown
+            "habits": raw_habits,
+            "numbers": raw_numbers,
+            "categories": category_data
         })
 
     return daily_records

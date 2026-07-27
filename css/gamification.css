@@ -1,12 +1,498 @@
 /* ═══════════════════════════════════════════════════════════════════
-   Gamification Dashboard — RPG HUD v3.0
-   Full hero + dashboard styles
+   Gamification Dashboard — RETRO PIXEL RPG HUD v4.0
 ═══════════════════════════════════════════════════════════════════ */
 body {
-    background-color: #0b0c10;
+    background-color: #090a0f;
     color: #e2e8f0;
     font-family: 'Inter', 'Outfit', system-ui, sans-serif;
 }
+
+/* Pixel Retro Fonts Utility */
+.pixel-font {
+    font-family: 'Press Start 2P', 'VT323', monospace, sans-serif;
+    letter-spacing: 0.5px;
+}
+
+/* CRT Scanline Overlay */
+.scanline-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.22) 50%);
+    background-size: 100% 4px;
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0.6;
+}
+
+/* ── Live Quest Call-To-Action Banner ─────────────────────────────── */
+.pixel-action-banner {
+    position: relative;
+    z-index: 5;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    background: linear-gradient(135deg, rgba(6, 182, 212, 0.12) 0%, rgba(168, 85, 247, 0.12) 100%);
+    border: 2px solid #06b6d4;
+    box-shadow: 0 0 20px rgba(6, 182, 212, 0.25), inset 0 0 15px rgba(6, 182, 212, 0.1);
+    border-radius: 16px;
+    padding: 16px 24px;
+    margin-bottom: 25px;
+}
+
+.pab-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.pixel-pulse-badge {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.65rem;
+    background: #06b6d4;
+    color: #000;
+    font-weight: 900;
+    padding: 6px 10px;
+    border-radius: 6px;
+    box-shadow: 0 0 10px #06b6d4;
+    animation: pulseBadge 1.5s infinite ease-in-out;
+}
+
+@keyframes pulseBadge {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.8; transform: scale(1.05); }
+}
+
+.pab-text {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #f8fafc;
+    letter-spacing: 0.3px;
+}
+
+.pixel-cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    color: #000;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.72rem;
+    font-weight: 900;
+    padding: 12px 22px;
+    border-radius: 10px;
+    text-decoration: none;
+    border: 2px solid #34d399;
+    box-shadow: 0 0 18px rgba(16, 185, 129, 0.6);
+    transition: all 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.pixel-cta-btn:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 0 30px rgba(52, 211, 153, 0.9);
+    background: linear-gradient(135deg, #34d399 0%, #10b981 100%);
+    color: #000;
+}
+
+/* ── Main Pixel Hero Card ─────────────────────────────────────────── */
+.pixel-hero-card {
+    position: relative;
+    z-index: 5;
+    background: rgba(15, 23, 42, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 2px solid rgba(168, 85, 247, 0.4);
+    box-shadow: 0 0 35px rgba(168, 85, 247, 0.2), inset 0 0 20px rgba(0,0,0,0.6);
+    border-radius: 24px;
+    padding: 32px;
+    overflow: hidden;
+}
+
+.pixel-hero-layout {
+    display: grid;
+    grid-template-columns: 200px 1fr 240px;
+    gap: 30px;
+    align-items: center;
+}
+
+/* LEFT: Avatar Frame */
+.pixel-avatar-side {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.pixel-avatar-frame {
+    position: relative;
+    width: 170px;
+    height: 170px;
+    border-radius: 20px;
+    background: #0f172a;
+    border: 3px solid #06b6d4;
+    box-shadow: 0 0 25px rgba(6, 182, 212, 0.5), inset 0 0 15px rgba(6, 182, 212, 0.2);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pixel-avatar-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    image-rendering: pixelated;
+    transition: transform 0.5s ease;
+}
+
+.pixel-avatar-frame:hover .pixel-avatar-img {
+    transform: scale(1.08);
+}
+
+.pixel-avatar-badge {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    background: rgba(0, 0, 0, 0.85);
+    border: 1px solid #06b6d4;
+    padding: 3px 8px;
+    border-radius: 6px;
+}
+
+.pab-lvl {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.65rem;
+    color: #06b6d4;
+    font-weight: 700;
+}
+
+.pixel-class-tag {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.58rem;
+    color: #a78bfa;
+    background: rgba(168, 85, 247, 0.15);
+    border: 1px solid rgba(168, 85, 247, 0.4);
+    padding: 6px 12px;
+    border-radius: 99px;
+    text-align: center;
+}
+
+/* CENTER: Character Stats */
+.pixel-stats-side {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.pixel-user-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.pixel-username {
+    font-family: 'Outfit', sans-serif;
+    font-size: 2rem;
+    font-weight: 900;
+    color: #fff;
+    letter-spacing: 0.5px;
+    line-height: 1.1;
+    background: linear-gradient(135deg, #fff 0%, #a78bfa 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.pixel-subtitle {
+    font-size: 0.85rem;
+    color: #94a3b8;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 4px;
+}
+
+.pixel-exp-loot {
+    background: rgba(251, 191, 36, 0.12);
+    border: 1px solid rgba(251, 191, 36, 0.35);
+    padding: 6px 14px;
+    border-radius: 12px;
+    text-align: right;
+}
+
+.loot-label {
+    display: block;
+    font-size: 0.65rem;
+    font-weight: 700;
+    color: #fbbf24;
+    letter-spacing: 0.5px;
+}
+
+.loot-value {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.85rem;
+    color: #fff;
+    font-weight: 900;
+}
+
+/* Hearts Card */
+.pixel-hearts-card {
+    background: rgba(239, 68, 68, 0.08);
+    border: 1px solid rgba(239, 68, 68, 0.25);
+    border-radius: 14px;
+    padding: 12px 16px;
+}
+
+.ph-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.ph-title {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #fca5a5;
+}
+
+.ph-status {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.6rem;
+    color: #ef4444;
+}
+
+.pixel-hearts-row {
+    display: flex;
+    gap: 8px;
+}
+
+.pixel-heart {
+    font-size: 1.25rem;
+    filter: drop-shadow(0 0 6px rgba(239, 68, 68, 0.8));
+    animation: heartBeat 2s infinite ease-in-out;
+}
+
+.pixel-heart.empty {
+    opacity: 0.2;
+    filter: grayscale(100%);
+    animation: none;
+}
+
+/* XP Block */
+.pixel-xp-block {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.pxp-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+}
+
+.pxp-title {
+    font-weight: 700;
+    color: #a78bfa;
+}
+
+.pxp-val {
+    color: #94a3b8;
+    font-size: 0.78rem;
+}
+
+.pixel-xp-track {
+    height: 14px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 99px;
+    overflow: hidden;
+    padding: 2px;
+}
+
+.pixel-xp-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #06b6d4 0%, #a855f7 50%, #10b981 100%);
+    border-radius: 99px;
+    transition: width 1s cubic-bezier(0.22, 1, 0.36, 1);
+    box-shadow: 0 0 12px rgba(6, 182, 212, 0.8);
+}
+
+/* RIGHT: Gear Inventory */
+.pixel-gear-side {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 16px;
+}
+
+.gear-header {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.65rem;
+    color: #fbbf24;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.pixel-gear-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.gear-slot {
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 10px 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.gear-slot.unlocked {
+    border-color: rgba(251, 191, 36, 0.4);
+    background: rgba(251, 191, 36, 0.06);
+}
+
+.gear-slot.unlocked:hover {
+    transform: translateY(-2px);
+    border-color: #fbbf24;
+    box-shadow: 0 0 12px rgba(251, 191, 36, 0.3);
+}
+
+.gear-slot.locked {
+    opacity: 0.4;
+    filter: grayscale(100%);
+}
+
+.gear-icon {
+    font-size: 1.2rem;
+}
+
+.gear-name {
+    font-size: 0.65rem;
+    font-weight: 700;
+    color: #94a3b8;
+}
+
+.gear-slot.unlocked .gear-name {
+    color: #fbbf24;
+}
+
+/* ── TODAY'S QUEST LOG BREAKDOWN ────────────────────────────────── */
+.pixel-card {
+    background: rgba(15, 23, 42, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 24px;
+}
+
+.today-quest-card {
+    border-color: rgba(6, 182, 212, 0.3);
+    box-shadow: 0 0 20px rgba(6, 182, 212, 0.08);
+}
+
+.pq-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.pq-header h3 {
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: #f8fafc;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.pq-date-tag {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.6rem;
+    background: rgba(6, 182, 212, 0.15);
+    color: #06b6d4;
+    border: 1px solid rgba(6, 182, 212, 0.3);
+    padding: 4px 10px;
+    border-radius: 8px;
+}
+
+.today-quests-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+}
+
+.quest-item-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 14px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition: all 0.25s ease;
+}
+
+.quest-item-card:hover {
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+.qic-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.qic-title {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #f8fafc;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.qic-xp-tag {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.58rem;
+    color: #10b981;
+    background: rgba(16, 185, 129, 0.12);
+    border: 1px solid rgba(16, 185, 129, 0.3);
+    padding: 3px 6px;
+    border-radius: 6px;
+}
+
+.qic-val {
+    font-size: 0.82rem;
+    color: #94a3b8;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .pixel-hero-layout {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    .pixel-avatar-side, .pixel-user-row {
+        flex-direction: column;
+        align-items: center;
+    }
+    .pixel-gear-side {
+        margin-top: 10px;
+    }
+}
+
 
 /* ── Hero Section ─────────────────────────────────────────── */
 .gamification-hero {
@@ -1010,4 +1496,406 @@ body {
     .level-cards-grid {
         grid-template-columns: 1fr;
     }
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   MINECRAFT RPG HUD: HEART CONTAINERS & ACHIEVEMENTS SHOWCASE
+═══════════════════════════════════════════════════════════════════ */
+
+/* Heart Container / Willpower Shield */
+.hero-hearts-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(239, 68, 68, 0.08);
+    border: 1px solid rgba(239, 68, 68, 0.25);
+    border-radius: 12px;
+    padding: 8px 14px;
+    margin-top: 4px;
+    box-shadow: inset 0 0 10px rgba(239, 68, 68, 0.1);
+}
+
+.hearts-label {
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: #fca5a5;
+    letter-spacing: 0.5px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.hearts-container {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.heart-icon {
+    font-size: 1.1rem;
+    filter: drop-shadow(0 0 4px rgba(239, 68, 68, 0.8));
+    animation: heartBeat 2s infinite ease-in-out;
+}
+
+.heart-icon:nth-child(2) { animation-delay: 0.2s; }
+.heart-icon:nth-child(3) { animation-delay: 0.4s; }
+.heart-icon:nth-child(4) { animation-delay: 0.6s; }
+.heart-icon:nth-child(5) { animation-delay: 0.8s; }
+
+.heart-icon.empty {
+    opacity: 0.25;
+    filter: grayscale(100%);
+    animation: none;
+}
+
+@keyframes heartBeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.12); }
+}
+
+/* Achievements Section */
+.achievements-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.achievement-filters {
+    display: flex;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.04);
+    padding: 4px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.ach-filter-btn {
+    background: transparent;
+    border: none;
+    color: #94a3b8;
+    padding: 6px 14px;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.ach-filter-btn:hover {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.ach-filter-btn.active {
+    background: linear-gradient(135deg, #7c3aed, #a78bfa);
+    color: #fff;
+    box-shadow: 0 0 12px rgba(124, 58, 237, 0.4);
+}
+
+.achievements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 18px;
+}
+
+/* Individual Achievement Card */
+.achievement-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 16px;
+    padding: 18px;
+    display: flex;
+    gap: 14px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.achievement-card.unlocked {
+    background: linear-gradient(135deg, rgba(245, 158, 11, 0.08) 0%, rgba(139, 92, 246, 0.06) 100%);
+    border-color: rgba(245, 158, 11, 0.35);
+    box-shadow: 0 0 20px rgba(245, 158, 11, 0.12);
+}
+
+.achievement-card.unlocked:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0 28px rgba(245, 158, 11, 0.25), 0 10px 25px rgba(0,0,0,0.5);
+    border-color: #f59e0b;
+}
+
+.achievement-card.locked {
+    opacity: 0.65;
+    filter: grayscale(40%);
+}
+
+.achievement-card.locked:hover {
+    opacity: 0.85;
+    transform: translateY(-2px);
+    border-color: rgba(255,255,255,0.15);
+}
+
+.ach-icon-wrapper {
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    flex-shrink: 0;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.4);
+}
+
+.achievement-card.unlocked .ach-icon-wrapper {
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+    border: 1px solid #fbbf24;
+    color: #fff;
+    box-shadow: 0 0 16px rgba(245, 158, 11, 0.5);
+}
+
+.ach-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.ach-title-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ach-title {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #f8fafc;
+    letter-spacing: 0.3px;
+}
+
+.achievement-card.unlocked .ach-title {
+    color: #fbbf24;
+}
+
+.ach-status-badge {
+    font-size: 0.65rem;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    padding: 2px 8px;
+    border-radius: 99px;
+    text-transform: uppercase;
+}
+
+.ach-status-badge.unlocked {
+    background: rgba(245, 158, 11, 0.2);
+    color: #fbbf24;
+    border: 1px solid rgba(245, 158, 11, 0.4);
+}
+
+.ach-status-badge.locked {
+    background: rgba(148, 163, 184, 0.1);
+    color: #94a3b8;
+    border: 1px solid rgba(148, 163, 184, 0.2);
+}
+
+.ach-desc {
+    font-size: 0.78rem;
+    color: #94a3b8;
+    line-height: 1.4;
+    margin: 2px 0;
+}
+
+.ach-progress-track {
+    height: 6px;
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 99px;
+    overflow: hidden;
+    margin-top: 6px;
+}
+
+.ach-progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #f59e0b, #ec4899);
+    border-radius: 99px;
+    transition: width 1s ease;
+}
+
+.ach-progress-text {
+    font-size: 0.7rem;
+    color: #64748b;
+    margin-top: 3px;
+    text-align: right;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   GOLD VAULT & ITEM UPGRADE WORKSHOP MODAL
+═══════════════════════════════════════════════════════════════════ */
+.pixel-vault-box {
+    display: flex;
+    gap: 10px;
+}
+
+.pixel-gold-loot {
+    background: rgba(251, 191, 36, 0.15);
+    border: 1px solid #fbbf24;
+    box-shadow: 0 0 12px rgba(251, 191, 36, 0.3);
+    padding: 6px 14px;
+    border-radius: 12px;
+    text-align: right;
+}
+
+.gold-label {
+    display: block;
+    font-size: 0.65rem;
+    font-weight: 800;
+    color: #fbbf24;
+    letter-spacing: 0.5px;
+}
+
+.gold-value {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.8rem;
+    color: #fff;
+    font-weight: 900;
+}
+
+.gear-lvl-badge {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.5rem;
+    background: rgba(251, 191, 36, 0.2);
+    border: 1px solid #fbbf24;
+    color: #fbbf24;
+    padding: 1px 4px;
+    border-radius: 4px;
+    margin-top: 2px;
+}
+
+/* Modal Window */
+.pixel-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: rgba(0, 0, 0, 0.82);
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.pixel-modal-content {
+    background: #0f172a;
+    border: 2px solid #a855f7;
+    box-shadow: 0 0 35px rgba(168, 85, 247, 0.4);
+    border-radius: 20px;
+    padding: 28px;
+    max-width: 440px;
+    width: 100%;
+    position: relative;
+}
+
+.pixel-modal-close {
+    position: absolute;
+    top: 16px;
+    right: 20px;
+    color: #94a3b8;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.pixel-modal-close:hover {
+    color: #fff;
+}
+
+.pum-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.pum-icon {
+    font-size: 2.2rem;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 12px;
+    border-radius: 14px;
+}
+
+.pum-title {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: #f8fafc;
+    margin: 0;
+}
+
+.pum-sub {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.65rem;
+    color: #fbbf24;
+}
+
+.pum-desc {
+    font-size: 0.85rem;
+    color: #94a3b8;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.pum-stats-box {
+    background: rgba(168, 85, 247, 0.08);
+    border: 1px solid rgba(168, 85, 247, 0.25);
+    border-radius: 12px;
+    padding: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.pum-stat-label {
+    font-size: 0.8rem;
+    color: #cbd5e1;
+}
+
+.pum-stat-val {
+    font-weight: 700;
+    color: #a78bfa;
+}
+
+.pum-action-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pum-cost {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.7rem;
+    color: #fbbf24;
+}
+
+.pum-upgrade-btn {
+    background: linear-gradient(135deg, #a855f7 0%, #7c3aed 100%);
+    color: #fff;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.65rem;
+    font-weight: bold;
+    padding: 10px 18px;
+    border-radius: 10px;
+    border: 1px solid #c084fc;
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(168, 85, 247, 0.5);
+    transition: all 0.2s ease;
+}
+
+.pum-upgrade-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(168, 85, 247, 0.8);
 }

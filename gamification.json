@@ -1,5 +1,42 @@
 [
   {
+    "id": "notion-test-2026-07-28",
+    "name": "2026-07-28",
+    "date": "2026-07-28",
+    "numbers": {
+      "Kariyer & Mühendislik (Dk)": 540,
+      "Zihin & Gelişim (Dk)": 60,
+      "Fiziksel & Efor (Dk)": 15
+    },
+    "habits": {
+      "Sigara": false,
+      "Soul": false,
+      "Bakım": true
+    },
+    "categories": {
+      "Career": {
+        "completedMinutes": 540,
+        "maxMinutes": 540,
+        "exp": 100
+      },
+      "Mental": {
+        "completedMinutes": 60,
+        "maxMinutes": 60,
+        "exp": 100
+      },
+      "Stamina": {
+        "completedMinutes": 15,
+        "maxMinutes": 45,
+        "exp": 33
+      },
+      "Willpower": {
+        "completedMinutes": 30,
+        "maxMinutes": 90,
+        "exp": 30
+      }
+    }
+  },
+  {
     "id": "33cdf6cd-2b29-8143-b8d9-cfd967095a13",
     "name": "2026-04-09",
     "date": "2026-04-08",

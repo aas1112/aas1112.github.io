@@ -7,10 +7,10 @@
     <title>Gelişim & Başarım Ağı - Ahmet Arda Sezgin</title>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <!-- Google Fonts -->
+    <!-- Google Fonts: Inter, Outfit, Press Start 2P & VT323 -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@700;800;900&family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
     <!-- ApexCharts -->
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
     <link rel="stylesheet" href="css/style.css">
@@ -50,153 +50,215 @@
     <main class="gamification-page">
 
         <!-- ══════════════════════════════════════════════════════
-             HERO — Premium Character Showcase
+             RETRO PIXEL RPG HERO SHOWCASE (SCORPIO TO EAGLE METAMORPHOSIS)
         ══════════════════════════════════════════════════════ -->
-        <section class="gamification-hero">
-
-            <!-- Animated background particles -->
+        <section class="gamification-hero pixel-hero-section">
+            <div class="scanline-overlay" aria-hidden="true"></div>
             <div class="hero-bg-grid" aria-hidden="true"></div>
             <div class="hero-orb hero-orb-1" aria-hidden="true"></div>
             <div class="hero-orb hero-orb-2" aria-hidden="true"></div>
 
             <div class="container">
-                <div class="hero-layout">
 
-                    <!-- ── LEFT: Level Showcase ── -->
-                    <div class="hero-level-side">
+                <!-- Live Quest Call-To-Action Banner -->
+                <div class="pixel-action-banner">
+                    <div class="pab-left">
+                        <span class="pixel-pulse-badge">DAILY PROTOCOL</span>
+                        <span class="pab-text">Günün disiplin verilerini Notion'a gir, karakter seviyeni yükselt!</span>
+                    </div>
+                    <a href="https://notion.so" target="_blank" rel="noopener noreferrer" class="pixel-cta-btn">
+                        <i class="fas fa-gamepad"></i> NOTION'A GİR & XP KAZAN ⚡
+                    </a>
+                </div>
 
-                        <!-- Outer glow ring -->
-                        <div class="level-ring-outer">
-                            <svg class="level-ring-svg" viewBox="0 0 200 200">
-                                <defs>
-                                    <linearGradient id="ringGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                                        <stop offset="0%" stop-color="#818cf8"/>
-                                        <stop offset="50%" stop-color="#a78bfa"/>
-                                        <stop offset="100%" stop-color="#ec4899"/>
-                                    </linearGradient>
-                                </defs>
-                                <!-- Track -->
-                                <circle class="lr-track" cx="100" cy="100" r="88"/>
-                                <!-- Progress fill -->
-                                <circle class="lr-fill" id="heroRingFill" cx="100" cy="100" r="88"
-                                        stroke="url(#ringGradient)"
-                                        stroke-dasharray="553"
-                                        stroke-dashoffset="553"
-                                        transform="rotate(-90 100 100)"/>
-                            </svg>
+                <!-- Main Pixel Hero Card -->
+                <div class="pixel-hero-card">
+                    <div class="pixel-hero-layout">
 
-                            <!-- Inner content -->
-                            <div class="level-ring-inner">
-                                <span class="lvl-tag">GLOBAL LEVEL</span>
-                                <span class="lvl-number" id="heroGlobalLevel">–</span>
-                                <span class="lvl-subtitle" id="heroTitleLabel">Yükleniyor...</span>
+                        <!-- LEFT: Pixel Character Avatar Frame -->
+                        <div class="pixel-avatar-side">
+                            <div class="pixel-avatar-frame">
+                                <img src="images/scorpio_eagle_hero.png" alt="Cyber Engineer Hero" class="pixel-avatar-img">
+                                <div class="pixel-avatar-badge">
+                                    <span class="pab-lvl">LVL <span id="heroGlobalLevel">1</span></span>
+                                </div>
+                            </div>
+                            <div class="pixel-class-tag" id="heroTitleLabel">CYBER ENGINEER</div>
+                        </div>
+
+                        <!-- CENTER: Character Stats & Gold Coins -->
+                        <div class="pixel-stats-side">
+                            <div class="pixel-user-row">
+                                <div>
+                                    <h1 class="pixel-username">AAS1112</h1>
+                                    <span class="pixel-subtitle"><i class="fas fa-microchip"></i> Elektrik & Elektronik Mühendisi</span>
+                                </div>
+                                <div class="pixel-vault-box">
+                                    <div class="pixel-exp-loot">
+                                        <span class="loot-label">TOPLAM GAIN</span>
+                                        <span class="loot-value"><span id="userXP">0</span>% XP</span>
+                                    </div>
+                                    <div class="pixel-gold-loot">
+                                        <span class="gold-label">ALTIN KASA</span>
+                                        <span class="gold-value">🪙 <span id="userGoldCoins">0</span> SİKKE</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Willpower / Health Hearts Container -->
+                            <div class="pixel-hearts-card">
+                                <div class="ph-header">
+                                    <span class="ph-title"><i class="fas fa-shield-alt"></i> İrade & Sağlık Kalkanı (Sigarasız Yaşam)</span>
+                                    <span class="ph-status" id="willpowerStatusText">5/5 KALKAN AKTİF</span>
+                                </div>
+                                <div class="pixel-hearts-row" id="heroHeartsContainer">
+                                    <span class="pixel-heart filled">❤️</span>
+                                    <span class="pixel-heart filled">❤️</span>
+                                    <span class="pixel-heart filled">❤️</span>
+                                    <span class="pixel-heart filled">❤️</span>
+                                    <span class="pixel-heart filled">❤️</span>
+                                </div>
+                            </div>
+
+                            <!-- Global Level Progress Bar -->
+                            <div class="pixel-xp-block">
+                                <div class="pxp-labels">
+                                    <span class="pxp-title">⚡ GENEL LEVEL İLERLEMESİ</span>
+                                    <span class="pxp-val"><span id="heroGlobalExp">0 EXP</span> (<span id="heroXpToNext">100 EXP kaldı</span>)</span>
+                                </div>
+                                <div class="pixel-xp-track">
+                                    <div class="pixel-xp-fill" id="heroXpFill" style="width:0%"></div>
+                                </div>
                             </div>
                         </div>
 
-                        <!-- XP progress bar below ring -->
-                        <div class="hero-xp-section">
-                            <div class="hero-xp-labels">
-                                <span class="xp-label-left">⚡ <span id="heroGlobalExp">– EXP</span></span>
-                                <span class="xp-label-right" id="heroXpToNext">...</span>
+                        <!-- RIGHT: RPG Equipment Inventory & Upgrade Workshop -->
+                        <div class="pixel-gear-side">
+                            <div class="gear-header">
+                                <span><i class="fas fa-anvil"></i> ENVANTER & GELİŞTİRME</span>
+                                <span style="font-size:0.55rem; color:#a78bfa;">(Tıkla & Yükselt)</span>
                             </div>
-                            <div class="hero-xp-track">
-                                <div class="hero-xp-fill" id="heroXpFill" style="width:0%"></div>
-                                <span class="hero-xp-pct" id="heroXpPct">0%</span>
+                            <div class="pixel-gear-grid">
+                                <div class="gear-slot unlocked" id="gearWeapon" onclick="openItemUpgradeModal('weapon')">
+                                    <span class="gear-icon">⚔️</span>
+                                    <span class="gear-name">Kılıç</span>
+                                    <span class="gear-lvl-badge" id="gearLvlWeapon">Lv.1</span>
+                                </div>
+                                <div class="gear-slot unlocked" id="gearShield" onclick="openItemUpgradeModal('shield')">
+                                    <span class="gear-icon">🛡️</span>
+                                    <span class="gear-name">Kalkan</span>
+                                    <span class="gear-lvl-badge" id="gearLvlShield">Lv.1</span>
+                                </div>
+                                <div class="gear-slot unlocked" id="gearHelm" onclick="openItemUpgradeModal('helm')">
+                                    <span class="gear-icon">🎓</span>
+                                    <span class="gear-name">Taç</span>
+                                    <span class="gear-lvl-badge" id="gearLvlHelm">Lv.1</span>
+                                </div>
+                                <div class="gear-slot unlocked" id="gearBoots" onclick="openItemUpgradeModal('boots')">
+                                    <span class="gear-icon">👟</span>
+                                    <span class="gear-name">Çizme</span>
+                                    <span class="gear-lvl-badge" id="gearLvlBoots">Lv.1</span>
+                                </div>
+                                <div class="gear-slot unlocked" id="gearRing" onclick="openItemUpgradeModal('ring')">
+                                    <span class="gear-icon">💍</span>
+                                    <span class="gear-name">Yüzük</span>
+                                    <span class="gear-lvl-badge" id="gearLvlRing">Lv.1</span>
+                                </div>
                             </div>
                         </div>
 
-                    </div><!-- /hero-level-side -->
+                    </div>
+                </div>
 
-                    <!-- ── CENTER: Divider ── -->
-                    <div class="hero-vdivider" aria-hidden="true"></div>
-
-                    <!-- ── RIGHT: Info & Stats ── -->
-                    <div class="hero-info-side">
-
-                        <div class="hero-handle-row">
-                            <div class="hero-handle-badge"><i class="fas fa-terminal"></i></div>
-                            <div>
-                                <div class="hero-username">AAS1112</div>
-                                <div class="hero-subtitle">Gelişim & Başarım Ağı</div>
-                            </div>
-                        </div>
-
-                        <p class="hero-desc">
-                            Notion'a girdiğim günlük disiplinlerin görsel veritabanı.<br>
-                            Her gün biraz daha ileri. Sürekli gelişim.
-                        </p>
-
-                        <!-- Overall success rate — BIG number -->
-                        <div class="hero-success-rate">
-                            <span class="hsr-number" id="userXP">–</span>
-                            <span class="hsr-unit">%</span>
-                            <span class="hsr-label">Ortalama Başarım Oranı</span>
-                        </div>
-
-                        <!-- Mini category bars -->
-                        <div class="hero-cat-bars" id="heroCatBars">
-                            <!-- Filled by JS -->
-                        </div>
-
-                        <div class="hero-days-row">
-                            <i class="fas fa-calendar-alt"></i>
-                            <span id="userLevel">–</span> gün takip edildi
-                        </div>
-
-                    </div><!-- /hero-info-side -->
-
-                </div><!-- /hero-layout -->
             </div>
         </section>
 
 
+        <!-- Item Upgrade Modal -->
+        <div id="itemUpgradeModal" class="pixel-modal" style="display:none;">
+            <div class="pixel-modal-content">
+                <span class="pixel-modal-close" onclick="closeItemUpgradeModal()">&times;</span>
+                <div class="pum-header">
+                    <span id="modalItemIcon" class="pum-icon">⚔️</span>
+                    <div>
+                        <h4 id="modalItemName" class="pum-title">Redstone Kılıcı</h4>
+                        <span id="modalItemLevel" class="pum-sub">Mevcut Seviye: Lv.1</span>
+                    </div>
+                </div>
+                <p id="modalItemDesc" class="pum-desc">Kariyer ve Mühendislik eforunuzu simgeler.</p>
+                <div class="pum-stats-box">
+                    <span class="pum-stat-label">Geliştirme Bonusu:</span>
+                    <span id="modalItemBonus" class="pum-stat-val">+15% EXP Boost</span>
+                </div>
+                <div class="pum-action-row">
+                    <span class="pum-cost">Maliyet: 🪙 <span id="modalUpgradeCost">50</span> Sikke</span>
+                    <button id="btnDoUpgrade" class="pum-upgrade-btn" onclick="upgradeSelectedItem()">GELİŞTİR ⚡</button>
+                </div>
+            </div>
+        </div>
+
+
         <!-- Loading Indicator -->
-        <div id="loading" class="container" style="text-align: center; padding: 40px; color: var(--text-color);">
-            <i class="fas fa-circle-notch fa-spin fa-3x"></i>
-            <p style="margin-top: 10px;">Notion veritabanı ile senkronize ediliyor...</p>
+        <div id="loading" class="container" style="text-align: center; padding: 50px; color: var(--text-color);">
+            <i class="fas fa-gamepad fa-spin fa-3x" style="color: #06b6d4;"></i>
+            <p class="pixel-font" style="margin-top: 15px; font-size: 0.9rem; color: #a78bfa;">NOTION VERİTABANI İLE RPG SENKRONİZASYONU SAĞLANIYOR...</p>
         </div>
 
         <!-- Dashboard Content -->
         <section id="dashboardContent" class="gamification-content" style="display: none;">
             <div class="container">
-                <div class="dashboard-grid">
 
-                    <!-- ══ SKILL LEVEL CARDS (full width) ══ -->
+                <!-- ══ TODAY'S QUEST LOG & LOOT DROP ══ -->
+                <div class="pixel-card today-quest-card">
+                    <div class="pq-header">
+                        <h3><i class="fas fa-scroll" style="color: #fbbf24;"></i> BUGÜNÜN DİSİPLİN AV-I & GANİMET KARTLARI</h3>
+                        <span class="pq-date-tag" id="todayDateTag">BUGÜN</span>
+                    </div>
+                    <div id="todayQuestsGrid" class="today-quests-grid">
+                        <!-- Filled by JS -->
+                    </div>
+                </div>
+
+                <div class="dashboard-grid" style="margin-top: 30px;">
+
+                    <!-- ══ SKILL LEVEL CARDS ══ -->
                     <div class="dashboard-card skill-cards-wrapper" style="grid-column: 1 / -1;">
-                        <h3><i class="fas fa-layer-group"></i> Yetenek Seviyeleri</h3>
+                        <h3><i class="fas fa-cubes"></i> YETENEK AĞAÇLARI & SEVİYE SÜTUNLARI</h3>
                         <p class="text-muted" style="margin-bottom: 25px; font-size: 0.9rem;">
-                            Birikimli EXP → Level dönüşümü &nbsp;|&nbsp;
-                            <code style="background:rgba(255,255,255,0.05);padding:2px 6px;border-radius:4px;font-size:0.8rem;">EXP Eşiği&nbsp;=&nbsp;100 × level<sup>1.5</sup></code>
+                            Minecraft Sandbox Kümülâtif EXP Motoru &nbsp;|&nbsp;
+                            <code style="background:rgba(255,255,255,0.05);padding:2px 6px;border-radius:4px;font-size:0.8rem;">Seviye Eşiği = 100 × level<sup>1.5</sup></code>
                         </p>
                         <div id="levelCardsContainer" class="level-cards-grid"></div>
                     </div>
 
+                    <!-- ══ MULTI-STAGE ACHIEVEMENTS SHOWCASE ══ -->
+                    <div class="dashboard-card achievements-wrapper" style="grid-column: 1 / -1;">
+                        <div class="achievements-header">
+                            <div>
+                                <h3><i class="fas fa-trophy" style="color: #f59e0b;"></i> ROZET ODASI & KATMANLI BAŞARIMLAR</h3>
+                                <p class="text-muted" style="margin-bottom: 0; font-size: 0.9rem;">Görevleri tamamlayın, Aşama II, III ve IV hedeflerini açın</p>
+                            </div>
+                            <div class="achievement-filters">
+                                <button class="ach-filter-btn active" data-filter="all">Tümü (<span id="achTotalCount">0</span>)</button>
+                                <button class="ach-filter-btn" data-filter="unlocked">Kazanılanlar 🏆 (<span id="achUnlockedCount">0</span>)</button>
+                                <button class="ach-filter-btn" data-filter="locked">Kilitli 🔒 (<span id="achLockedCount">0</span>)</button>
+                            </div>
+                        </div>
+                        <div id="achievementsContainer" class="achievements-grid" style="margin-top: 25px;"></div>
+                    </div>
+
                     <!-- Recent Efforts Snapshot -->
                     <div class="dashboard-card today-card">
-                        <h3><i class="fas fa-bolt"></i> Yakın Dönem Eforu</h3>
-                        <p class="text-muted" style="margin-bottom: 25px; font-size: 0.9rem;">Son 5 güne ait disiplin barı</p>
+                        <h3><i class="fas fa-bolt"></i> YAKIN DÖNEM MACERALARI</h3>
+                        <p class="text-muted" style="margin-bottom: 25px; font-size: 0.9rem;">Son 7 güne ait efor ve başarım skoru</p>
                         <div id="recentDaysList" class="recent-days-list"></div>
                     </div>
 
-                    <!-- Radar Chart: Today's Snapshot -->
+                    <!-- Radar Chart: Character Build -->
                     <div class="dashboard-card chart-card">
-                        <h3><i class="fas fa-spider"></i> Bugünkü Yetenek Haritası</h3>
-                        <p class="text-muted" style="margin-bottom: 10px; font-size: 0.9rem;">Günlük tamamlanma yüzdelerine göre 4 kategori radari</p>
+                        <h3><i class="fas fa-spider"></i> KARAKTER BECERİ RADARI</h3>
+                        <p class="text-muted" style="margin-bottom: 10px; font-size: 0.9rem;">4 temel sütunun dengeli dağılımı</p>
                         <div id="radarChart"></div>
-                    </div>
-
-                    <!-- Github Style Heatmap -->
-                    <div class="dashboard-card heatmap-card" style="grid-column: 1 / -1;">
-                        <h3><i class="fas fa-calendar-check"></i> Tarihsel Devamlılık Ağı (Son 30 Gün)</h3>
-                        <p class="text-muted" style="margin-bottom: 20px; font-size: 0.9rem;">Günlük genel disiplin yoğunluğu</p>
-                        <div id="heatmapChart"></div>
-                    </div>
-
-                    <!-- Trend Line -->
-                    <div class="dashboard-card line-card" style="grid-column: 1 / -1;">
-                        <h3><i class="fas fa-chart-line"></i> Başarım Trendi</h3>
-                        <p class="text-muted" style="margin-bottom: 20px; font-size: 0.9rem;">Zaman içerisindeki gelişim yüzdesi</p>
-                        <div id="lineChart"></div>
                     </div>
 
                 </div>
@@ -213,8 +275,7 @@
                 <p>Elektrik ve Elektronik Mühendisi</p>
                 <div class="footer-contact">
                     <p><i class="fas fa-map-marker-alt"></i> İzmir, Turkey</p>
-                    <p><i class="fas fa-envelope"></i> <a
-                            href="mailto:ahmetardaszgnas@gmail.com">ahmetardaszgnas@gmail.com</a></p>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:ahmetardaszgnas@gmail.com">ahmetardaszgnas@gmail.com</a></p>
                 </div>
             </div>
 

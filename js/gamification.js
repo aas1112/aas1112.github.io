@@ -1,49 +1,24 @@
-/**
- * ═══════════════════════════════════════════════════════════════════
- *  Gamification Dashboard  ·  Level / EXP Engine  ·  v2.0
- *  Author: AAS1112
- * ═══════════════════════════════════════════════════════════════════
- *
- *  Categories & max daily minutes
- *  ─────────────────────────────────────────────────────────────────
- *  Mental    (Zihinsel)  : Ders-120, Makale-30, Felsefe-60                            → 210 dk
- *  Career    (Kariyer)   : Kişisel Proje-90, İş Arama-30, Proje Fikri-30, Mühendislik Haberleri-30, Yabancı Dil-30 → 210 dk
- *  Stamina   (Fiziksel)  : Spor-120, Soğuk Duş-15, Bakım-15                           → 150 dk
- *  Willpower (İrade)     : Sosyal-75, Gün Planı-15, Okuma-60                          → 150 dk
- *
- *  Normalised EXP formula (per day, per category):
- *    EXP = round( (completedMinutes / maxMinutes) × 100 )
- *
- *  Levelling curve (exponential):
- *    requiredTotalEXP(level) = 100 × (level-1)^1.5
- *    → Level 1 :  0 EXP (Başlangıç)
- *    → Level 2 :  100 EXP
- *    → Level 3 :  ~282 EXP
- *    → Level 10:  ~2700 EXP
- */
+/* ═══════════════════════════════════════════════════════════════════
+   Gamification Engine v4.0 — Scorpio-Eagle Metamorphosis & RPG Upgrades
+   Notion API → Gamification JSON → Interactive Retro RPG HUD
+ ═══════════════════════════════════════════════════════════════════ */
 
-// ─── Category meta ──────────────────────────────────────────────────────────
 const CATEGORIES = {
-    Mental:    { label: 'Mental',    icon: '🧠', color: '#818cf8', glow: 'rgba(129,140,248,0.5)', maxMinutes: 210 },
-    Career:    { label: 'Career',    icon: '⚡', color: '#34d399', glow: 'rgba(52,211,153,0.5)',  maxMinutes: 210 },
-    Stamina:   { label: 'Stamina',   icon: '🔥', color: '#f472b6', glow: 'rgba(244,114,182,0.5)', maxMinutes: 150 },
-    Willpower: { label: 'Willpower', icon: '🛡️', color: '#fbbf24', glow: 'rgba(251,191,36,0.5)',  maxMinutes: 150  },
+    Career:    { name: 'Kariyer & Mühendislik', icon: '⚡', color: '#06b6d4', targetMins: 540 },
+    Mental:    { name: 'Zihin & Gelişim',      icon: '🧠', color: '#a855f7', targetMins: 60 },
+    Stamina:   { name: 'Fiziksel & Efor',      icon: '🔥', color: '#ec4899', targetMins: 45 },
+    Willpower: { name: 'İrade & Temiz Yaşam',  icon: '🛡️', color: '#10b981', targetMins: 90 },
 };
 
-// ─── Levelling helpers ───────────────────────────────────────────────────────
-
 /**
- * Total EXP required to REACH a given level from level 1.
- * Uses: required = 100 × (level-1)^1.5
+ * Exponential EXP Level Formula:
+ * EXP required for level N = 100 * (N - 1)^1.5
  */
 function expRequiredForLevel(level) {
     if (level <= 1) return 0;
     return Math.floor(100 * Math.pow(level - 1, 1.5));
 }
 
-/**
- * Given accumulated EXP, compute { level, progress, expToNext, totalForNext }.
- */
 function computeLevel(totalExp) {
     let level = 1;
     while (expRequiredForLevel(level + 1) <= totalExp) {
@@ -52,29 +27,25 @@ function computeLevel(totalExp) {
     const expForCurrent = expRequiredForLevel(level);
     const expForNext    = expRequiredForLevel(level + 1);
     
-    // Prevent negative progress or divide by zero
     let progress = 0;
     if (expForNext > expForCurrent) {
         progress = Math.round(((totalExp - expForCurrent) / (expForNext - expForCurrent)) * 100);
     }
-    progress = Math.max(0, Math.min(progress, 99)); // Clamp between 0 and 99
-    
-    const expToNext     = expForNext - totalExp;
+    progress = Math.max(0, Math.min(progress, 99));
+    const expToNext = expForNext - totalExp;
 
     return { level, progress, expToNext, totalExp, expForNext };
 }
 
 /**
- * Maps a global level number to a Turkish RPG title.
+ * Astrological Scorpio to Eagle Metamorphosis titles
  */
 function levelTitle(globalLevel) {
-    if (globalLevel <= 2)  return 'Acemi 🌱';
-    if (globalLevel <= 5)  return 'Deneyimli ⚔️';
-    if (globalLevel <= 9)  return 'Uzman 💫';
-    if (globalLevel <= 14) return 'Usta 🔥';
-    if (globalLevel <= 19) return 'Elit ⚡';
-    if (globalLevel <= 29) return 'Efsanevi 👑';
-    return 'Tanrısal 🌌';
+    if (globalLevel <= 2)  return 'CYBER ENGINEER · STAGE I';
+    if (globalLevel <= 4)  return 'CYBER ENGINEER · STAGE II';
+    if (globalLevel <= 7)  return 'SYSTEM ARCHITECT · STAGE III';
+    if (globalLevel <= 12) return 'PRINCIPAL ENGINEER · STAGE IV';
+    return 'CORE MASTER · STAGE V';
 }
 
 // ─── Aggregate category EXPs from all records ────────────────────────────────
@@ -84,373 +55,39 @@ function aggregateCategoryEXP(records) {
     for (const cat of Object.keys(CATEGORIES)) totals[cat] = 0;
 
     for (const day of records) {
-        // Prefer the pre-computed `categories` field (from Python backend)
         if (day.categories) {
             for (const cat of Object.keys(CATEGORIES)) {
                 totals[cat] += (day.categories[cat]?.exp || 0);
             }
-        } else {
-            // Fallback: compute from raw habits using CATEGORY_TASKS
-            // (in case JSON is old format)
-            const raw = day.habits || {};
-            const FALLBACK = {
-                Mental:    { 'Ders-120': 120, 'Makale-30': 30, 'Felsefe-60': 60 },
-                Career:    { 'Kişisel Proje-90': 90, 'İş Arama-30': 30, 'Proje Fikri-30': 30, 'Mühendislik Haberleri-30': 30, 'Yabancı Dil-30': 30 },
-                Stamina:   { 'Spor-120': 120, 'Soğuk Duş-15': 15, 'Bakım-15': 15 },
-                Willpower: { 'Sosyal-75': 75, 'Gün Planı-15': 15, 'Okuma-60': 60 },
-            };
-            for (const [cat, tasks] of Object.entries(FALLBACK)) {
-                const maxMins  = Object.values(tasks).reduce((a, b) => a + b, 0);
-                const doneMins = Object.entries(tasks)
-                    .filter(([name]) => raw[name])
-                    .reduce((sum, [, mins]) => sum + mins, 0);
-                totals[cat] += Math.round((doneMins / maxMins) * 100);
-            }
         }
     }
-
-    return totals; // { Mental: 350, Career: 210, ... }
+    return totals;
 }
-
-// ─── Compute today's radar data (percentage per category) ─────────────────────
 
 function getTodayRadarData(records) {
     if (records.length === 0) return {};
-    const today = records[0]; // already sorted descending
+    const today = records[0];
     const result = {};
-
     for (const cat of Object.keys(CATEGORIES)) {
-        if (today.categories) {
-            result[cat] = today.categories[cat]?.exp || 0;
-        } else {
-            result[cat] = 0;
-        }
+        result[cat] = today.categories ? (today.categories[cat]?.exp || 0) : 0;
     }
     return result;
 }
-
-// ─── Overall daily completion (for existing charts) ──────────────────────────
 
 function getDailyOverallPct(day) {
     if (day.categories) {
         const vals = Object.values(day.categories).map(c => c.exp);
         return Math.round(vals.reduce((a, b) => a + b, 0) / vals.length);
     }
-    const habits = Object.values(day.habits || {});
-    if (habits.length === 0) return 0;
-    return Math.round((habits.filter(Boolean).length / habits.length) * 100);
+    return 0;
 }
 
-// ════════════════════════════════════════════════════════════════════
-//  RENDER FUNCTIONS
-// ════════════════════════════════════════════════════════════════════
-
-// ─── Level Cards ─────────────────────────────────────────────────────────────
-
-function renderLevelCards(categoryTotals) {
-    const container = document.getElementById('levelCardsContainer');
-    if (!container) return;
-    container.innerHTML = '';
-
-    for (const [cat, meta] of Object.entries(CATEGORIES)) {
-        const totalExp = categoryTotals[cat] || 0;
-        const levelData = computeLevel(totalExp);
-
-        const card = document.createElement('div');
-        card.className = 'level-card';
-        card.style.setProperty('--cat-color', meta.color);
-        card.style.setProperty('--cat-glow',  meta.glow);
-
-        card.innerHTML = `
-            <div class="level-card-header">
-                <span class="cat-icon">${meta.icon}</span>
-                <span class="cat-label">${meta.label}</span>
-                <span class="cat-level-badge">LVL ${levelData.level}</span>
-            </div>
-            <div class="level-card-body">
-                <div class="exp-numbers">
-                    <span class="exp-current">${totalExp} <small>EXP</small></span>
-                    <span class="exp-next">→ ${levelData.expForNext} EXP</span>
-                </div>
-                <div class="level-progress-track">
-                    <div class="level-progress-fill" style="width: 0%"
-                         data-target="${levelData.progress}"></div>
-                </div>
-                <div class="progress-label">
-                    <span>Sonraki level: <strong>${levelData.expToNext} EXP</strong> kaldı</span>
-                    <span>${levelData.progress}%</span>
-                </div>
-            </div>
-        `;
-        container.appendChild(card);
-    }
-
-    // Animate bars
-    requestAnimationFrame(() => {
-        setTimeout(() => {
-            container.querySelectorAll('.level-progress-fill').forEach(bar => {
-                bar.style.width = bar.dataset.target + '%';
-            });
-        }, 300);
-    });
-}
-
-// ─── Hero mini category bars ─────────────────────────────────────────────────
-
-function renderHeroCatBars(categoryTotals) {
-    const container = document.getElementById('heroCatBars');
-    if (!container) return;
-    container.innerHTML = '';
-
-    for (const [cat, meta] of Object.entries(CATEGORIES)) {
-        const totalExp  = categoryTotals[cat] || 0;
-        const levelData = computeLevel(totalExp);
-
-        const bar = document.createElement('div');
-        bar.className = 'hero-cat-bar-row';
-        bar.innerHTML = `
-            <div class="hcb-meta">
-                <span class="hcb-icon">${meta.icon}</span>
-                <span class="hcb-name">${meta.label}</span>
-                <span class="hcb-lvl" style="color:${meta.color}">LVL ${levelData.level}</span>
-            </div>
-            <div class="hcb-track">
-                <div class="hcb-fill" style="width:0%; background:${meta.color};
-                     box-shadow:0 0 8px ${meta.glow};"
-                     data-target="${levelData.progress}"></div>
-            </div>
-        `;
-        container.appendChild(bar);
-    }
-
-    requestAnimationFrame(() => {
-        setTimeout(() => {
-            container.querySelectorAll('.hcb-fill').forEach(f => {
-                f.style.width = f.dataset.target + '%';
-            });
-        }, 500);
-    });
-}
-
-
-// ─── Radar Chart (ApexCharts) ─────────────────────────────────────────────────
-
-function renderRadarChart(categoryTotals) {
-    const labels     = Object.keys(CATEGORIES);
-    const seriesData = labels.map(cat => computeLevel(categoryTotals[cat] || 0).level);
-    const colors     = labels.map(cat => CATEGORIES[cat].color);
-
-    // Find the max level to set the radar axis properly
-    const maxLevel   = Math.max(...seriesData, 5);
-
-    const options = {
-        series: [{ name: "Yetenek Seviyesi", data: seriesData }],
-        chart: {
-            height: 480, // Increased height for larger container
-            type: 'radar',
-            toolbar: { show: false },
-            background: 'transparent',
-            animations: { enabled: true, easing: 'easeinout', speed: 900 },
-            parentHeightOffset: 0
-        },
-        theme: { mode: 'dark' },
-        labels,
-        colors: ['#a78bfa'],
-        stroke:  { width: 2.5, colors: ['#a78bfa'] },
-        fill:    { opacity: 0.25, colors: ['#a78bfa'] },
-        markers: { size: 5, colors: ['#fff'], strokeColors: '#a78bfa', strokeWidth: 2 },
-        plotOptions: {
-            radar: {
-                size: 130, // Reduced from 180 to fit labels horizontally and prevent clipping
-                polygons: {
-                    strokeColors:      'rgba(255,255,255,0.07)',
-                    connectorColors:   'rgba(255,255,255,0.07)',
-                    fill: { colors: ['rgba(255,255,255,0.01)', 'rgba(255,255,255,0.03)'] }
-                }
-            }
-        },
-        yaxis: {
-            min: 0,
-            max: maxLevel + 1,
-            tickAmount: maxLevel + 1,
-            labels: {
-                formatter: v => Math.floor(v),
-                style: { colors: ['#94a3b8'], fontSize: '11px' }
-            }
-        },
-        xaxis: {
-            labels: {
-                style: { colors: labels.map(cat => CATEGORIES[cat].color), fontSize: '14px', fontWeight: 700 }
-            }
-        },
-        tooltip: {
-            y: { formatter: v => 'Level ' + v }
-        }
-    };
-
-    const el = document.querySelector('#radarChart');
-    if (!el) return;
-    el.innerHTML = '';
-    
-    // Change heading title to reflect total logic
-    const titleEl = el.parentElement.querySelector('h2');
-    if (titleEl) {
-        titleEl.innerHTML = '<i class="fas fa-spider"></i> Karakter Yetenek Dağılımı';
-    }
-
-    new ApexCharts(el, options).render();
-}
-
-// ─── Recent Efforts (son 5 gün) ───────────────────────────────────────────────
-
-function renderRecentEfforts(recordsDesc) {
-    const listDiv = document.getElementById('recentDaysList');
-    if (!listDiv) return;
-    listDiv.innerHTML = '';
-
-    recordsDesc.slice(0, 7).forEach(day => {
-        const pct = getDailyOverallPct(day);
-
-        // API'den gelen day.date ayni olabilir, bu yuzden de day.name (asıl gün adı YYYY-MM-DD olarak gelir) kontrol edelim.
-        const dateStr = /^\d{4}-\d{2}-\d{2}$/.test(day.name) ? day.name : day.date;
-        const d = new Date(dateStr);
-        const dayNames = ['Pazar', 'Pazartesi', 'Salı', 'Çarşamba', 'Perşembe', 'Cuma', 'Cumartesi'];
-        const monthNames = ['Ocak', 'Şubat', 'Mart', 'Nisan', 'Mayıs', 'Haziran', 'Temmuz', 'Ağustos', 'Eylül', 'Ekim', 'Kasım', 'Aralık'];
-        
-        const isToday = new Date().toISOString().split('T')[0] === dateStr;
-        const dayName = isToday ? 'Bugün' : dayNames[d.getDay()];
-        const formattedDate = `${d.getDate().toString().padStart(2, '0')} ${monthNames[d.getMonth()]}`;
-
-        const subLabel = dateStr !== day.name ? day.name : day.date; // Use the other string as small sublabel
-
-        const row = document.createElement('div');
-        row.className = 'recent-day-row';
-        row.innerHTML = `
-            <div class="recent-day-header">
-                <span><strong style="font-size: 1.05em; font-weight: 700;">${dayName}</strong> <span style="opacity:0.6; font-size:0.8rem; margin-left: 6px;">${formattedDate}</span> <span style="opacity:0.4; font-size:0.75rem; margin-left: 4px;">• ${subLabel}</span></span>
-                <span style="font-weight:700; color:#a78bfa; text-shadow: 0 0 5px rgba(167,139,250,0.4);">${pct}%</span>
-            </div>
-            <div class="progress-bar-container" style="height: 10px; margin-bottom: 0;">
-                <div class="progress-bar-fill" style="width: 0%" data-target="${pct}"></div>
-            </div>
-        `;
-        listDiv.appendChild(row);
-    });
-
-    requestAnimationFrame(() => {
-        setTimeout(() => {
-            listDiv.querySelectorAll('.progress-bar-fill').forEach(bar => {
-                bar.style.width = bar.dataset.target + '%';
-            });
-        }, 400);
-    });
-}
-
-// ─── Heatmap ─────────────────────────────────────────────────────────────────
-
-function renderHeatmap(recordsAsc) {
-    if (recordsAsc.length === 0) return;
-
-    const heatmapData = recordsAsc.slice(-30).map(day => {
-        const dateStr = /^\d{4}-\d{2}-\d{2}$/.test(day.name) ? day.name : day.date;
-        return {
-            x: dateStr.substring(5),
-            y: getDailyOverallPct(day)
-        };
-    });
-
-    const options = {
-        series: [{ name: 'Genel Tamamlanma', data: heatmapData }],
-        chart: {
-            height: 200,
-            type: 'heatmap',
-            toolbar: { show: false },
-            background: 'transparent'
-        },
-        theme: { mode: 'dark' },
-        plotOptions: {
-            heatmap: {
-                shadeIntensity: 0.5,
-                radius: 4,
-                useFillColorAsStroke: false,
-                colorScale: {
-                    ranges: [
-                        { from: 0,  to: 0,   name: 'Boş',   color: 'rgba(255,255,255,0.04)' },
-                        { from: 1,  to: 35,  name: 'Düşük', color: '#6366f1' },
-                        { from: 36, to: 69,  name: 'Orta',  color: '#8b5cf6' },
-                        { from: 70, to: 100, name: 'Yüksek',color: '#ec4899' }
-                    ]
-                }
-            }
-        },
-        dataLabels: { enabled: false },
-        stroke: { width: 1 }
-    };
-
-    const el = document.querySelector('#heatmapChart');
-    if (!el) return;
-    el.innerHTML = '';
-    new ApexCharts(el, options).render();
-}
-
-// ─── Trend Line ───────────────────────────────────────────────────────────────
-
-function renderTrendLine(recordsAsc) {
-    if (recordsAsc.length === 0) return;
-
-    const recent    = recordsAsc.slice(-30);
-    const dates     = recent.map(d => {
-        const dateStr = /^\d{4}-\d{2}-\d{2}$/.test(d.name) ? d.name : d.date;
-        return dateStr.substring(5);
-    });
-    const percents  = recent.map(d => getDailyOverallPct(d));
-
-    const options = {
-        series: [{ name: 'Günlük Başarım (%)', data: percents }],
-        chart: {
-            height: 300,
-            type: 'area',
-            toolbar: { show: false },
-            background: 'transparent',
-            animations: { enabled: true, easing: 'easeinout', speed: 800 }
-        },
-        theme: { mode: 'dark' },
-        colors: ['#00d4ff'],
-        fill: {
-            type: 'gradient',
-            gradient: { shadeIntensity: 1, opacityFrom: 0.6, opacityTo: 0.05, stops: [0, 90, 100] }
-        },
-        dataLabels: { enabled: false },
-        stroke: { curve: 'smooth', width: 2 },
-        xaxis: {
-            categories: dates,
-            labels: { style: { colors: '#94a3b8', fontSize: '11px' } }
-        },
-        yaxis: {
-            min: 0,
-            max: 100,
-            labels: {
-                formatter: v => v + '%',
-                style: { colors: '#94a3b8' }
-            }
-        },
-        tooltip: { y: { formatter: v => v + '%' } }
-    };
-
-    const el = document.querySelector('#lineChart');
-    if (!el) return;
-    el.innerHTML = '';
-    new ApexCharts(el, options).render();
-}
-
-// ─── Player stats header + hero character card ────────────────────────────────
+// ─── Player Overall Stats Calculation ───────────────────────────────────────
 
 function calculatePlayerStats(records) {
-    // Days tracked
     const dayEl = document.getElementById('userLevel');
     if (dayEl) dayEl.innerText = records.length;
 
-    // Overall avg completion rate
     let total = 0, sum = 0;
     records.forEach(day => {
         sum += getDailyOverallPct(day);
@@ -461,58 +98,490 @@ function calculatePlayerStats(records) {
     if (xpEl) xpEl.innerText = avg;
 }
 
+// ─── Render Today's RPG Quest Breakdown ────────────────────────────────────
+
+function renderTodayQuests(recordsDesc) {
+    const container = document.getElementById('todayQuestsGrid');
+    const dateTag   = document.getElementById('todayDateTag');
+    if (!container || recordsDesc.length === 0) return;
+
+    const latest = recordsDesc[0];
+    if (dateTag) dateTag.innerText = latest.name || latest.date || 'BUGÜN';
+
+    const numbers = latest.numbers || {};
+    const cats    = latest.categories || {};
+    const habits  = latest.habits || {};
+
+    const careerDone  = numbers['Kariyer & Mühendislik (Dk)'] ?? cats.Career?.completedMinutes ?? 0;
+    const mentalDone  = numbers['Zihin & Gelişim (Dk)'] ?? cats.Mental?.completedMinutes ?? 0;
+    const staminaDone = numbers['Fiziksel & Efor (Dk)'] ?? cats.Stamina?.completedMinutes ?? 0;
+
+    const willpowerCheckedCount = Object.entries(habits)
+        .filter(([k, v]) => v && ['sigara', 'soul', 'bakım', 'bakim'].some(t => k.toLowerCase().includes(t)))
+        .length;
+
+    const quests = [
+        {
+            icon: '⚡',
+            title: 'Kariyer & Mühendislik',
+            val: `${careerDone} / 540 Dk`,
+            xp: `${cats.Career?.exp || 0} EXP`,
+            isDone: careerDone >= 540
+        },
+        {
+            icon: '🧠',
+            title: 'Zihin & Gelişim',
+            val: `${mentalDone} / 60 Dk`,
+            xp: `${cats.Mental?.exp || 0} EXP`,
+            isDone: mentalDone >= 60
+        },
+        {
+            icon: '🔥',
+            title: 'Fiziksel & Efor',
+            val: `${staminaDone} / 45 Dk`,
+            xp: `${cats.Stamina?.exp || 0} EXP`,
+            isDone: staminaDone >= 45
+        },
+        {
+            icon: '🛡️',
+            title: 'İrade & Temiz Yaşam',
+            val: `${willpowerCheckedCount > 0 ? willpowerCheckedCount + ' Kalkan Aktif' : 'Beklemede'}`,
+            xp: `${cats.Willpower?.exp || 0} EXP`,
+            isDone: (cats.Willpower?.exp || 0) >= 30
+        }
+    ];
+
+    container.innerHTML = '';
+    quests.forEach(q => {
+        const card = document.createElement('div');
+        card.className = 'quest-item-card';
+        card.innerHTML = `
+            <div class="qic-top">
+                <span class="qic-title"><span>${q.icon}</span> ${q.title}</span>
+                <span class="qic-xp-tag">+${q.xp}</span>
+            </div>
+            <div class="qic-val">
+                ${q.isDone ? '<span style="color:#10b981;font-weight:700;">TAMAMLANDI ⚔️</span>' : q.val}
+            </div>
+        `;
+        container.appendChild(card);
+    });
+}
+
 function updateHeroCharacterCard(categoryTotals) {
-    // Compute global average EXP and level
     const cats       = Object.keys(CATEGORIES);
-    const avgExp     = Math.round(cats.reduce((s, c) => s + (categoryTotals[c] || 0), 0) / cats.length);
+    const totalExp   = Object.values(categoryTotals).reduce((s, val) => s + val, 0);
+    window._lastGlobalExp = totalExp;
+
+    const avgExp     = Math.round(totalExp / cats.length);
     const levelData  = computeLevel(avgExp);
     const globalLvl  = Math.round(cats.reduce((s, c) => s + computeLevel(categoryTotals[c] || 0).level, 0) / cats.length);
 
-    // Level number
     const lvlEl = document.getElementById('heroGlobalLevel');
-    if (lvlEl) {
-        lvlEl.innerText = globalLvl;
-        // Entrance animation
-        lvlEl.style.transform = 'scale(0.6)';
-        lvlEl.style.opacity = '0';
-        requestAnimationFrame(() => {
-            setTimeout(() => {
-                lvlEl.style.transition = 'transform 0.8s cubic-bezier(0.22,1,0.36,1), opacity 0.6s ease';
-                lvlEl.style.transform = 'scale(1)';
-                lvlEl.style.opacity = '1';
-            }, 200);
-        });
-    }
+    if (lvlEl) lvlEl.innerText = globalLvl;
 
-    // Dynamic title label
     const titleEl = document.getElementById('heroTitleLabel');
     if (titleEl) titleEl.innerText = levelTitle(globalLvl);
 
-    // EXP text
     const expEl = document.getElementById('heroGlobalExp');
     if (expEl) expEl.innerText = avgExp + ' EXP';
 
-    // XP progress bar
     const fill = document.getElementById('heroXpFill');
-    const pct  = document.getElementById('heroXpPct');
     const next = document.getElementById('heroXpToNext');
-    if (fill) {
-        requestAnimationFrame(() => {
-            setTimeout(() => { fill.style.width = levelData.progress + '%'; }, 300);
-        });
-    }
-    if (pct)  pct.innerText  = levelData.progress + '%';
+    if (fill) fill.style.width = levelData.progress + '%';
     if (next) next.innerText = levelData.expToNext + ' EXP kaldı';
 
-    // SVG ring: circumference for r=88 → 2π×88 ≈ 553
-    const ring = document.getElementById('heroRingFill');
-    if (ring) {
-        const circ   = 553;
-        const offset = circ * (1 - levelData.progress / 100);
-        requestAnimationFrame(() => {
-            setTimeout(() => { ring.style.strokeDashoffset = offset; }, 400);
+    // Update Gold Vault & Equipment levels
+    updateGoldAndInventory(totalExp);
+}
+
+// ─── Render Minecraft Heart Containers ─────────────────────────────────────
+
+function renderHearts(categoryTotals) {
+    const willpowerExp = categoryTotals['Willpower'] || 0;
+    const willpowerLvl = computeLevel(willpowerExp).level;
+    const container = document.getElementById('heroHeartsContainer');
+    if (!container) return;
+
+    const activeHearts = Math.min(5, Math.max(1, 1 + willpowerLvl));
+    container.innerHTML = '';
+
+    for (let i = 0; i < 5; i++) {
+        const heart = document.createElement('span');
+        heart.className = `pixel-heart ${i < activeHearts ? 'filled' : 'empty'}`;
+        heart.innerText = '❤️';
+        container.appendChild(heart);
+    }
+}
+
+// ─── GOLD VAULT & ITEM UPGRADES SYSTEM ────────────────────────────────────
+
+const ITEM_CONFIGS = {
+    weapon: { name: 'Redstone Kılıcı', icon: '⚔️', desc: 'Kariyer ve Mühendislik eforunuzu simgeler.', baseCost: 50, bonusPerLvl: '+15% EXP Boost' },
+    shield: { name: 'İrade Kalkanı', icon: '🛡️', desc: 'Sigarasız yaşam ve irade kalkanınızı korur.', baseCost: 50, bonusPerLvl: '+20% Willpower Boost' },
+    helm:   { name: 'Bilgelik Tacı', icon: '🎓', desc: 'Zihin ve kitap okuma gücünüzü temsil eder.', baseCost: 50, bonusPerLvl: '+15% Mental Boost' },
+    boots:  { name: 'Efor Çizmeleri', icon: '👟', desc: 'Fiziksel dayanıklılık ve spor hızınızı artırır.', baseCost: 50, bonusPerLvl: '+15% Stamina Boost' },
+    ring:   { name: 'Elmas Yüzük', icon: '💍', desc: 'Global seviyenizi ve toplam ganimetinizi katlar.', baseCost: 100, bonusPerLvl: '+25% Global Bonus' }
+};
+
+let currentSelectedItemKey = null;
+
+function getItemLevels() {
+    try {
+        return JSON.parse(localStorage.getItem('rpg_item_levels')) || { weapon: 1, shield: 1, helm: 1, boots: 1, ring: 1 };
+    } catch {
+        return { weapon: 1, shield: 1, helm: 1, boots: 1, ring: 1 };
+    }
+}
+
+function getSpentGold() {
+    try {
+        return parseInt(localStorage.getItem('rpg_spent_gold') || '0');
+    } catch {
+        return 0;
+    }
+}
+
+function updateGoldAndInventory(totalGlobalExp) {
+    const itemLevels = getItemLevels();
+    const spentGold  = getSpentGold();
+    
+    const totalEarnedGold = totalGlobalExp * 2;
+    const currentGold     = Math.max(0, totalEarnedGold - spentGold);
+    
+    const goldEl = document.getElementById('userGoldCoins');
+    if (goldEl) goldEl.innerText = currentGold;
+
+    for (const [key, lvl] of Object.entries(itemLevels)) {
+        const badgeEl = document.getElementById(`gearLvl${key.charAt(0).toUpperCase() + key.slice(1)}`);
+        if (badgeEl) badgeEl.innerText = `Lv.${lvl}`;
+    }
+}
+
+function openItemUpgradeModal(itemKey) {
+    const cfg = ITEM_CONFIGS[itemKey];
+    if (!cfg) return;
+    currentSelectedItemKey = itemKey;
+    
+    const itemLevels = getItemLevels();
+    const curLvl     = itemLevels[itemKey] || 1;
+    const cost       = cfg.baseCost * curLvl;
+
+    document.getElementById('modalItemIcon').innerText = cfg.icon;
+    document.getElementById('modalItemName').innerText = cfg.name;
+    document.getElementById('modalItemLevel').innerText = `Mevcut Seviye: Lv.${curLvl}`;
+    document.getElementById('modalItemDesc').innerText  = cfg.desc;
+    document.getElementById('modalItemBonus').innerText = `${cfg.bonusPerLvl} (Lv.${curLvl + 1}'de Katlanır)`;
+    document.getElementById('modalUpgradeCost').innerText = cost;
+
+    document.getElementById('itemUpgradeModal').style.display = 'flex';
+}
+
+function closeItemUpgradeModal() {
+    document.getElementById('itemUpgradeModal').style.display = 'none';
+}
+
+function upgradeSelectedItem() {
+    if (!currentSelectedItemKey) return;
+    const cfg = ITEM_CONFIGS[currentSelectedItemKey];
+    const itemLevels = getItemLevels();
+    const curLvl = itemLevels[currentSelectedItemKey] || 1;
+    const cost   = cfg.baseCost * curLvl;
+
+    const goldEl = document.getElementById('userGoldCoins');
+    const currentGold = parseInt(goldEl?.innerText || '0');
+
+    if (currentGold < cost) {
+        alert(`Yetersiz Altın Sikke! ${cost} Altın Sikkeye ihtiyacınız var. Notion'da görev tamamlayarak XP ve Altın kazanın!`);
+        return;
+    }
+
+    itemLevels[currentSelectedItemKey] = curLvl + 1;
+    localStorage.setItem('rpg_item_levels', JSON.stringify(itemLevels));
+    localStorage.setItem('rpg_spent_gold', (getSpentGold() + cost).toString());
+
+    closeItemUpgradeModal();
+    if (window._lastGlobalExp) updateGoldAndInventory(window._lastGlobalExp);
+}
+
+// ─── Render Multi-Stage Tiered Achievements Showcase ─────────────────────────
+
+function renderAchievements(records, categoryTotals) {
+    const container = document.getElementById('achievementsContainer');
+    if (!container) return;
+
+    const totalGlobalExp = Object.values(categoryTotals).reduce((a, b) => a + b, 0);
+    const cats = Object.keys(CATEGORIES);
+    const globalLvl = Math.round(cats.reduce((s, c) => s + computeLevel(categoryTotals[c] || 0).level, 0) / cats.length);
+
+    const CHAINS = [
+        {
+            icon: '⚡',
+            baseTitle: 'Redstone Mühendisi',
+            unit: 'EXP',
+            tiers: [
+                { stage: 'I', target: 300, desc: 'Kariyer & İş kategorisinde 300+ EXP barajını aş.' },
+                { stage: 'II', target: 600, desc: 'Kariyer & İş kategorisinde 600+ EXP seviyesine ulaş.' },
+                { stage: 'III', target: 1200, desc: 'Kariyer & İş kategorisinde 1,200+ EXP efsane seviyesine eriş.' },
+                { stage: 'IV', target: 2500, desc: 'Kariyer & İş kategorisinde 2,500+ EXP tanrısal seviyeye ulaş.' }
+            ],
+            getValue: () => categoryTotals['Career'] || 0
+        },
+        {
+            icon: '📚',
+            baseTitle: 'Bilgelik Üstadı',
+            unit: 'EXP',
+            tiers: [
+                { stage: 'I', target: 300, desc: 'Zihin & Okuma kategorisinde 300+ EXP biriktir.' },
+                { stage: 'II', target: 600, desc: 'Zihin & Okuma kategorisinde 600+ EXP bilgelik kademesine geç.' },
+                { stage: 'III', target: 1200, desc: 'Zihin & Okuma kategorisinde 1,200+ EXP kütüphane koruyucusu ol.' }
+            ],
+            getValue: () => categoryTotals['Mental'] || 0
+        },
+        {
+            icon: '🔥',
+            baseTitle: 'Nether Koşucusu',
+            unit: 'EXP',
+            tiers: [
+                { stage: 'I', target: 200, desc: 'Fiziksel spor ve eforda 200+ EXP seviyesine ulaş.' },
+                { stage: 'II', target: 500, desc: 'Fiziksel spor ve eforda 500+ EXP atlet kademesine geç.' },
+                { stage: 'III', target: 1000, desc: 'Fiziksel spor ve eforda 1,000+ EXP maratoncusu ol.' }
+            ],
+            getValue: () => categoryTotals['Stamina'] || 0
+        },
+        {
+            icon: '🛡️',
+            baseTitle: 'Demir İrade',
+            unit: 'EXP',
+            tiers: [
+                { stage: 'I', target: 200, desc: 'Sigarasız yaşam ve iradede 200+ EXP kalkanı oluştur.' },
+                { stage: 'II', target: 500, desc: 'Sigarasız yaşam ve iradede 500+ EXP elmas kalkanına geç.' },
+                { stage: 'III', target: 1000, desc: 'Sigarasız yaşam ve iradede 1,000+ EXP çelik zırhına eriş.' }
+            ],
+            getValue: () => categoryTotals['Willpower'] || 0
+        },
+        {
+            icon: '💎',
+            baseTitle: 'Elmas Karakter',
+            unit: 'EXP',
+            tiers: [
+                { stage: 'I', target: 1000, desc: 'Tüm alanlarda toplam 1,000+ EXP barajını devir.' },
+                { stage: 'II', target: 2500, desc: 'Tüm alanlarda toplam 2,500+ EXP elmas seviyesine yüksel.' },
+                { stage: 'III', target: 5000, desc: 'Tüm alanlarda toplam 5,000+ EXP şampiyonu ol.' }
+            ],
+            getValue: () => totalGlobalExp
+        },
+        {
+            icon: '👑',
+            baseTitle: 'Sistem Hakimi',
+            unit: 'LVL',
+            tiers: [
+                { stage: 'I', target: 3, desc: 'Sistem Seviyesini Level 3 e yükselt.' },
+                { stage: 'II', target: 5, desc: 'Sistem Seviyesini Level 5 e yükselt.' },
+                { stage: 'III', target: 10, desc: 'Sistem Seviyesini Level 10 efsanesine eriş.' }
+            ],
+            getValue: () => globalLvl
+        },
+        {
+            icon: '🏆',
+            baseTitle: 'Kıdemli Maceracı',
+            unit: 'gün',
+            tiers: [
+                { stage: 'I', target: 7, desc: 'En az 7 farklı gün boyunca disiplin kaydı gir.' },
+                { stage: 'II', target: 30, desc: 'En az 30 gün boyunca kesintisiz disiplin sağla.' },
+                { stage: 'III', target: 100, desc: 'En az 100 gün boyunca 100 Gün Serisine ulaş.' }
+            ],
+            getValue: () => records.length
+        }
+    ];
+
+    const achievementsList = [];
+
+    CHAINS.forEach(chain => {
+        const val = chain.getValue();
+        let nextTierFound = false;
+
+        chain.tiers.forEach(tier => {
+            const isUnlocked = val >= tier.target;
+
+            if (isUnlocked) {
+                achievementsList.push({
+                    id: `${chain.baseTitle}_${tier.stage}`,
+                    icon: chain.icon,
+                    title: `${chain.baseTitle} ${tier.stage}`,
+                    desc: tier.desc,
+                    current: val,
+                    target: tier.target,
+                    unit: chain.unit,
+                    isUnlocked: true
+                });
+            } else if (!nextTierFound) {
+                nextTierFound = true;
+                achievementsList.push({
+                    id: `${chain.baseTitle}_${tier.stage}`,
+                    icon: chain.icon,
+                    title: `${chain.baseTitle} ${tier.stage}`,
+                    desc: tier.desc,
+                    current: val,
+                    target: tier.target,
+                    unit: chain.unit,
+                    isUnlocked: false
+                });
+            }
+        });
+    });
+
+    const unlockedCount = achievementsList.filter(a => a.isUnlocked).length;
+    const lockedCount   = achievementsList.filter(a => !a.isUnlocked).length;
+
+    const totalEl    = document.getElementById('achTotalCount');
+    const unlockedEl = document.getElementById('achUnlockedCount');
+    const lockedEl   = document.getElementById('achLockedCount');
+
+    if (totalEl) totalEl.innerText = achievementsList.length;
+    if (unlockedEl) unlockedEl.innerText = unlockedCount;
+    if (lockedEl) lockedEl.innerText = lockedCount;
+
+    function renderFiltered(filter) {
+        container.innerHTML = '';
+        const list = achievementsList.filter(item => {
+            if (filter === 'unlocked') return item.isUnlocked;
+            if (filter === 'locked') return !item.isUnlocked;
+            return true;
+        });
+
+        if (list.length === 0) {
+            container.innerHTML = `<p style="grid-column: 1/-1; color: #64748b; font-style: italic;">Bu filtrede gösterilecek rozet bulunamadı.</p>`;
+            return;
+        }
+
+        list.forEach(ach => {
+            const pct = Math.min(100, Math.round((ach.current / ach.target) * 100));
+            const card = document.createElement('div');
+            card.className = `achievement-card ${ach.isUnlocked ? 'unlocked' : 'locked'}`;
+
+            card.innerHTML = `
+                <div class="ach-icon-wrapper">
+                    <span>${ach.icon}</span>
+                </div>
+                <div class="ach-body">
+                    <div class="ach-title-row">
+                        <span class="ach-title">${ach.title}</span>
+                        <span class="ach-status-badge ${ach.isUnlocked ? 'unlocked' : 'locked'}">
+                            ${ach.isUnlocked ? 'KAZANILDI 🏆' : 'KİLİTLİ 🔒'}
+                        </span>
+                    </div>
+                    <p class="ach-desc">${ach.desc}</p>
+                    <div class="ach-progress-track">
+                        <div class="ach-progress-fill" style="width: ${pct}%"></div>
+                    </div>
+                    <div class="ach-progress-text">
+                        ${ach.current} / ${ach.target} ${ach.unit} (${pct}%)
+                    </div>
+                </div>
+            `;
+            container.appendChild(card);
         });
     }
+
+    renderFiltered('all');
+
+    const buttons = document.querySelectorAll('.ach-filter-btn');
+    buttons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            buttons.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            renderFiltered(btn.dataset.filter);
+        });
+    });
+}
+
+// ─── Render Skill Tree Cards & Radar Chart ──────────────────────────────────
+
+function renderLevelCards(categoryTotals) {
+    const container = document.getElementById('levelCardsContainer');
+    if (!container) return;
+    container.innerHTML = '';
+
+    for (const [catKey, config] of Object.entries(CATEGORIES)) {
+        const exp       = categoryTotals[catKey] || 0;
+        const levelData = computeLevel(exp);
+
+        const card = document.createElement('div');
+        card.className = 'level-card';
+        card.style.borderTop = `3px solid ${config.color}`;
+
+        card.innerHTML = `
+            <div class="lc-header">
+                <span class="lc-title"><span>${config.icon}</span> ${config.name}</span>
+                <span class="lc-badge">LVL ${levelData.level}</span>
+            </div>
+            <div class="lc-exp-row">
+                <span class="lc-exp-val">${exp} <small>EXP</small></span>
+                <span class="lc-next-val">→ ${levelData.expForNext} EXP</span>
+            </div>
+            <div class="lc-track">
+                <div class="lc-fill" style="width:${levelData.progress}%; background:${config.color}"></div>
+            </div>
+        `;
+        container.appendChild(card);
+    }
+}
+
+function renderRecentEfforts(recordsDesc) {
+    const container = document.getElementById('recentDaysList');
+    if (!container) return;
+    container.innerHTML = '';
+
+    const recent = recordsDesc.slice(0, 5);
+    recent.forEach(day => {
+        const pct = getDailyOverallPct(day);
+        const item = document.createElement('div');
+        item.className = 'recent-day-item';
+        item.innerHTML = `
+            <span class="rdi-date">${day.name || day.date}</span>
+            <span class="rdi-bar"><span style="width:${pct}%"></span></span>
+            <span class="rdi-pct">%${pct}</span>
+        `;
+        container.appendChild(item);
+    });
+}
+
+function renderRadarChart(categoryTotals) {
+    const container = document.getElementById('radarChart');
+    if (!container) return;
+
+    const seriesData = [
+        categoryTotals['Career'] || 0,
+        categoryTotals['Mental'] || 0,
+        categoryTotals['Stamina'] || 0,
+        categoryTotals['Willpower'] || 0
+    ];
+
+    const options = {
+        chart: {
+            type: 'radar',
+            height: 320,
+            toolbar: { show: false },
+            background: 'transparent'
+        },
+        series: [{ name: 'Toplam EXP', data: seriesData }],
+        labels: ['Kariyer', 'Zihin', 'Efor', 'İrade'],
+        stroke: { width: 2, colors: ['#06b6d4'] },
+        fill: { opacity: 0.25, colors: ['#06b6d4'] },
+        markers: { size: 4, colors: ['#a855f7'] },
+        yaxis: { show: false },
+        xaxis: {
+            labels: {
+                style: { colors: ['#94a3b8', '#94a3b8', '#94a3b8', '#94a3b8'], fontSize: '12px' }
+            }
+        },
+        theme: { mode: 'dark' }
+    };
+
+    container.innerHTML = '';
+    const chart = new ApexCharts(container, options);
+    chart.render();
 }
 
 // ════════════════════════════════════════════════════════════════════
@@ -532,7 +601,6 @@ document.addEventListener('DOMContentLoaded', async () => {
         });
 
         const recordsDesc = [...recordsWithSortDate].sort((a, b) => new Date(b._sortDate) - new Date(a._sortDate));
-        const recordsAsc  = [...recordsWithSortDate].sort((a, b) => new Date(a._sortDate) - new Date(b._sortDate));
 
         if (recordsDesc.length === 0) {
             document.getElementById('loading').innerHTML = '<p>Henüz kayıt bulunamadı.</p>';
@@ -542,26 +610,17 @@ document.addEventListener('DOMContentLoaded', async () => {
         document.getElementById('loading').style.display = 'none';
         document.getElementById('dashboardContent').style.display = 'block';
 
-        // ① Calculate overall player stats
         calculatePlayerStats(recordsDesc);
 
-        // ② Aggregate EXP per category and render level cards
         const categoryTotals = aggregateCategoryEXP(recordsDesc);
         renderLevelCards(categoryTotals);
         updateHeroCharacterCard(categoryTotals);
+        renderHearts(categoryTotals);
+        renderTodayQuests(recordsDesc);
 
-
-        // ③ Radar chart (overall Character Build)
-        renderRadarChart(categoryTotals);
-
-        // ④ Recent 5 days
+        renderAchievements(recordsDesc, categoryTotals);
         renderRecentEfforts(recordsDesc);
-
-        // ⑤ Heatmap
-        renderHeatmap(recordsAsc);
-
-        // ⑥ Trend line
-        renderTrendLine(recordsAsc);
+        renderRadarChart(categoryTotals);
 
     } catch (error) {
         console.error('Dashboard error:', error);

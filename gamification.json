@@ -1,23 +1,23 @@
 [
   {
-    "id": "3aadf6cd-2b29-804b-af7f-c360650d86b1",
-    "name": "2026-07-28",
-    "date": "2026-07-27",
+    "id": "3acdf6cd-2b29-8019-86ac-fbff348d8820",
+    "name": "2026-07-29",
+    "date": "2026-07-29",
     "habits": {
       "Sigara": false,
       "Bakım": false,
       "Soul": false
     },
     "numbers": {
-      "Kariyer & Mühendislik (Dk)": 0,
+      "Kariyer & Mühendislik (Dk)": 540,
       "Zihin & Gelişim (Dk)": 0,
       "Fiziksel & Efor (Dk)": 0
     },
     "categories": {
       "Career": {
-        "completedMinutes": 0,
+        "completedMinutes": 540,
         "maxMinutes": 540,
-        "exp": 0
+        "exp": 100
       },
       "Mental": {
         "completedMinutes": 0,
@@ -33,6 +33,43 @@
         "completedMinutes": 0,
         "maxMinutes": 90,
         "exp": 0
+      }
+    }
+  },
+  {
+    "id": "3aadf6cd-2b29-804b-af7f-c360650d86b1",
+    "name": "2026-07-28",
+    "date": "2026-07-27",
+    "habits": {
+      "Sigara": false,
+      "Bakım": true,
+      "Soul": false
+    },
+    "numbers": {
+      "Kariyer & Mühendislik (Dk)": 540,
+      "Zihin & Gelişim (Dk)": 30,
+      "Fiziksel & Efor (Dk)": 0
+    },
+    "categories": {
+      "Career": {
+        "completedMinutes": 540,
+        "maxMinutes": 540,
+        "exp": 100
+      },
+      "Mental": {
+        "completedMinutes": 30,
+        "maxMinutes": 60,
+        "exp": 50
+      },
+      "Stamina": {
+        "completedMinutes": 0,
+        "maxMinutes": 45,
+        "exp": 0
+      },
+      "Willpower": {
+        "completedMinutes": 30,
+        "maxMinutes": 90,
+        "exp": 30
       }
     }
   },

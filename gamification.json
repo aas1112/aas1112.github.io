@@ -5,13 +5,13 @@
     "date": "2026-07-29",
     "habits": {
       "Sigara": false,
-      "Bakım": false,
+      "Bakım": true,
       "Soul": false
     },
     "numbers": {
       "Kariyer & Mühendislik (Dk)": 540,
-      "Zihin & Gelişim (Dk)": 0,
-      "Fiziksel & Efor (Dk)": 0
+      "Zihin & Gelişim (Dk)": 60,
+      "Fiziksel & Efor (Dk)": 70
     },
     "categories": {
       "Career": {
@@ -20,19 +20,19 @@
         "exp": 100
       },
       "Mental": {
-        "completedMinutes": 0,
+        "completedMinutes": 60,
         "maxMinutes": 60,
-        "exp": 0
+        "exp": 100
       },
       "Stamina": {
-        "completedMinutes": 0,
+        "completedMinutes": 70,
         "maxMinutes": 45,
-        "exp": 0
+        "exp": 100
       },
       "Willpower": {
-        "completedMinutes": 0,
+        "completedMinutes": 30,
         "maxMinutes": 90,
-        "exp": 0
+        "exp": 30
       }
     }
   },

@@ -1,5 +1,42 @@
 [
   {
+    "id": "3addf6cd-2b29-8073-96e2-ffb6d283b281",
+    "name": "2026-07-30",
+    "date": "2026-07-30",
+    "habits": {
+      "Sigara": false,
+      "Bakım": false,
+      "Soul": false
+    },
+    "numbers": {
+      "Kariyer & Mühendislik (Dk)": 540,
+      "Zihin & Gelişim (Dk)": 0,
+      "Fiziksel & Efor (Dk)": 0
+    },
+    "categories": {
+      "Career": {
+        "completedMinutes": 540,
+        "maxMinutes": 540,
+        "exp": 100
+      },
+      "Mental": {
+        "completedMinutes": 0,
+        "maxMinutes": 60,
+        "exp": 0
+      },
+      "Stamina": {
+        "completedMinutes": 0,
+        "maxMinutes": 45,
+        "exp": 0
+      },
+      "Willpower": {
+        "completedMinutes": 0,
+        "maxMinutes": 90,
+        "exp": 0
+      }
+    }
+  },
+  {
     "id": "3acdf6cd-2b29-8019-86ac-fbff348d8820",
     "name": "2026-07-29",
     "date": "2026-07-29",

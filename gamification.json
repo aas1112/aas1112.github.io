@@ -1,5 +1,116 @@
 [
   {
+    "id": "3b0df6cd-2b29-80a9-9f0a-e68f8681c5db",
+    "name": "2026-08-02",
+    "date": "2026-08-02",
+    "habits": {
+      "Sigara": false,
+      "Bakım": false,
+      "Soul": false
+    },
+    "numbers": {
+      "Kariyer & Mühendislik (Dk)": 0,
+      "Zihin & Gelişim (Dk)": 0,
+      "Fiziksel & Efor (Dk)": 100
+    },
+    "categories": {
+      "Career": {
+        "completedMinutes": 0,
+        "maxMinutes": 540,
+        "exp": 0
+      },
+      "Mental": {
+        "completedMinutes": 0,
+        "maxMinutes": 60,
+        "exp": 0
+      },
+      "Stamina": {
+        "completedMinutes": 100,
+        "maxMinutes": 45,
+        "exp": 100
+      },
+      "Willpower": {
+        "completedMinutes": 0,
+        "maxMinutes": 90,
+        "exp": 0
+      }
+    }
+  },
+  {
+    "id": "3b0df6cd-2b29-8044-925c-e8a010d3aa0b",
+    "name": "2026-08-01",
+    "date": "2026-08-02",
+    "habits": {
+      "Sigara": false,
+      "Bakım": false,
+      "Soul": false
+    },
+    "numbers": {
+      "Kariyer & Mühendislik (Dk)": 0,
+      "Zihin & Gelişim (Dk)": 15,
+      "Fiziksel & Efor (Dk)": 0
+    },
+    "categories": {
+      "Career": {
+        "completedMinutes": 0,
+        "maxMinutes": 540,
+        "exp": 0
+      },
+      "Mental": {
+        "completedMinutes": 15,
+        "maxMinutes": 60,
+        "exp": 25
+      },
+      "Stamina": {
+        "completedMinutes": 0,
+        "maxMinutes": 45,
+        "exp": 0
+      },
+      "Willpower": {
+        "completedMinutes": 0,
+        "maxMinutes": 90,
+        "exp": 0
+      }
+    }
+  },
+  {
+    "id": "3b0df6cd-2b29-80c8-b9cf-d3faaeb8eef9",
+    "name": "2026-07-31",
+    "date": "2026-08-02",
+    "habits": {
+      "Sigara": false,
+      "Bakım": false,
+      "Soul": false
+    },
+    "numbers": {
+      "Kariyer & Mühendislik (Dk)": 540,
+      "Zihin & Gelişim (Dk)": 15,
+      "Fiziksel & Efor (Dk)": 0
+    },
+    "categories": {
+      "Career": {
+        "completedMinutes": 540,
+        "maxMinutes": 540,
+        "exp": 100
+      },
+      "Mental": {
+        "completedMinutes": 15,
+        "maxMinutes": 60,
+        "exp": 25
+      },
+      "Stamina": {
+        "completedMinutes": 0,
+        "maxMinutes": 45,
+        "exp": 0
+      },
+      "Willpower": {
+        "completedMinutes": 0,
+        "maxMinutes": 90,
+        "exp": 0
+      }
+    }
+  },
+  {
     "id": "3addf6cd-2b29-8073-96e2-ffb6d283b281",
     "name": "2026-07-30",
     "date": "2026-07-30",
@@ -10,7 +121,7 @@
     },
     "numbers": {
       "Kariyer & Mühendislik (Dk)": 540,
-      "Zihin & Gelişim (Dk)": 0,
+      "Zihin & Gelişim (Dk)": 15,
       "Fiziksel & Efor (Dk)": 0
     },
     "categories": {
@@ -20,9 +131,9 @@
         "exp": 100
       },
       "Mental": {
-        "completedMinutes": 0,
+        "completedMinutes": 15,
         "maxMinutes": 60,
-        "exp": 0
+        "exp": 25
       },
       "Stamina": {
         "completedMinutes": 0,
